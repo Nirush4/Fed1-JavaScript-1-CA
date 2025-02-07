@@ -52,19 +52,19 @@ Decide if you will use your existing project, or a fresh project.
  
 ## Features
 
-- SEO friendly #TODO
-- Responsive #TODO
-- Prebuilt components #TODO
-- E2E testing with every pull request #TODO
+- SEO friendly
+- Responsive
+- Prebuilt components
+- E2E testing with every pull request
 
 
-### production
+### Production
 
 Production is the enviromewnt the end-user experience. This is the final product that will be deployed to the public. This enviroment is hosted on Netlify.
 
-### staging
+### Staging
 
-Staging is the enviroment where the team can test the latest features and bug fixes. This enviroment is hosted on Vercel.
+Staging is the enviroment where the team can test the latest features and bug fixes. This enviroment is hosted on Netlify.
 
 ## Built with
 
