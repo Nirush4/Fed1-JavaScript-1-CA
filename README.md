@@ -66,7 +66,7 @@ Production is the enviromewnt the end-user experience. This is the final product
 
 Staging is the enviroment where the team can test the latest features and bug fixes. This enviroment is hosted on Vercel.
 
-## Build with
+## Built with
 
 ![HTML](/images/Readme/html.png) ![CSS](/images/Readme/css.png)
 
