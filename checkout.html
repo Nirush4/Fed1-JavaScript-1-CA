@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on." />
+  <title>Rainydays|Checkout</title>
+  <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/checkout.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
+    integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
+    crossorigin="anonymous" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css?family=Prata:regular" rel="stylesheet" s />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+    rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css?family=Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Play:regular,700" rel="stylesheet" />
+</head>
+
+<body>
+
+
+  <!--imp! HEADER -->
+
+  <header>
+    <nav class="desktop-nav">
+      <div class="logo-div">
+        <a role="logo" href="index.html" class="logo"><img src="/images/rainydays-logo.png" alt="logo"
+            aria-label="logo"></a>
+      </div>
+      <input type="checkbox" id="check">
+      <div class="nav-links">
+        <li role="home" aria-label="home"> <a href="index.html" class="nav-item">Home</a></li>
+        <li role="jackets" id="jacket-links" aria-label="jackets-links">
+          <a href="#" class="nav-item nav-item-link ">Jackets</a>
+          <div class="jacket-categories-main">
+            <div class="jacket-categories-sub">
+              <ul>
+                <li aria-label="men"> <a href="/men.html">Men's</a></li>
+                <li aria-label="women"> <a href="/women.html">Women's</a></li>
+                <li aria-label="kids"> <a href="#">Kids</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <details class=" jacket-links-mobile">
+          <summary class="jacket-summary">
+            Jackets
+          </summary>
+          <a href="/men.html" class="c-summary-btn"> Men's</a>
+          <a href="/women.html" class="c-summary-btn"> Women's</a>
+          <a href="/" class="c-summary-btn"> Kids</a>
+        </details>
+        <li role=" aboutus"> <a href="about.html" class="nav-item">About us</a></li>
+        <li role="contact"> <a href="contact.html" class="nav-item">Contact</a></li>
+        <label for="check" class="c-close-menu">
+          <i class="fa-solid fa-x"></i>
+        </label>
+      </div>
+      <div class="nav-icons">
+        <div class="search-box">
+          <a href="" aria-label="search for items">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <input type="search" placeholder="Search...">
+        </div>
+        <a href="/login.html" class="nav-login" aria-label="login to the account"><i class="fa-solid fa-user"></i></a>
+        <i class="fa-solid fa-cart-shopping"></i>
+      </div>
+
+      <label for="check" class="c-open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </nav>
+  </header>
+
+
+  <main class="l-main">
+    <section class="c-hero">
+      <div class="c-back-btn">
+        <a href="info-cart.html" aria-label="link you back to info cart page"><i
+            class="fa-solid fa-arrow-left"></i>Back</a>
+      </div>
+      <div class="c-main-header">Guest checkout</div>
+      <div class="c-line-progress">
+        <div class="c-line-container">
+          <div class="c-line-black-container">
+            <div class="c-line-text">Cart</div>
+            <div class="c-line-checked-container">
+              <div class="c-line-checked">
+                <div class="c-dot-checked"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="c-line-black-container">
+            <div class="c-line-text">Checkout</div>
+            <div class="c-line-dobbel-container">
+              <div class="c-line-black">
+                <div class="c-dot-black"></div>
+              </div>
+              <div class="c-line-filler"></div>
+            </div>
+          </div>
+
+          <div class="c-line-grey-container">
+            <div class="c-line-text">Success</div>
+            <div class="c-line-grey">
+              <div class="c-dot-grey"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="c-form-container">
+      <form action="card.html" aria-label="link you to card page" class="c-payment">
+        <div class="c-payment-container">
+          <div class="c-pay-header">Choose payment method</div>
+
+          <div class="c-all-cards-container">
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="visa" id="visa" class="c-checkbox" required />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Visa/Mastercard</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/visa-small.jpg" alt="visa card image" />
+                <img src="/images/payment icons/master-small.jpg" alt="Mastercard image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Paypal</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/paypal-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Klarna</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/klarna-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">American Express</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/amex-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Vipps</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/vipps-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+          </div>
+
+          <div class="c-btn-container">
+            <input type="submit" name="submit" id="submit" value="Submit" aria-label="Links to card page" />
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!--imp! FOOTER -->
+
+  <footer class="l-footer-main-1 common-div" aria-label="footer">
+    <div class="l-footer-row-1">
+      <div class="l-footer-col-1">
+        <div><img src="/images/Rainydays-whitelogo.png" alt="logo" /></div>
+      </div>
+
+      <div class="l-footer-col-2">
+        <div class="l-footer-sub-col-1 l-footer-sub-col-common">
+          <h6>Help</h6>
+          <div class="l-footer-help-list">
+            <a href="">Shipping & Return Policy</a>
+            <a href="">Help Center</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div class="l-footer-sub-col-2 l-footer-sub-col-common">
+          <h6>Company</h6>
+          <div class="l-footer-help-list">
+            <a href="/about.html">About us</a>
+            <a href="/contact.html">Contact</a>
+            <a href="">News</a>
+            <a href="">Support</a>
+          </div>
+        </div>
+
+        <div class="l-footer-sub-col-3 l-footer-sub-col-common">
+          <h6>Shop</h6>
+          <div class="l-footer-help-list">
+            <a href="">Products</a>
+            <a href="">Overview</a>
+            <a href="">Pricing</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="l-footer-col-3">
+        <h6>Follow us</h6>
+        <div class="l-footer-col-3-sm-icon">
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+
+      <div class="l-footer-col-4">
+        <a href=""><img src="/images/hero-page-img/google-playstore-logo.png" alt="Google playtore" /></a>
+        <a href=""><img src="/images/hero-page-img/apple-app store-logo.png" alt="Apple app store" /></a>
+      </div>
+    </div>
+
+    <div class="l-footer-main-2">
+      <div class="l-footer-row-2-item-1">
+        <div class="l-footer-row-2-line"></div>
+        <div class="l-footer-row-2-text">
+          <a class="l-footer-row-2-text-1">Terms</a>
+          <a class="l-footer-row-2-text-2">Privacy</a>
+          <a class="l-footer-row-2-text-3">Conditions</a>
+        </div>
+      </div>
+
+      <div class="l-footer-row-2-item-2">
+        <p>&copy; 2024 Rainydays. All rights reserved. (This is a student project.)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!--imp! FOOTER MOBILE -->
+
+  <footer class="l-footer">
+    <section class="c-footer-col">
+      <details class="c-footer-help">
+        <summary class="c-footer-summary">
+          Help <i class="fa-solid fa-plus"></i>
+        </summary>
+        <a href="/" class="c-summary-btn"> Shipping & Return Policy</a>
+        <a href="/" class="c-summary-btn"> Help Center</a>
+        <a href="/" class="c-summary-btn"> Terms & Conditions</a>
+        <a href="/" class="c-summary-btn"> Privacy Policy</a>
+      </details>
+
+      <details class="c-footer-info">
+        <summary class="c-footer-summary">
+          Company <i class="fa-solid fa-plus"></i>
+        </summary>
+        <a href="/" class="c-summary-btn"> About us</a>
+        <a href="/" class="c-summary-btn"> Contact</a>
+        <a href="/" class="c-summary-btn"> News</a>
+        <a href="/" class="c-summary-btn"> Support</a>
+      </details>
+
+      <details class="c-footer-info">
+        <summary class="c-footer-summary">
+          Shop <i class="fa-solid fa-plus"></i>
+        </summary>
+        <a href="/" class="c-summary-btn"> Products</a>
+        <a href="/" class="c-summary-btn"> Overview</a>
+        <a href="/" class="c-summary-btn"> Pricing</a>
+      </details>
+
+      <details class="c-footer-info">
+        <summary class="c-footer-summary">
+          Join Now <i class="fa-solid fa-plus"></i>
+        </summary>
+      </details>
+
+      <div class="c-footer-region">
+        <div class="c-region-country">Norway</div>
+        <div class="c-region-change">Change Region</div>
+        <i class="fa-solid fa-chevron-down" class="c-region-icon"></i>
+      </div>
+
+      <div class="c-footer-follow">
+        <div class="c-follow-p">
+          <p>Follow us</p>
+          <div class="c-follow-icons">
+            <i class="fa-brands fa-x-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+        </div>
+        <div class="c-follow-container">
+          <div class="c-apple-container">
+            <img src="/images/hero-page-img/apple-app store-logo.png" alt="App store logo" />
+          </div>
+          <div class="c-google-container">
+            <img src="/images/hero-page-img/google-playstore-logo.png" alt="Google store logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="c-footer-last">
+      <p>&copy; 2024 Rainydays. All rights reserved. (This is a student project.)</p>
+    </div>
+  </footer>
+</body>
+
+</html>
