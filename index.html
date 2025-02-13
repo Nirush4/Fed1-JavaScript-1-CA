@@ -74,12 +74,12 @@
                 </label>
             </div>
             <div class="nav-icons">
-                <div class="search-box">
-                    <a href="" aria-label="search for items">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                    <input type="search" placeholder="Search...">
-                </div>
+
+                <Section class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="search-input" placeholder="Search...">
+                </Section>
+
                 <a href="/login.html" class="nav-login" aria-label="login to the account"><i
                         class="fa-solid fa-user"></i></a>
                 <i class="fa-solid fa-cart-shopping"></i>
@@ -96,7 +96,7 @@
 
         <!--imp! SECTION-HERO -->
 
-        <div class="hero-img" aria-label="section-hero">
+        <div class="hero-img" id="hero-img" aria-label="section-hero">
             <div class="heading-div">
                 <span class="Durable">"Durable,</span>
                 <span class="All-Weather">All-Weather Jackets</span>
@@ -165,9 +165,34 @@
 
         <!--imp! SECTION-2 -->
 
-        <section id="js-products-section" class="section-2 ">
+        <section class="section-2">
+            <div class="filter-main-div">
+                <div class="sort-by-section">
+                    <form>
+                        <select name="sort-by" id="js-sort-by" class="short-by">
+                            <option disabled selected hidden>SORT BY</option>
+                            <option value="asc">Price low-high</option>
+                            <option value="dec">Price high-low</option>
+                        </select>
+                    </form>
+                </div>
+                <!-- <i class="fa-solid fa-arrow-up-z-a"></i> -->
+                <div class="filters-by-section">
+                    <form>
+                        <select name="filter-by" id="js-filter-by" class="filter-by">
+                            <option disabled selected hidden>FILTER</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+
+            <div id="js-products-section" class="section-2-article ">
+            </div>
 
         </section>
+
 
 
         <hr class="hero-page-hr-2">

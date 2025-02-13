@@ -3,7 +3,15 @@ import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
 // import { addToCart } from './cart.mjs';
 
 const containerEl = document.querySelector('#js-products-section');
-// const sortByEl = document.querySelector('#js-sort-by');
+const sortByEl = document.querySelector('#js-sort-by');
+const filterEl = document.querySelector('#js-filter-by');
+const inputSearch = document.querySelector('#search-input');
+const heroSection = document.querySelector('#hero-img');
+const Section1 = document.querySelector('.section-1');
+const Section2 = document.querySelector('.section-2');
+const Section3 = document.querySelector('.section-3');
+const Section4 = document.querySelector('.section-4');
+const Section5 = document.querySelector('.section-5');
 
 console.log(containerEl);
 let products = [];
@@ -11,42 +19,54 @@ let products = [];
 setup();
 
 function setup() {
-  // Check if the containerEl and sortByEl elements exist in the DOM
-  if (!containerEl) {
-    // Log an error message if either element is missing
+  if (!containerEl || !sortByEl) {
     console.error('JS cannot run!!!');
   } else {
-    // If both elements exist, call the setup function to initialize the application
     getProducts();
   }
 }
 
-/**
- * Event listener for the 'change' event on the sortByEl element.
- * This function sorts the product list based on the selected value.
- *
- * @param {Event} event - The change event triggered by the sortByEl element.
- *
- * The function checks the value of the event target:
- * - If the value is "asc", it calls sortByPriceDescending() to sort the product list by price in descending order.
- * - If the value is "dec", it calls sortByPriceAscending() to sort the product list by price in ascending order.
- *
- * After sorting, it calls createProductsListEl(products) to rerender the sorted product list.
- */
-// sortByEl.addEventListener('change', (event) => {
-//   const val = event.target.value;
+inputSearch.addEventListener('input', (event) => {
+  Section2.scrollIntoView();
 
-//   // Sort productlist by price - low to high
-//   if (val === 'asc') {
-//     sortByPriceDescending();
-//     // Sort productlist by price - high to low
-//   } else if (val === 'dec') {
-//     sortByPriceAscending();
-//   }
+  const inputVal = event.target.value;
+  const filteredProductsSearch = products.filter(({ title }) =>
+    title.trim().toLowerCase().includes(inputVal.trim().toLowerCase())
+  );
 
-//   // NOTE: we need to rerender our sorted list now;
-//   createProductsListEl(products);
-// });
+  createProductsListEl(filteredProductsSearch);
+});
+
+sortByEl.addEventListener('change', (event) => {
+  const val = event.target.value;
+
+  if (val === 'asc') {
+    sortByPriceDescending();
+  } else if (val === 'dec') {
+    sortByPriceAscending();
+  }
+
+  createProductsListEl(products);
+});
+
+filterEl.addEventListener('change', (event) => {
+  const val = event.target.value;
+
+  if (val === 'Male' || val === 'Female') {
+    filterProductsByGender(val);
+  } else {
+    createProductsListEl(products); // Pass the original products list when no gender filter is selected
+  }
+});
+
+function filterProductsByGender(gender) {
+  const list = products;
+  const filteredProducts = list.filter((product) => {
+    return product.gender === gender;
+  });
+  createProductsListEl(filteredProducts);
+  console.log(filteredProducts);
+}
 
 async function getProducts() {
   clearNode(containerEl);
@@ -56,6 +76,8 @@ async function getProducts() {
     const response = await fetch(API_URL);
     const { data } = await response.json();
     products = data;
+
+    console.log(products);
 
     sortByPriceDescending();
     createProductsListEl(products);
@@ -90,47 +112,55 @@ function productTemplate({
                 <span>&#9733;</span>
                 <span>&#9733;</span>
                 <span>&#9734;</span>
-                <span>(123 reviews)</span>
+                <span class="reviews">(123 reviews)</span>
             </div>
-              <spa class="class=section-2-gallery-text-price">${price} ${CURRENCY}</spa>
-              <button class="c-add-to-cart" id="js-add-to-cart-${id}">Add to Cart</button>
+            <span class="section-2-gallery-text-price">${price} ${CURRENCY}</span>
+            <button class="c-add-to-cart" id="js-add-to-cart-${id}">Add to Cart</button>
 
-    </article>
-
-
-    <article class="c-product-preview-details animate__animated animate__fadeInUp animate__delay-${index}s">
-      <div class="c-product-preview-image">
-        <a href=${detailsUrl}>
-          <img src="${imgUrl}" alt="${imgAl}" />
-        </a>  
-      </div>
-
-      <div class="c-product-preview-info">
-        <h1 class="c-product-preview-title">
-          <a href=${detailsUrl}>${title}</a>
-        </h1>
-
-        <div class="c-product-preview-rating">
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9733;</span>
-          <span>&#9734;</span>
-          <span>(123 reviews)</span>
-        </div>
-        <div class="c-product-preview-price">${price} ${CURRENCY}</div>
-        <div class="c-product-preview-description">
-          <p>
-            ${description}
-          </p>
-        </div>
-        <button class="c-add-to-cart" id="js-add-to-cart-${id}">Add to Cart</button>
-      </div>
     </article>
  `;
 }
 
-function productSkeletonTemplate() {
+function productTemplateBesteller({
+  id,
+  title = 'Unknown Item',
+  imgUrl,
+  imgAl,
+  price = 0,
+  description = 'Missing description',
+  index,
+}) {
+  const detailsUrl = `/product-details.html?id=${id}`;
+  return `
+  <section class="section-3 common-div" aria-label="section-3">
+            <h2 class="section-3-title">
+                Best Seller
+            </h2>
+            <div class="section-3-content-holder">
+
+                <div class="section-3-content-main-1">
+                    <div class="section-3-content-1 section-3-common">
+                        <div class="section-3-content-text-1">
+                            <div class="section-3-star-main-div-1">
+                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
+                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
+                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
+                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
+                                <i class="fa-solid fa-star" id="section-3-content-stars-white"></i>
+                            </div>
+                            <p class="section-3-content-item-name-1">Beta SL Jakke</p>
+                            <div class="section-3-content-item-price-list-1">
+                                <span class="section-3-content-item-price-new-1">2.200kr</span>
+                                <span class="section-3-content-item-price-old-1">2.400kr</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+ `;
+}
+
+function SkeletonTemplate() {
   return `
   <article class="c-product-preview-details">
     <div class="c-product-preview-image">
@@ -149,24 +179,12 @@ function productSkeletonTemplate() {
 
 function createLoadingSkeleton(count = 3) {
   [...Array(count)].forEach(() => {
-    const template = productSkeletonTemplate();
+    const template = SkeletonTemplate();
     const newEl = createHTML(template);
     containerEl.append(newEl);
   });
 }
 
-/**
- * Creates and appends a list of product elements to the container element.
- *
- * @param {Array} [list=products] - The list of products to display. Each product should be an object with the following properties:
- * @param {string} list[].id - The unique identifier for the product.
- * @param {string} list[].title - The title of the product.
- * @param {Object} list[].image - The image object for the product.
- * @param {string} list[].image.url - The URL of the product image.
- * @param {string} list[].image.alt - The alt text for the product image.
- * @param {number} list[].price - The price of the product.
- * @param {string} list[].description - The description of the product.
- */
 function createProductsListEl(list = products) {
   clearNode(containerEl);
 
@@ -181,7 +199,6 @@ function createProductsListEl(list = products) {
     });
 
     const newEl = createHTML(template);
-    // FIXME: Use data attribute
     const btn = newEl.querySelector('button');
 
     btn.addEventListener('click', () => {
@@ -204,3 +221,8 @@ function sortByPriceDescending(list = products) {
 function sortByPriceAscending(list = products) {
   list.sort((a, b) => b.price - a.price);
 }
+
+// Example usage:
+// filterProductsByGender('male');
+// filterProductsByGender('female');
+// filterProductsByGender('unisex');
