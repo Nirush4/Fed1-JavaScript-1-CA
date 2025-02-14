@@ -621,10 +621,10 @@
     display: flex;
     justify-content: center;
     background-color: #444d56;
-    align-items: center;
+    align-items: flex-end;
     flex-wrap: wrap;
-    gap: 3rem;
-    padding: 4rem 6rem 6rem;
+    gap: 4rem;
+    padding: 3rem 6rem 6rem;
 
     article {
         display: flex;
@@ -656,11 +656,11 @@
 .section-3-content-1 {
     text-decoration: none;
     min-width: 14rem;
-    height: 22.5rem;
+    height: 24.5rem;
     border-radius: 10.625rem 10.625rem 0rem 0rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: end;
     background-color: #fff;
 
@@ -669,7 +669,7 @@
         height: auto;
         display: block;
         padding: 0.7rem;
-        border-radius: 10.625rem 10.625rem 0rem 0rem;
+        border-radius: 6.625rem 6.625rem 0rem 0rem;
     }
 }
 
@@ -792,11 +792,23 @@
 }
 
 .hero-page-hr-3 {
-    /* margin-top: 1rem; */
     height: none;
     border: none;
     border-top: 0.5px solid #00000050;
 }
+
+.discount-percentage {
+    background-color: #6db200;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    width: 3.2rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0 100%);
+}
+
+
 
 @media (width<600px) {
     .section-3-title {
