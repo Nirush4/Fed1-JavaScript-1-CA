@@ -37,7 +37,7 @@ sortByEl.addEventListener('change', (event) => {
 
   if (val === 'asc') {
     sortByPriceDescending();
-  } else if (val === 'dec') {
+  } else if (val === 'desc') {
     sortByPriceAscending();
   }
 
@@ -86,9 +86,21 @@ const onSaleProductList = productsList.filter((product) => {
   return product.onSale;
 });
 
-const limitedSale = onSaleProductList.slice(0, 5);
+const limitedSale = onSaleProductList.slice(0, 6);
 
 createproductTemplateOnSale(limitedSale);
+
+// discountedAmount(limitedSale);
+
+// function discountedAmount(limitedSale) {
+//   limitedSale.forEach((product) => {
+//     createLoadingSkeleton(5);
+//     const discountPercentage =
+//       ((product.price - product.discountedPrice) / product.price) * 100;
+//     console.log('discountPercent for product:', discountPercentage + '%');
+//     return discountPercentage;
+//   });
+// }
 
 function productTemplate({
   id,
@@ -133,6 +145,7 @@ function productTemplateOnSale({
   price = 0,
   discountedPrice = 0,
   description = 'Missing description',
+  discountPercentage = 0,
   index,
 }) {
   const detailsUrl = `/product-details.html?id=${id}`;
@@ -144,7 +157,8 @@ function productTemplateOnSale({
                 <div class="section-3-content-main-1"> 
                      <a href="${detailsUrl}" class="section-3-content-1">
                         <img src="${imgUrl}" alt="${imgAl}" >
-                        <div class="section-3-content-text-1">
+                        <span class="discount-percentage">-${discountPercentage}%</span>
+                      <div class="section-3-content-text-1">
                         <p class="section-3-content-item-name-1">${title}</p>
                              <div class="c-product-preview-rating">
                                   <span>&#9733;</span>
@@ -158,7 +172,7 @@ function productTemplateOnSale({
                                 <span class="section-3-content-item-price-new-1">${discountedPrice} ${CURRENCY}</span>
                                 <span class="section-3-content-item-price-old-1">${price} ${CURRENCY}</span>
                             </div>
-                        </div>
+                      </div>
                       </a>
                       <button class="c-add-to-cart-2" id="js-add-to-cart-${id}">Add to Cart</button>
                 </div>
@@ -224,6 +238,7 @@ function createproductTemplateOnSale(list = products) {
   clearNode(Section3);
 
   list.forEach(({ id, title, image, price, description, discountedPrice }) => {
+    const discountPercentage = ((price - discountedPrice) / price) * 100;
     const template = productTemplateOnSale({
       id,
       title,
@@ -232,6 +247,7 @@ function createproductTemplateOnSale(list = products) {
       price,
       description,
       discountedPrice,
+      discountPercentage: discountPercentage.toFixed(0),
     });
 
     const newElOnSale = createHTML(template);
