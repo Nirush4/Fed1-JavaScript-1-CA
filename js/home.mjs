@@ -6,14 +6,9 @@ const containerEl = document.querySelector('#js-products-section');
 const sortByEl = document.querySelector('#js-sort-by');
 const filterEl = document.querySelector('#js-filter-by');
 const inputSearch = document.querySelector('#search-input');
-const heroSection = document.querySelector('#hero-img');
-const Section1 = document.querySelector('.section-1');
 const Section2 = document.querySelector('.section-2');
 const Section3 = document.querySelector('.section-3');
-const Section4 = document.querySelector('.section-4');
-const Section5 = document.querySelector('.section-5');
 
-console.log(containerEl);
 let products = [];
 
 setup();
@@ -77,7 +72,7 @@ async function getProducts() {
     const { data } = await response.json();
     products = data;
 
-    console.log(products);
+    window.localStorage.setItem('products', JSON.stringify(products));
 
     sortByPriceDescending();
     createProductsListEl(products);
@@ -85,6 +80,15 @@ async function getProducts() {
     console.error(ERROR_MESSAGE_DEFAULT, error?.message);
   }
 }
+
+const productsList = JSON.parse(localStorage.getItem('products'));
+const onSaleProductList = productsList.filter((product) => {
+  return product.onSale;
+});
+
+const limitedSale = onSaleProductList.slice(0, 5);
+
+createproductTemplateOnSale(limitedSale);
 
 function productTemplate({
   id,
@@ -121,42 +125,44 @@ function productTemplate({
  `;
 }
 
-function productTemplateBesteller({
+function productTemplateOnSale({
   id,
   title = 'Unknown Item',
   imgUrl,
   imgAl,
   price = 0,
+  discountedPrice = 0,
   description = 'Missing description',
   index,
 }) {
   const detailsUrl = `/product-details.html?id=${id}`;
   return `
-  <section class="section-3 common-div" aria-label="section-3">
-            <h2 class="section-3-title">
-                Best Seller
-            </h2>
+
+  <article  aria-label="section-3">
             <div class="section-3-content-holder">
 
-                <div class="section-3-content-main-1">
-                    <div class="section-3-content-1 section-3-common">
+                <div class="section-3-content-main-1"> 
+                     <a href="${detailsUrl}" class="section-3-content-1">
+                        <img src="${imgUrl}" alt="${imgAl}" >
                         <div class="section-3-content-text-1">
-                            <div class="section-3-star-main-div-1">
-                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
-                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
-                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
-                                <i class="fa-solid fa-star" class="section-3-content-stars"></i>
-                                <i class="fa-solid fa-star" id="section-3-content-stars-white"></i>
-                            </div>
-                            <p class="section-3-content-item-name-1">Beta SL Jakke</p>
+                        <p class="section-3-content-item-name-1">${title}</p>
+                             <div class="c-product-preview-rating">
+                                  <span>&#9733;</span>
+                                  <span>&#9733;</span>
+                                  <span>&#9733;</span>
+                                  <span>&#9733;</span>
+                                  <span>&#9734;</span>
+                                  <span class="reviews-2">(123 reviews)</span>
+                              </div>
                             <div class="section-3-content-item-price-list-1">
-                                <span class="section-3-content-item-price-new-1">2.200kr</span>
-                                <span class="section-3-content-item-price-old-1">2.400kr</span>
+                                <span class="section-3-content-item-price-new-1">${discountedPrice} ${CURRENCY}</span>
+                                <span class="section-3-content-item-price-old-1">${price} ${CURRENCY}</span>
                             </div>
                         </div>
-                    </div>
+                      </a>
+                      <button class="c-add-to-cart-2" id="js-add-to-cart-${id}">Add to Cart</button>
                 </div>
-    </section>
+    </article>
  `;
 }
 
@@ -211,6 +217,25 @@ function createProductsListEl(list = products) {
     });
 
     containerEl.append(newEl);
+  });
+}
+
+function createproductTemplateOnSale(list = products) {
+  clearNode(Section3);
+
+  list.forEach(({ id, title, image, price, description, discountedPrice }) => {
+    const template = productTemplateOnSale({
+      id,
+      title,
+      imgUrl: image.url,
+      imgAl: image.alt,
+      price,
+      description,
+      discountedPrice,
+    });
+
+    const newElOnSale = createHTML(template);
+    Section3.append(newElOnSale);
   });
 }
 

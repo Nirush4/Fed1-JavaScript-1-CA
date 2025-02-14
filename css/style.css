@@ -399,7 +399,7 @@
         justify-content: center;
         flex-wrap: wrap;
         gap: 4rem;
-        padding: 3rem 0 5rem;
+        padding: 3rem 6% 5rem;
     }
 
     .filter-main-div {
@@ -509,6 +509,23 @@
     background-color: var(--background-color-addbtn-hover);
 }
 
+.c-add-to-cart-2 {
+    width: 100%;
+    padding: 0.3rem 0;
+    border-radius: 0.3rem;
+    background-color: var(--background-color-addbtn);
+    border: transparent;
+    color: #fff;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.c-add-to-cart-2:hover {
+    background-color: var(--background-color-addbtn-hover);
+}
+
 .c-product-preview-rating {
     color: var(--color-star);
 
@@ -517,13 +534,20 @@
     }
 }
 
+.reviews-2 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
 @media (width<600px) {
 
     .section-2 {
-        padding: 3rem 1.5rem;
 
         .section-2-article {
             gap: 2rem;
+            padding: 3rem 2rem;
         }
 
         .filter-main-div {
@@ -593,19 +617,18 @@
 /*imp! SECTION-3 */
 
 
-.section-3-content-holder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 2.55rem;
-    justify-content: center;
-    align-items: center;
-
-}
-
 .section-3 {
     display: flex;
     justify-content: center;
+    background-color: #444d56;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 4rem 6rem 6rem;
+
+    article {
+        display: flex;
+    }
 }
 
 .section-3-title {
@@ -614,22 +637,15 @@
     font-weight: 100;
     display: flex;
     justify-content: center;
-    padding-bottom: 2rem;
+    padding-top: 4rem;
+    background-color: #444d56;
+    color: #ffffff;
 }
 
-#section-3-content-stars-white {
-    color: white;
-}
-
-.section-3-content-holder {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
 
 .section-3-content-main-1 {
-    width: 12rem;
-    height: 17.5rem;
+    width: 14rem;
+    height: auto;
 }
 
 .section-3-common {
@@ -638,25 +654,31 @@
 
 
 .section-3-content-1 {
-    background-image: url(/images/hero-page-img/best-seller-1.jpg);
-    background-size: cover;
-    min-width: 12rem;
-    height: 100%;
+    text-decoration: none;
+    min-width: 14rem;
+    height: 22.5rem;
     border-radius: 10.625rem 10.625rem 0rem 0rem;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: end;
-    transition: background-image .5s ease-in-out;
+    background-color: #fff;
 
-    &:hover {
-        background-image: url(/images/hero-page-img/best-seller-1-bg.jpg);
+    img {
+        width: 100%;
+        height: auto;
+        display: block;
+        padding: 0.7rem;
+        border-radius: 10.625rem 10.625rem 0rem 0rem;
     }
 }
 
 
 
 .section-3-content-text-1 {
-    min-width: 12rem;
-    height: 3.5rem;
+
+    height: 6.5rem;
+    width: 100%;
     background-color: #03346E;
     text-align: center;
     letter-spacing: 0.04rem;
@@ -667,11 +689,6 @@
 
 }
 
-.section-3-star-main-div-1 {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-}
 
 .section-3-content-text-1 i {
     font-size: 0.7rem;
@@ -679,7 +696,7 @@
 }
 
 .section-3-content-item-name-1 {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-family: 'Roboto';
     font-weight: 400;
     color: white;
@@ -689,33 +706,19 @@
 .section-3-content-item-price-new-1 {
     font-family: 'Prata';
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #FCB502;
 }
 
 .section-3-content-item-price-old-1 {
     font-family: 'Prata';
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: white;
     text-decoration: line-through;
 }
 
 
-.section-3-content-2 {
-    background-image: url(/images/hero-page-img/best-seller-2.jpg);
-    background-size: cover;
-    min-width: 14rem;
-    height: 100%;
-    border-radius: 10.625rem 10.625rem 0rem 0rem;
-    display: flex;
-    align-items: end;
-    transition: background-image .5s ease-in-out;
-
-    &:hover {
-        background-image: url(/images/hero-page-img/best-seller-2-bg.jpg);
-    }
-}
 
 .section-3-content-main-2 {
     width: 14rem;
@@ -762,210 +765,6 @@
 }
 
 .section-3-content-item-price-old-2 {
-    font-family: 'Prata';
-    font-weight: 400;
-    font-size: 0.8rem;
-    color: white;
-    text-decoration: line-through;
-}
-
-
-.section-3-content-3 {
-    background-image: url(/images/hero-page-img/best-seller-3.jpg);
-    background-size: cover;
-    min-width: 15rem;
-    height: 100%;
-    border-radius: 10.625rem 10.625rem 0rem 0rem;
-    display: flex;
-    align-items: end;
-    transition: background-image .5s ease-in-out;
-
-    &:hover {
-        background-image: url(/images/hero-page-img/best-seller-3-bg.jpg);
-    }
-}
-
-.section-3-content-main-3 {
-    width: 16rem;
-    height: 22.5rem;
-}
-
-.section-3-content-text-3 {
-    min-width: 16rem;
-    height: 4.5rem;
-    background-color: #03346E;
-    text-align: center;
-    letter-spacing: 0.04rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.2rem;
-
-}
-
-.section-3-star-main-div-3 {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-}
-
-.section-3-content-text-3 i {
-    font-size: 0.8rem;
-    color: #FCB502;
-}
-
-.section-3-content-item-name-3 {
-    font-size: 1rem;
-    font-family: 'Roboto';
-    font-weight: 400;
-    color: white;
-}
-
-
-.section-3-content-item-price-new-3 {
-    font-family: 'Prata';
-    font-weight: 400;
-    font-size: 0.9rem;
-    color: #FCB502;
-}
-
-.section-3-content-item-price-old-3 {
-    font-family: 'Prata';
-    font-weight: 400;
-    font-size: 0.9rem;
-    color: white;
-    text-decoration: line-through;
-}
-
-.section-3-content-4 {
-    background-image: url(/images/hero-page-img/best-seller-4.jpg);
-    background-size: cover;
-    min-width: 14rem;
-    height: 100%;
-    border-radius: 10.625rem 10.625rem 0rem 0rem;
-    display: flex;
-    align-items: end;
-    transition: background-image .5s ease-in-out;
-
-    &:hover {
-        background-image: url(/images/hero-page-img/best-seller-4-bg.jpg);
-    }
-}
-
-.section-3-content-main-4 {
-    width: 14rem;
-    height: 20.5rem;
-}
-
-.section-3-content-text-4 {
-    min-width: 14rem;
-    height: 3.5rem;
-    background-color: #03346E;
-    text-align: center;
-    letter-spacing: 0.04rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.section-3-star-main-div-4 {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-}
-
-.section-3-content-text-4 i {
-    font-size: 0.7rem;
-    color: #FCB502;
-}
-
-.section-3-content-item-name-4 {
-    font-size: 0.9rem;
-    font-family: 'Roboto';
-    font-weight: 400;
-    color: white;
-}
-
-
-.section-3-content-item-price-new-4 {
-    font-family: 'Prata';
-    font-weight: 400;
-    font-size: 0.8rem;
-    color: #FCB502;
-}
-
-.section-3-content-item-price-old-4 {
-    font-family: 'Prata';
-    font-weight: 400;
-    font-size: 0.8rem;
-    color: white;
-    text-decoration: line-through;
-}
-
-
-.section-3-content-5 {
-    background-image: url(/images/hero-page-img/best-seller-5.jpg);
-    background-size: cover;
-    min-width: 12rem;
-    height: 100%;
-    border-radius: 10.625rem 10.625rem 0rem 0rem;
-    display: flex;
-    align-items: end;
-    transition: background-image .5s ease-in-out;
-
-    &:hover {
-        background-image: url(/images/hero-page-img/best-seller-5-bg.jpg);
-    }
-}
-
-.section-3-content-main-5 {
-    width: 12rem;
-    height: 17.5rem;
-}
-
-.section-3-content-text-5 {
-    min-width: 12rem;
-    height: 3.5rem;
-    background-color: #03346E;
-    text-align: center;
-    letter-spacing: 0.04rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.section-3-star-main-div-5 {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-}
-
-.section-3-content-text-5 i {
-    font-size: 0.7rem;
-    color: #FCB502;
-}
-
-.section-3-content-item-name-5 {
-    font-size: 0.9rem;
-    font-family: 'Roboto';
-    font-weight: 400;
-    color: white;
-}
-
-
-.section-3-content-item-price-new-5 {
-    font-family: 'Prata';
-    font-weight: 400;
-    font-size: 0.8rem;
-    color: #FCB502;
-}
-
-.section-3-content-item-price-old-5 {
     font-family: 'Prata';
     font-weight: 400;
     font-size: 0.8rem;
@@ -1501,8 +1300,7 @@
 .l-footer-main-1 {
     width: 100%;
     height: auto;
-    padding-top: 4.25rem;
-    padding-bottom: 1.5rem;
+    padding: 4.25rem 6rem 1.5rem;
     background-color: #03346E;
     display: flex;
     flex-direction: column;
