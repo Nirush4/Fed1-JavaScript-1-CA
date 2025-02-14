@@ -20,13 +20,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.common-div {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 6rem;
-    justify-content: center;
-}
-
 body {
     min-height: 100dvh;
 }
