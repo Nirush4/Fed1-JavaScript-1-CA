@@ -9,7 +9,7 @@
     <title>Rainydays|Jacket Specific Page</title>
     <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/jacket-specific.css">
-    <script defer src="/js/script.js"></script>
+    <script type="module" defer src="/js/jacket-specific.mjs"></script>
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css'
         integrity='sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=='
@@ -147,7 +147,7 @@
 
         <!--imp! SECTION-1 -->
 
-        <section class="section-1-jacket common-div">
+        <section class="section-1-jacket">
 
             <div class="sec-1-title-div-jacket">
                 <h4>Products</h4>
@@ -156,165 +156,41 @@
                         Products</a>
                 </div>
             </div>
-            <div class="sec-1-main-container-jacket">
-                <div class="sec-1-gallery-jacket sec-1-gallery-jacket-desktop">
 
-                    <div class="sec-1-img-div-1-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-1.jpg" alt="Jacket">
+            <section class="sec-1-main-container-jacket skeleton-product" id="product-details">
+                <div class="skeleton-product-images">
+                    <div class="skeleton-main-image"></div>
+                    <div class="skeleton-thumbnail-container">
+                        <div class="skeleton-thumbnail"></div>
+                        <div class="skeleton-thumbnail"></div>
+                        <div class="skeleton-thumbnail"></div>
                     </div>
-                    <div class="sec-1-img-div-2-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-2.jpg" alt="Jacket">
-                    </div>
-                    <div class="sec-1-img-div-3-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-3.jpg" alt="Jacket">
-                    </div>
-                    <div class="sec-1-img-div-4-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-4.jpg" alt="Jacket">
-                    </div>
-                    <div class="sec-1-img-div-5-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-5.jpg" alt="Jacket">
-                    </div>
-                    <!-- <div class="sec-1-img-div-6-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-6.jpg" alt="image-6">
-                    </div> -->
-
-                </div>
-                <div class="sec-1-gallery-jacket sec-1-gallery-jacket-mobile">
-
-                    <div class="sec-1-img-div-1-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/jacket-specific-mobile/image-1-1.jpg" alt=" Jacket">
-                    </div>
-                    <div class="sec-1-img-div-2-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/jacket-specific-mobile/image-2-2.jpg" alt="Jacket">
-                    </div>
-                    <div class="sec-1-img-div-3-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/jacket-specific-mobile/image-3-3.jpg" alt="Jacket">
-                    </div>
-                    <div class="sec-1-img-div-4-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/jacket-specific-mobile/image-4-4.jpg" alt="Jacket">
-                    </div>
-                    <div class="sec-1-img-div-5-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/jacket-specific-mobile/image-5-5.jpg" alt="Jacket">
-                    </div>
-                    <!-- <div class="sec-1-img-div-6-jacket gallery-jacket-common">
-                        <img src="/images/jacket-specific/image-6.jpg" alt="image-6">
-                    </div> -->
-
                 </div>
 
-                <div class="sec-1-details-main-jacket">
-                    <div class="sec-1-details-name-jacket">
-                        <h2>Nordsjo Winter Parka</h2>
-                    </div>
-                    <div class="sec-1-details-review-jacket">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star white"></i>
-                        <p>(37 Reviews)</p>
-                    </div>
-                    <div class="sec-1-details-price-jacket">
-                        <h3>5.399kr</h3>
-                    </div>
-                    <div class="sec-1-details-viewing-jacket">
-                        <i class="fa-regular fa-eye"></i>
-                        <p>32 People are viewing this right now</p>
-                    </div>
-                    <div class="sec-1-details-color-jacket">
-                        <p><strong>Color:</strong> Black</p>
-                    </div>
-                    <div class="sec-1-details-color-option-jacket">
-                        <div class="clr-div">
-                            <div class="red-clr-option clr-option"></div>
-                        </div>
-                        <div class="clr-div">
-                            <div class="black-clr-option clr-option"></div>
-                        </div>
-                    </div>
-                    <div class="sec-1-details-size-jacket">
-                        <p><strong>Size</strong></p>
-                    </div>
-                    <div class="sec-1-details-size-option-jacket">
-                        <div class="size">xs</div>
-                        <div class="size">s</div>
-                        <div class="size">m</div>
-                        <div class="size">l</div>
-                        <div class="size">xl</div>
-                        <div class="size">xxl</div>
-                    </div>
-                    <p class="stock">Only 5 Items(s) left in stock</p>
-                    <p class="quantity">Quantity</p>
-                    <div class="add-to-card-main">
-                        <div class="add-to-card">
-                            <div class="add-to-card-1">
-                                <i class="fa-solid fa-minus"></i>
-                                <p>1</p>
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
-                            <div class="add-to-card-2" id="add-to-card-2">
-                                <p>Add to cart</p>
-                            </div>
-                        </div>
-                        <div class="buy-now">
-                            <a href="/info-cart.html">Buy now</a>
-                        </div>
-                    </div>
+                <div class="skeleton-product-info">
+                    <h2></h2>
+                    <p class="skeleton-price"></p>
+                    <p class="skeleton-description"></p>
 
-                    <div class="sec-1-product-details-main-jacket">
-                        <div class="sec-1-product-details-col-1-jacket">
-                            <h4>Product Details</h4>
-                            <p>A modern, warm and weatherproof parka that protects you on the coldest days. It features
-                                our trusted Protection
-                                technology, so it's waterproof, breathable and windproof. In addition, it has a number
-                                of smart details, such as
-                                reflectors on the sleeves and knitted wrist cuffs. We've added removable faux fur on the
-                                hood, which both looks good and
-                                is functional as it creates a warm microclimate around your face when you remove the
-                                hood.</p>
-                        </div>
-                        <div class="sec-1-product-details-col-2-jacket pb">
-                            <div class="sec-1-product-details-cols-div-1-jacket">
-                                <h4>Fiber content:</h4>
-                            </div>
-                            <div class="sec-1-product-details-cols-div-2-jacket">
-                                <p>Shell: 100% polyamide. Lining: 100% polyester. Lining 2: 100% polyamide. Insulation:
-                                    100%
-                                    polyester (recycled). Faux
-                                    fur: 85% acrylic, 15% polyester.</p>
-                            </div>
-                        </div>
-                        <div class="sec-1-product-details-col-3-jacket pb">
-                            <div class="sec-1-product-details-cols-div-1-jacket">
-                                <h4>Maintenance advice:</h4>
-                            </div>
-                            <div class="sec-1-product-details-cols-div-2-jacket">
-                                <p>Do not use fabric softener. Remove all loose parts before washing. Tumble dry until
-                                    the
-                                    garment is completely dry. Dry
-                                    with dryer balls. Wash with similar colors.</p>
-                            </div>
-                        </div>
-                        <div class="sec-1-product-details-col-4-jacket pb">
-                            <div class="sec-1-product-details-cols-div-1-jacket">
-                                <h4>Size & Fit:</h4>
-                            </div>
-                            <div class="sec-1-product-details-cols-div-2-jacket ">
-                                <p class="sec-1-product-details-col-4-p-jacket">
-                                    class="sec-1-product-details-col-4-p-jacket">Model's height: 188cm / 6' 2'' Model is
-                                    wearing: L - Chest 42
-                                </p>
-                                <p>
-                                    <strong>Sizing Help</strong> <br>Still unsure what size to get? Check out our
-                                    <a href="">size
-                                        guide.</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <form class="skeleton-purchase-options" name="add-to-cart">
+                        <label for="size">Size:</label>
+                        <select id="size" name="size">
+                            <option value="s">Small</option>
+                            <option value="m">Medium</option>
+                            <option value="l">Large</option>
+                            <option value="xl">XL</option>
+                        </select>
 
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" value="1" />
+
+                        <button type="submit" class="skeleton-add-to-cart">
+                            Add to Cart
+                        </button>
+                    </form>
                 </div>
-            </div>
+            </section>
+
         </section>
 
         <hr class="hero-page-hr-1">
@@ -617,177 +493,6 @@
         </section>
 
         <hr class="hero-page-hr-5">
-
-        <!--imp! SECTION-3 -->
-
-        <section class="section-3 common-div" aria-label="section-3">
-            <div class="section-3-title">
-                <h4>People also bought</h4>
-                <p>Learn more about these products are ranked <i class="fa-regular fa-copy"></i></p>
-            </div>
-            <!-- <div class="section-3-gallery-main-container"> -->
-            <!-- <div class="section-3-gallery-left-arrow">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div> -->
-            <!-- <div class="section-3-gallery-sub-container"> -->
-            <div class="section-3-gallery section-3-gallery-scroll-bar">
-
-                <div class="section-3-gallery-img-1 section-3-gallery-common">
-                    <div>
-                        <a href="/jacket-specific.html">
-                            <img src="/images/jacket-specific/pa-bought-1.jpg" alt="A woman with a jacket">
-                        </a>
-                    </div>
-                    <p class="section-3-gallery-text-p">Penelope Winterjacket</p>
-                    <span class="section-3-gallery-text-price">1.600kr</span>
-
-                    <div class="section-2-clr-selection-div">
-                        <div class="section-2-gallery-1">
-                            <div class="section-2-gallery-img-1-clr-1-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-1 section-2-clr-selection-common"></div>
-                            </div>
-                            <div class="section-2-gallery-img-1-clr-2-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-2 section-2-clr-selection-common"></div>
-                            </div>
-                        </div>
-                        <div class="section-2-gallery-2">
-                            <div class="add-btn-div">
-                                <a href="/jacket-specific.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="section-3-gallery-img-2 section-3-gallery-common">
-                    <div><a href="/jacket-specific.html">
-                            <img src="/images/jacket-specific/pa-bought-2.jpg" alt="A man with a jacket">
-                        </a></div>
-                    <p class="section-3-gallery-text-p">Arctic Patrol Down Parka</p>
-                    <span class="section-3-gallery-text-price">5.600kr</span>
-
-                    <div class="section-2-clr-selection-div">
-                        <div class="section-2-gallery-1">
-                            <div class="section-2-gallery-img-1-clr-1-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-1 section-2-clr-selection-common"></div>
-                            </div>
-                            <div class="section-2-gallery-img-1-clr-2-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-2 section-2-clr-selection-common"></div>
-                            </div>
-                        </div>
-                        <div class="section-2-gallery-2">
-                            <div class="add-btn-div">
-                                <a href="/jacket-specific.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-3-gallery-img-3 section-3-gallery-common">
-                    <div><a href="/jacket-specific.html">
-                            <img src="/images/jacket-specific/pa-bought-3.jpg" alt="A woman with a jacket">
-                        </a></div>
-                    <p class="section-3-gallery-text-p">Nordsjo Winter Parka</p>
-                    <span class="section-3-gallery-text-price">5.399kr</span>
-
-                    <div class="section-2-clr-selection-div">
-                        <div class="section-2-gallery-1">
-                            <div class="section-2-gallery-img-1-clr-1-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-1 section-2-clr-selection-common"></div>
-                            </div>
-                            <div class="section-2-gallery-img-1-clr-2-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-2 section-2-clr-selection-common"></div>
-                            </div>
-                        </div>
-                        <div class="section-2-gallery-2">
-                            <div class="add-btn-div">
-                                <a href="/jacket-specific.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-3-gallery-img-4 section-3-gallery-common">
-                    <div><a href="/jacket-specific.html">
-                            <img src="/images/jacket-specific/pa-bought-4.jpg" alt="A man with a jacket">
-                        </a></div>
-                    <p class="section-3-gallery-text-p">Leather Harrington Jacket</p>
-                    <span class="section-3-gallery-text-price">1.200kr</span>
-
-                    <div class="section-2-clr-selection-div">
-                        <div class="section-2-gallery-1">
-                            <div class="section-2-gallery-img-1-clr-1-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-1 section-2-clr-selection-common"></div>
-                            </div>
-                            <div class="section-2-gallery-img-1-clr-2-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-2 section-2-clr-selection-common"></div>
-                            </div>
-                        </div>
-                        <div class="section-2-gallery-2">
-                            <div class="add-btn-div">
-                                <a href="/jacket-specific.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="section-3-gallery-img-5 section-3-gallery-common">
-                    <div><a href="/jacket-specific.html">
-                            <img src="/images/jacket-specific/pa-bought-5.jpg" alt="A man with a jacket">
-                        </a></div>
-                    <p class="section-3-gallery-text-p">Women's Maud Parka</p>
-                    <span class="section-3-gallery-text-price">2.599kr</span>
-
-                    <div class="section-2-clr-selection-div">
-                        <div class="section-2-gallery-1">
-                            <div class="section-2-gallery-img-1-clr-1-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-1 section-2-clr-selection-common"></div>
-                            </div>
-                            <div class="section-2-gallery-img-1-clr-2-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-2 section-2-clr-selection-common"></div>
-                            </div>
-                        </div>
-                        <div class="section-2-gallery-2">
-                            <div class="add-btn-div">
-                                <a href="/jacket-specific.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="section-3-gallery-img-6 section-3-gallery-common">
-                    <div><a href="/jacket-specific.html">
-                            <img src="/images/jacket-specific/pa-bought-6.jpg" alt="A man with a jacket">
-                        </a></div>
-                    <p class="section-3-gallery-text-p">Verglas Icefall Down Jacket</p>
-                    <span class="section-3-gallery-text-price">2.550kr</span>
-
-                    <div class="section-2-clr-selection-div">
-                        <div class="section-2-gallery-1">
-                            <div class="section-2-gallery-img-1-clr-1-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-1 section-2-clr-selection-common"></div>
-                            </div>
-                            <div class="section-2-gallery-img-1-clr-2-b section-2-clr-selection-common-b">
-                                <div class="section-2-gallery-img-1-clr-2 section-2-clr-selection-common"></div>
-                            </div>
-                        </div>
-                        <div class="section-2-gallery-2">
-                            <div class="add-btn-div">
-                                <a href="/jacket-specific.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <!-- </div> -->
-            <!-- <div class="section-3-gallery-right-arrow">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div> -->
-            <!-- </div> -->
-        </section>
-
-        <hr class="hero-page-hr-3">
 
         <!--imp! PAYMENT METHOD -->
 
