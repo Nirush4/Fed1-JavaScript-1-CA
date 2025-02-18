@@ -111,7 +111,7 @@ function productTemplate({
   description = "Missing description",
   index,
 }) {
-  const detailsUrl = `/product-details.html?id=${id}`;
+  const detailsUrl = `/jacket-specific.html?id=${id}`;
   return `
   <article class="section-2-gallery animate__animated animate__fadeInUp animate__delay-${index}s">
 
@@ -148,7 +148,7 @@ function productTemplateOnSale({
   discountPercentage = 0,
   index,
 }) {
-  const detailsUrl = `/product-details.html?id=${id}`;
+  const detailsUrl = `/jacket-specific.html?id=${id}`;
   return `
 
   <article  aria-label="section-3">
