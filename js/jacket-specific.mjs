@@ -2,6 +2,7 @@ import { createHTML, clearNode } from './utils.mjs';
 import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
 
 const containerEl = document.querySelector('#product-details');
+const onSaleSection = document.querySelector('#section-3');
 
 async function fetchProductDetails(productId = '') {
   const Id = getId();
@@ -37,14 +38,17 @@ function detailsTemplate({
   description = "This product doesn't have a description",
   alt = 'No Description present',
 }) {
+  const detailsUrl = `/jacket-specific.html?id=${id}`;
   return `
     <article class="product-details">
       <div class="product-images">
+       <a href="${detailsUrl}">
         <img
           src="${primaryImgUrl}"
           alt="${alt}"
           class="main-image"
         />
+      </a>
       </div>
 
       <div class="product-info">
@@ -101,7 +105,81 @@ async function renderProductDetails(productId) {
   });
 
   const detailsEl = createHTML(template);
-  //   const detailsElWithListener = addFormHandlerToDetailsEl(detailsEl);
   clearNode(containerEl);
   containerEl.appendChild(detailsEl);
+}
+
+function productTemplateOnSale({
+  id,
+  title = 'Unknown Item',
+  imgUrl,
+  imgAl,
+  price = 0,
+  discountedPrice = 0,
+  description = 'Missing description',
+  discountPercentage = 0,
+  index,
+}) {
+  const detailsUrl = `/jacket-specific.html?id=${id}`;
+  return `
+
+  <article  aria-label="section-3">
+            <div class="section-3-content-holder">
+
+            <a href="${detailsUrl}" class="section-3-content-1">
+                <div class="section-3-content-main-1"> 
+                        <img src="${imgUrl}" alt="${imgAl}" >
+                        <span class="discount-percentage">-${discountPercentage}%</span>
+                      <div class="section-3-content-text-1">
+                        <p class="section-3-content-item-name-1">${title}</p>
+                             <div class="c-product-preview-rating">
+                                  <span>&#9733;</span>
+                                  <span>&#9733;</span>
+                                  <span>&#9733;</span>
+                                  <span>&#9733;</span>
+                                  <span>&#9734;</span>
+                                  <span class="reviews-2">(123 reviews)</span>
+                              </div>
+                            <div class="section-3-content-item-price-list-1">
+                                <span class="section-3-content-item-price-new-1">${discountedPrice} ${CURRENCY}</span>
+                                <span class="section-3-content-item-price-old-1">${price} ${CURRENCY}</span>
+                            </div>
+                        </div>
+
+                  </div>
+              </a>
+                      <button class="c-add-to-cart-2" id="js-add-to-cart-${id}">Add to Cart</button>
+             </div>
+    </article>
+ `;
+}
+
+const productsList = JSON.parse(localStorage.getItem('products'));
+const onSaleProductList = productsList.filter((product) => {
+  return product.onSale;
+});
+
+const limitedSale = onSaleProductList.slice(0, 6);
+
+createproductTemplateOnSale(limitedSale);
+
+function createproductTemplateOnSale(list = products) {
+  clearNode(onSaleSection);
+
+  list.forEach(({ id, title, image, price, description, discountedPrice }) => {
+    const discountPercentage = ((price - discountedPrice) / price) * 100;
+    const template = productTemplateOnSale({
+      id,
+      title,
+      imgUrl: image.url,
+      imgAl: image.alt,
+      price,
+      description,
+      discountedPrice,
+      discountPercentage: discountPercentage.toFixed(0),
+    });
+
+    const newElOnSale = createHTML(template);
+    onSaleSection.append(newElOnSale);
+  });
 }
