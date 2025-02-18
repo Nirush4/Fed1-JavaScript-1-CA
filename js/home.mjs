@@ -1,13 +1,13 @@
-import { createHTML, clearNode } from './utils.mjs';
-import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
+import { createHTML, clearNode } from "./utils.mjs";
+import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from "./constants.mjs";
 // import { addToCart } from './cart.mjs';
 
-const containerEl = document.querySelector('#js-products-section');
-const sortByEl = document.querySelector('#js-sort-by');
-const filterEl = document.querySelector('#js-filter-by');
-const inputSearch = document.querySelector('#search-input');
-const Section2 = document.querySelector('.section-2');
-const Section3 = document.querySelector('.section-3');
+const containerEl = document.querySelector("#js-products-section");
+const sortByEl = document.querySelector("#js-sort-by");
+const filterEl = document.querySelector("#js-filter-by");
+const inputSearch = document.querySelector("#search-input");
+const Section2 = document.querySelector(".section-2");
+const Section3 = document.querySelector(".section-3");
 
 let products = [];
 
@@ -15,13 +15,13 @@ setup();
 
 function setup() {
   if (!containerEl || !sortByEl) {
-    console.error('JS cannot run!!!');
+    console.error("JS cannot run!!!");
   } else {
     getProducts();
   }
 }
 
-inputSearch.addEventListener('input', (event) => {
+inputSearch.addEventListener("input", (event) => {
   Section2.scrollIntoView();
 
   const inputVal = event.target.value;
@@ -32,22 +32,22 @@ inputSearch.addEventListener('input', (event) => {
   createProductsListEl(filteredProductsSearch);
 });
 
-sortByEl.addEventListener('change', (event) => {
+sortByEl.addEventListener("change", (event) => {
   const val = event.target.value;
 
-  if (val === 'asc') {
+  if (val === "asc") {
     sortByPriceDescending();
-  } else if (val === 'desc') {
+  } else if (val === "desc") {
     sortByPriceAscending();
   }
 
   createProductsListEl(products);
 });
 
-filterEl.addEventListener('change', (event) => {
+filterEl.addEventListener("change", (event) => {
   const val = event.target.value;
 
-  if (val === 'Male' || val === 'Female') {
+  if (val === "Male" || val === "Female") {
     filterProductsByGender(val);
   } else {
     createProductsListEl(products); // Pass the original products list when no gender filter is selected
@@ -72,7 +72,7 @@ async function getProducts() {
     const { data } = await response.json();
     products = data;
 
-    window.localStorage.setItem('products', JSON.stringify(products));
+    window.localStorage.setItem("products", JSON.stringify(products));
 
     sortByPriceDescending();
     createProductsListEl(products);
@@ -81,7 +81,7 @@ async function getProducts() {
   }
 }
 
-const productsList = JSON.parse(localStorage.getItem('products'));
+const productsList = JSON.parse(localStorage.getItem("products"));
 const onSaleProductList = productsList.filter((product) => {
   return product.onSale;
 });
@@ -104,11 +104,11 @@ createproductTemplateOnSale(limitedSale);
 
 function productTemplate({
   id,
-  title = 'Unknown Item',
+  title = "Unknown Item",
   imgUrl,
   imgAl,
   price = 0,
-  description = 'Missing description',
+  description = "Missing description",
   index,
 }) {
   const detailsUrl = `/jacket-specific.html?id=${id}`;
@@ -131,7 +131,7 @@ function productTemplate({
                 <span class="reviews">(123 reviews)</span>
             </div>
             <span class="section-2-gallery-text-price">${price} ${CURRENCY}</span>
-            <button class="c-add-to-cart" id="js-add-to-cart-${id}">Add to Cart</button>
+            <button class="c-add-to-cart" data-id="${id}" id="js-add-to-cart-${id}">Add to Cart</button>
 
     </article>
  `;
@@ -139,12 +139,12 @@ function productTemplate({
 
 function productTemplateOnSale({
   id,
-  title = 'Unknown Item',
+  title = "Unknown Item",
   imgUrl,
   imgAl,
   price = 0,
   discountedPrice = 0,
-  description = 'Missing description',
+  description = "Missing description",
   discountPercentage = 0,
   index,
 }) {
@@ -219,16 +219,16 @@ function createProductsListEl(list = products) {
     });
 
     const newEl = createHTML(template);
-    const btn = newEl.querySelector('button');
+    const btn = newEl.querySelector("button");
 
-    btn.addEventListener('click', () => {
-      addToCart({
-        id,
-        title,
-        imgUrl: image.url,
-        price,
-      });
-    });
+    // btn.addEventListener("click", () => {
+    //   addToCart({
+    //     id,
+    //     title,
+    //     imgUrl: image.url,
+    //     price,
+    //   });
+    // });
 
     containerEl.append(newEl);
   });
