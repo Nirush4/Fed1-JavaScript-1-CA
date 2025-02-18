@@ -148,7 +148,7 @@ function productTemplateOnSale({
   discountPercentage = 0,
   index,
 }) {
-  const detailsUrl = `/product-details.html?id=${id}`;
+  const detailsUrl = `/jacket-specific.html?id=${id}`;
   return `
 
   <article  aria-label="section-3">
