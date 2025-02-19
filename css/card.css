@@ -179,6 +179,21 @@ header {
   cursor: pointer;
 }
 
+.icon-cart-span {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 19px;
+  right: 79px;
+}
+
 .search-box {
   display: flex;
   height: 2rem;
@@ -1434,4 +1449,8 @@ input#submit:hover {
 .open {
   visibility: visible;
   opacity: 1;
+}
+
+.hidden {
+  visibility: hidden;
 }

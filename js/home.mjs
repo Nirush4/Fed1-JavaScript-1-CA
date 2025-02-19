@@ -87,6 +87,7 @@ const onSaleProductList = productsList.filter((product) => {
 });
 
 const limitedSale = onSaleProductList.slice(0, 6);
+window.localStorage.setItem("productsOnSale", JSON.stringify(limitedSale));
 
 createproductTemplateOnSale(limitedSale);
 
@@ -174,7 +175,7 @@ function productTemplateOnSale({
                             </div>
                       </div>
                       </a>
-                      <button class="c-add-to-cart-2" id="js-add-to-cart-${id}">Add to Cart</button>
+                      <button class="c-add-to-cart-2" data-id="${id}" id="js-add-to-cart-${id}">Add to Cart</button>
                 </div>
     </article>
  `;
