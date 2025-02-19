@@ -14,7 +14,7 @@ async function formData() {
     const formData = new FormData(paymentCartEl);
     const data = Object.fromEntries(formData);
 
-    window.localStorage.setItem('Cart details', JSON.stringify(data));
+    window.localStorage.setItem('Payment cart details', JSON.stringify(data));
 
     sendDataToAPI(data);
 
@@ -33,8 +33,7 @@ async function formData() {
       }
       return 'Success';
     }
-    window.location = '/';
-
     paymentCartEl.reset();
+    window.location = '/success.html';
   });
 }
