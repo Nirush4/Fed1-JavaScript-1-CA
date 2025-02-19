@@ -38,6 +38,7 @@ window.addEventListener("load", () => {
     cart = JSON.parse(storedItem);
   }
   addToCartHTML();
+  debugger;
 });
 
 function addToCart(productId) {
