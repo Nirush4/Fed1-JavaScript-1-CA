@@ -1,20 +1,20 @@
-const paymentMethodEl = document.forms.paymentMethod;
+const contactFormEl = document.forms.contactForm;
 
 formData();
 
 async function formData() {
-  if (!paymentMethodEl) {
+  if (!contactFormEl) {
     console.warn('JS cannot run!!!');
     return;
   }
 
-  paymentMethodEl.addEventListener('submit', (e) => {
+  contactFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(paymentMethodEl);
+    const formData = new FormData(contactFormEl);
     const data = Object.fromEntries(formData);
 
-    window.localStorage.setItem('paymentMethod', JSON.stringify(data));
+    window.localStorage.setItem('Contact', JSON.stringify(data));
 
     sendDataToAPI(data);
 
@@ -33,8 +33,7 @@ async function formData() {
       }
       return 'Success';
     }
-    window.location = '/payment-cart.html';
 
-    paymentMethodEl.reset();
+    contactFormEl.reset();
   });
 }

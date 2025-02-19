@@ -35,6 +35,6 @@ async function formData() {
     }
     window.location = '/';
 
-    summaryFormEl.reset();
+    paymentCartEl.reset();
   });
 }

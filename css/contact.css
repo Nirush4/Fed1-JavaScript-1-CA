@@ -117,6 +117,11 @@
     flex-direction: column;
     padding: 0rem 6rem 4.5rem 6rem;
 
+    .main-form-container {
+        background-color: #dfecf7;
+        padding: 3rem;
+    }
+
 }
 
 .form-container {
@@ -140,6 +145,11 @@
     text-align: justify;
     font-weight: 400;
     color: #000000;
+
+    span {
+        color: red;
+        font-size: 1.5rem;
+    }
 }
 
 .form-container input {
