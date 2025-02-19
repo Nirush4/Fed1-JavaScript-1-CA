@@ -1,26 +1,26 @@
-const paymentMethodEl = document.forms.paymentMethod;
-
+const paymentCartEl = document.forms.paymentCart;
+console.log(paymentCartEl);
 formData();
 
 async function formData() {
-  if (!paymentMethodEl) {
+  if (!paymentCartEl) {
     console.warn('JS cannot run!!!');
     return;
   }
 
-  paymentMethodEl.addEventListener('submit', (e) => {
+  paymentCartEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(paymentMethodEl);
+    const formData = new FormData(paymentCartEl);
     const data = Object.fromEntries(formData);
 
-    window.localStorage.setItem('paymentMethod', JSON.stringify(data));
+    window.localStorage.setItem('Cart details', JSON.stringify(data));
 
     sendDataToAPI(data);
 
     async function sendDataToAPI(data) {
       try {
-        const res = await fetch('https://dummyjson.com/products/add', {
+        const res = await fetch('', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
@@ -33,7 +33,7 @@ async function formData() {
       }
       return 'Success';
     }
-    window.location = '/payment-cart.html';
+    window.location = '/';
 
     summaryFormEl.reset();
   });
