@@ -1,26 +1,26 @@
-const summaryFormEl = document.forms.checkout;
-
+const paymentCartEl = document.forms.paymentCart;
+console.log(paymentCartEl);
 formData();
 
 async function formData() {
-  if (!summaryFormEl) {
+  if (!paymentCartEl) {
     console.warn('JS cannot run!!!');
     return;
   }
 
-  summaryFormEl.addEventListener('submit', (e) => {
+  paymentCartEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(summaryFormEl);
+    const formData = new FormData(paymentCartEl);
     const data = Object.fromEntries(formData);
 
-    window.localStorage.setItem('shippingInfo', JSON.stringify(data));
+    window.localStorage.setItem('Payment cart details', JSON.stringify(data));
 
     sendDataToAPI(data);
 
     async function sendDataToAPI(data) {
       try {
-        const res = await fetch('https://dummyjson.com/products/add', {
+        const res = await fetch('', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
@@ -33,8 +33,7 @@ async function formData() {
       }
       return 'Success';
     }
-
-    summaryFormEl.reset();
-    window.location = '/payment-method.html';
+    paymentCartEl.reset();
+    window.location = '/success.html';
   });
 }

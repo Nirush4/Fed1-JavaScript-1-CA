@@ -33,8 +33,8 @@ async function formData() {
       }
       return 'Success';
     }
-    window.location = '/payment-method.html';
 
-    summaryFormEl.reset();
+    paymentMethodEl.reset();
+    window.location = '/payment-cart.html';
   });
 }

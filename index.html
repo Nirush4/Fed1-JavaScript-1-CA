@@ -1,662 +1,564 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on."
-    />
-    <title>Rainydays|Home</title>
-    <link
-      rel="shortcut icon"
-      href="/images/rainydays-logo.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/card.css" />
-    <script type="module" defer src="/js/home.mjs"></script>
-    <script type="module" defer src="/js/cart.mjs"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
-      integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
-      crossorigin="anonymous"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on." />
+  <title>Rainydays|Home</title>
+  <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/card.css" />
+  <script type="module" defer src="/js/home.mjs"></script>
+  <script type="module" defer src="/js/cart.mjs"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
-      rel="stylesheet"
-    />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
+    integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
+    crossorigin="anonymous" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Prata:regular"
-      rel="stylesheet"
-    />
+  <link
+    href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
-      rel="stylesheet"
-    />
+  <link href="https://fonts.googleapis.com/css?family=Prata:regular" rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
-      rel="stylesheet"
-    />
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+    rel="stylesheet" />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Play:regular,700"
-      rel="stylesheet"
-    />
-  </head>
+  <link
+    href="https://fonts.googleapis.com/css?family=Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+    rel="stylesheet" />
 
-  <body>
-    <!--imp! HEADER -->
+  <link href="https://fonts.googleapis.com/css?family=Play:regular,700" rel="stylesheet" />
+</head>
 
-    <header>
-      <nav class="desktop-nav">
-        <div class="logo-div">
-          <a role="logo" href="index.html" class="logo"
-            ><img src="/images/rainydays-logo.png" alt="logo" aria-label="logo"
-          /></a>
-        </div>
-        <input type="checkbox" id="check" />
-        <div class="nav-links">
-          <li role="home" aria-label="home">
-            <a href="index.html" class="nav-item">Home</a>
-          </li>
-          <li role="jackets" id="jacket-links" aria-label="jackets-links">
-            <a href="#" class="nav-item nav-item-link">Jackets</a>
-            <div class="jacket-categories-main">
-              <div class="jacket-categories-sub">
-                <ul>
-                  <li aria-label="men"><a href="/men.html">Men's</a></li>
-                  <li aria-label="women"><a href="/women.html">Women's</a></li>
-                  <li aria-label="kids"><a href="#">Kids</a></li>
-                </ul>
-              </div>
-            </div>
-          </li>
-          <details class="jacket-links-mobile">
-            <summary class="jacket-summary">Jackets</summary>
-            <a href="/men.html" class="c-summary-btn"> Men's</a>
-            <a href="/women.html" class="c-summary-btn"> Women's</a>
-            <a href="/" class="c-summary-btn"> Kids</a>
-          </details>
-          <li role=" aboutus">
-            <a href="about.html" class="nav-item">About us</a>
-          </li>
-          <li role="contact">
-            <a href="contact.html" class="nav-item">Contact</a>
-          </li>
-          <label for="check" class="c-close-menu">
-            <i class="fa-solid fa-x"></i>
-          </label>
-        </div>
-        <div class="nav-icons">
-          <section class="search-box">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="search" id="search-input" placeholder="Search..." />
-          </section>
+<body>
+  <!--imp! HEADER -->
 
-          <a
-            href="/login.html"
-            class="nav-login"
-            aria-label="login to the account"
-            ><i class="fa-solid fa-user"></i
-          ></a>
-          <i class="fa-solid fa-cart-shopping" id="js-cart-icon"></i>
-
-          <div class="shopping-card" id="js-shopping-cart">
-            <div class="shopping-card-col-1-main">
-              <div for="shopping-card-id" class="shopping-cart-id">
-                <h2>Shopping Cart</h2>
-                <button id="js-close-cart">X</button>
-              </div>
-              <div id="js-cart-product-list"></div>
-            </div>
-            <div class="shopping-card-col-2">
-              <div class="shopping-card-col-2-container">
-                <div class="shopping-card-sub-total">
-                  <h4>Subtotal</h4>
-                  <h4 id="js-total-price">0 kr</h4>
-                </div>
-                <p>Shipping & Taxes calculated at checkout.</p>
-                <div class="shopping-card-btn">
-                  <button class="shopping-card-btn-checkout">
-                    <a href="/info-cart.html"> Go to checkout</a>
-                  </button>
-                  <button class="shopping-card-btn-gotocard">
-                    <a href="/info-cart.html"> Go to cart</a>
-                  </button>
-                </div>
-              </div>
+  <header>
+    <nav class="desktop-nav">
+      <div class="logo-div">
+        <a role="logo" href="index.html" class="logo"><img src="/images/rainydays-logo.png" alt="logo"
+            aria-label="logo" /></a>
+      </div>
+      <input type="checkbox" id="check" />
+      <div class="nav-links">
+        <li role="home" aria-label="home">
+          <a href="index.html" class="nav-item">Home</a>
+        </li>
+        <li role="jackets" id="jacket-links" aria-label="jackets-links">
+          <a href="#" class="nav-item nav-item-link">Jackets</a>
+          <div class="jacket-categories-main">
+            <div class="jacket-categories-sub">
+              <ul>
+                <li aria-label="men"><a href="/men.html">Men's</a></li>
+                <li aria-label="women"><a href="/women.html">Women's</a></li>
+                <li aria-label="kids"><a href="#">Kids</a></li>
+              </ul>
             </div>
           </div>
-        </div>
-
-        <label for="check" class="c-open-menu">
-          <i class="fa-solid fa-bars"></i>
+        </li>
+        <details class="jacket-links-mobile">
+          <summary class="jacket-summary">Jackets</summary>
+          <a href="/men.html" class="c-summary-btn"> Men's</a>
+          <a href="/women.html" class="c-summary-btn"> Women's</a>
+          <a href="/" class="c-summary-btn"> Kids</a>
+        </details>
+        <li role=" aboutus">
+          <a href="about.html" class="nav-item">About us</a>
+        </li>
+        <li role="contact">
+          <a href="contact.html" class="nav-item">Contact</a>
+        </li>
+        <label for="check" class="c-close-menu">
+          <i class="fa-solid fa-x"></i>
         </label>
-      </nav>
-    </header>
-
-    <main>
-      <!--imp! SECTION-HERO -->
-
-      <div class="hero-img" id="hero-img" aria-label="section-hero">
-        <div class="heading-div">
-          <span class="Durable">"Durable,</span>
-          <span class="All-Weather">All-Weather Jackets</span>
-          <span class="Adventure">for Every Adventure"</span>
-        </div>
-        <div role="exploremore" class="act-btn-div" aria-label="explore-more">
-          <a
-            class="act-btn-hero"
-            href="/men.html"
-            aria-label="view more about the products"
-            >Explore More</a
-          >
-        </div>
       </div>
+      <div class="nav-icons">
+        <section class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" id="search-input" placeholder="Search..." />
+        </section>
 
-      <div class="hero-img-mobile">
-        <div class="heading-div-mobile">
-          <h2>All Jackets -20%</h2>
+        <a href="/login.html" class="nav-login" aria-label="login to the account"><i class="fa-solid fa-user"></i></a>
+        <div>
+          <i class="fa-solid fa-cart-shopping" id="js-cart-icon"></i>
+          <span class="icon-cart-span hidden" id="js-icon-cart-span">0</span>
         </div>
-        <div class="categories-main">
-          <div class="categories-list-1">
-            <div
-              class="categories-list-1-item-1 categories-list-1-item-1-common"
-            >
-              <button>
-                <a href="/men.html" aria-label="view more about men's page"
-                  >Men</a
-                >
-              </button>
+
+        <div class="shopping-card" id="js-shopping-cart">
+          <div class="shopping-card-col-1-main">
+            <div for="shopping-card-id" class="shopping-cart-id">
+              <h2>Shopping Cart</h2>
+              <button id="js-close-cart">X</button>
             </div>
-            <div
-              class="categories-list-1-item-2 categories-list-1-item-1-common"
-            >
-              <button>
-                <a href="/women.html" aria-label="view more about women's page"
-                  >Women</a
-                >
-              </button>
-            </div>
+            <div id="js-cart-product-list"></div>
           </div>
-          <div class="categories-list-2">
-            <div
-              class="categories-list-2-item-1 categories-list-1-item-1-common"
-            >
-              <button><a href="/">Kids</a></button>
-            </div>
-            <div
-              class="categories-list-2-item-2 categories-list-1-item-1-common"
-            >
-              <button><a href="/">Kids 9-14</a></button>
+          <div class="shopping-card-col-2">
+            <div class="shopping-card-col-2-container">
+              <div class="shopping-card-sub-total">
+                <h4>Subtotal</h4>
+                <h4 id="js-total-price">0 kr</h4>
+              </div>
+              <p>Shipping & Taxes calculated at checkout.</p>
+              <div class="shopping-card-btn">
+                <button class="shopping-card-btn-checkout">
+                  <a href="/info-cart.html"> Go to checkout</a>
+                </button>
+                <button class="shopping-card-btn-gotocard">
+                  <a href="/info-cart.html"> Go to cart</a>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!--imp! SECTION-1 -->
+      <label for="check" class="c-open-menu">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+    </nav>
+  </header>
 
-      <section class="section-1" aria-label="section-1">
-        <div class="section-1-left-col">
-          <div class="section-1-left-col-h1-div">
-            <h1>New</h1>
-            <h1>Arrival</h1>
+  <main>
+    <!--imp! SECTION-HERO -->
+
+    <div class="hero-img" id="hero-img" aria-label="section-hero">
+      <div class="heading-div">
+        <span class="Durable">"Durable,</span>
+        <span class="All-Weather">All-Weather Jackets</span>
+        <span class="Adventure">for Every Adventure"</span>
+      </div>
+      <div role="exploremore" class="act-btn-div" aria-label="explore-more">
+        <a class="act-btn-hero" href="/men.html" aria-label="view more about the products">Explore More</a>
+      </div>
+    </div>
+
+    <div class="hero-img-mobile">
+      <div class="heading-div-mobile">
+        <h2>All Jackets -20%</h2>
+      </div>
+      <div class="categories-main">
+        <div class="categories-list-1">
+          <div class="categories-list-1-item-1 categories-list-1-item-1-common">
+            <button>
+              <a href="/men.html" aria-label="view more about men's page">Men</a>
+            </button>
           </div>
-          <p>
-            Elevate your wardrobe with our brand-new collection of jackets,
-            where style meets function. Designed for those who value both
-            comfort and aesthetics, these jackets offer the perfect blend of
-            modern design and timeless appeal. Whether you're facing chilly
-            mornings or brisk evenings, our jackets provide the warmth you need
-            without sacrificing style.
-          </p>
-        </div>
-
-        <div class="section-1-right-col">
-          <div class="new-arrival-1">
-            <img
-              src="/images/hero-page-img/new-arrival-1.jpg"
-              alt="A man with a jacket"
-            />
-          </div>
-          <div class="new-arrival-2">
-            <img
-              src="/images/hero-page-img/new-arrival-2.jpg"
-              alt="A woman with a jacket"
-            />
-          </div>
-        </div>
-      </section>
-
-      <hr class="hero-page-hr-1" />
-
-      <!--imp! SECTION-2 -->
-
-      <section class="section-2">
-        <div class="filter-main-div">
-          <div class="sort-by-section">
-            <form>
-              <select name="sort-by" id="js-sort-by" class="short-by">
-                <option disabled selected hidden>SORT BY</option>
-                <option value="asc">SORT BY</option>
-                <option value="asc">Price low-high</option>
-                <option value="desc">Price high-low</option>
-              </select>
-            </form>
-          </div>
-          <!-- <i class="fa-solid fa-arrow-up-z-a"></i> -->
-          <div class="filters-by-section">
-            <form>
-              <select name="filter-by" id="js-filter-by" class="filter-by">
-                <option disabled selected hidden>FILTER</option>
-                <option value="">FILTER</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-              </select>
-            </form>
+          <div class="categories-list-1-item-2 categories-list-1-item-1-common">
+            <button>
+              <a href="/women.html" aria-label="view more about women's page">Women</a>
+            </button>
           </div>
         </div>
+        <div class="categories-list-2">
+          <div class="categories-list-2-item-1 categories-list-1-item-1-common">
+            <button><a href="/">Kids</a></button>
+          </div>
+          <div class="categories-list-2-item-2 categories-list-1-item-1-common">
+            <button><a href="/">Kids 9-14</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <div id="js-products-section" class="section-2-article"></div>
-      </section>
+    <!--imp! SECTION-1 -->
 
-      <hr class="hero-page-hr-2" />
+    <section class="section-1" aria-label="section-1">
+      <div class="section-1-left-col">
+        <div class="section-1-left-col-h1-div">
+          <h1>New</h1>
+          <h1>Arrival</h1>
+        </div>
+        <p>
+          Elevate your wardrobe with our brand-new collection of jackets,
+          where style meets function. Designed for those who value both
+          comfort and aesthetics, these jackets offer the perfect blend of
+          modern design and timeless appeal. Whether you're facing chilly
+          mornings or brisk evenings, our jackets provide the warmth you need
+          without sacrificing style.
+        </p>
+      </div>
 
-      <!--imp! SECTION-3 -->
+      <div class="section-1-right-col">
+        <div class="new-arrival-1">
+          <img src="/images/hero-page-img/new-arrival-1.jpg" alt="A man with a jacket" />
+        </div>
+        <div class="new-arrival-2">
+          <img src="/images/hero-page-img/new-arrival-2.jpg" alt="A woman with a jacket" />
+        </div>
+      </div>
+    </section>
 
-      <h2 class="section-3-title">On Sale</h2>
-      <section
-        id="section-3"
-        class="section-3 common-div"
-        aria-label="section-3"
-      ></section>
+    <hr class="hero-page-hr-1" />
 
-      <hr class="hero-page-hr-3" />
+    <!--imp! SECTION-2 -->
 
-      <div class="section-3-mobile">
-        <div class="section-3-mobile-container-main">
-          <div class="section-3-mobile-container-item">
-            <div class="section-3-mobile-container-item-list">
-              <img
-                src="/images/main-page-mobile-img/home-1.jpg"
-                alt="A woman with a jacket"
-              />
+    <section class="section-2">
+      <div class="filter-main-div">
+        <div class="sort-by-section">
+          <form>
+            <select name="sort-by" id="js-sort-by" class="short-by">
+              <option disabled selected hidden>SORT BY</option>
+              <option value="asc">SORT BY</option>
+              <option value="asc">Price low-high</option>
+              <option value="desc">Price high-low</option>
+            </select>
+          </form>
+        </div>
+        <!-- <i class="fa-solid fa-arrow-up-z-a"></i> -->
+        <div class="filters-by-section">
+          <form>
+            <select name="filter-by" id="js-filter-by" class="filter-by">
+              <option disabled selected hidden>FILTER</option>
+              <option value="">FILTER</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </form>
+        </div>
+      </div>
+
+      <div id="js-products-section" class="section-2-article"></div>
+    </section>
+
+    <hr class="hero-page-hr-2" />
+
+    <!--imp! SECTION-3 -->
+
+    <h2 class="section-3-title">On Sale</h2>
+    <section id="section-3" class="section-3 common-div" aria-label="section-3"></section>
+
+    <hr class="hero-page-hr-3" />
+
+    <div class="section-3-mobile">
+      <div class="section-3-mobile-container-main">
+        <div class="section-3-mobile-container-item">
+          <div class="section-3-mobile-container-item-list">
+            <img src="/images/main-page-mobile-img/home-1.jpg" alt="A woman with a jacket" />
+          </div>
+          <div class="section-3-mobile-container-item-list">
+            <div class="section-3-mobile-container-item-list-name">
+              <p>Penelope Winterjacket</p>
             </div>
-            <div class="section-3-mobile-container-item-list">
-              <div class="section-3-mobile-container-item-list-name">
-                <p>Penelope Winterjacket</p>
-              </div>
-              <div class="section-3-mobile-container-item-list-shop">
-                <span>shop now</span>
+            <div class="section-3-mobile-container-item-list-shop">
+              <span>shop now</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-3-mobile-container-item">
+          <div class="section-3-mobile-container-item-list">
+            <img src="/images/main-page-mobile-img/home-2.jpg" alt="A woman with a jacket" />
+            <div class="section-3-mobile-container-inside-text">
+              <h2>All Jackets</h2>
+              <div class="discount">
+                <h2>20%</h2>
+                <p>off</p>
               </div>
             </div>
           </div>
-          <div class="section-3-mobile-container-item">
-            <div class="section-3-mobile-container-item-list">
-              <img
-                src="/images/main-page-mobile-img/home-2.jpg"
-                alt="A woman with a jacket"
-              />
-              <div class="section-3-mobile-container-inside-text">
-                <h2>All Jackets</h2>
-                <div class="discount">
-                  <h2>20%</h2>
-                  <p>off</p>
-                </div>
+          <div class="section-3-mobile-container-item-list">
+            <div class="section-3-mobile-container-item-list-name">
+              <p>Oversized Belted Jacket</p>
+            </div>
+            <div class="section-3-mobile-container-item-list-shop">
+              <span>shop now</span>
+            </div>
+          </div>
+        </div>
+        <div class="section-3-mobile-container-item">
+          <div class="section-3-mobile-container-item-list">
+            <img src="/images/main-page-mobile-img/home-3.jpg" alt="A man with a jacket" />
+          </div>
+          <div class="section-3-mobile-container-item-list">
+            <div class="section-3-mobile-container-item-list-name">
+              <p>Arctic Patrol Down Parka</p>
+            </div>
+            <div class="section-3-mobile-container-item-list-shop">
+              <span>shop now</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--imp! SECTION-4 -->
+
+    <section class="section-4 common-div" aria-label="section-4">
+      <div class="main-gallery">
+        <img src="/images/hero-page-img/gallery-1.jpg" alt="A woman with a jacket" />
+        <img src="/images/hero-page-img/gallery-2.jpg" alt="A man with a jacket" />
+        <img src="/images/hero-page-img/gallery-3.jpg" alt="A woman with a jacket" />
+      </div>
+    </section>
+
+    <div class="section-4-mobile">
+      <div class="section-4-main-container-mobile">
+        <div class="section-4-main-container-mobile-heading-div">
+          <h2>Selected Collections</h2>
+        </div>
+        <div class="section-4-main-container-mobile-gallery">
+          <div class="section-4-main-container-mobile-gallery-1">
+            <div class="section-4-main-container-mobile-gallery-items">
+              <div>
+                <img src="/images/main-page-mobile-img/select-1.jpg" alt="A woman with a jacket" />
+              </div>
+              <div class="section-4-main-container-mobile-gallery-items-text">
+                <h4>Winter Jacket</h4>
+                <h4>Explore</h4>
               </div>
             </div>
-            <div class="section-3-mobile-container-item-list">
-              <div class="section-3-mobile-container-item-list-name">
-                <p>Oversized Belted Jacket</p>
+            <div class="section-4-main-container-mobile-gallery-items">
+              <div>
+                <img src="/images/main-page-mobile-img/select-2.jpg" alt="A man with a jacket" />
               </div>
-              <div class="section-3-mobile-container-item-list-shop">
-                <span>shop now</span>
+              <div class="section-4-main-container-mobile-gallery-items-text">
+                <h4>Hiking Jacket</h4>
+                <h4>Explore</h4>
               </div>
             </div>
           </div>
-          <div class="section-3-mobile-container-item">
-            <div class="section-3-mobile-container-item-list">
-              <img
-                src="/images/main-page-mobile-img/home-3.jpg"
-                alt="A man with a jacket"
-              />
-            </div>
-            <div class="section-3-mobile-container-item-list">
-              <div class="section-3-mobile-container-item-list-name">
-                <p>Arctic Patrol Down Parka</p>
+          <div class="section-4-main-container-mobile-gallery-2">
+            <div class="section-4-main-container-mobile-gallery-items">
+              <div>
+                <img src="/images/main-page-mobile-img/select-3.jpg" alt="A man with a jacket" />
               </div>
-              <div class="section-3-mobile-container-item-list-shop">
-                <span>shop now</span>
+              <div class="section-4-main-container-mobile-gallery-items-text">
+                <h4>Casual Jacket</h4>
+                <h4>Explore</h4>
+              </div>
+            </div>
+            <div class="section-4-main-container-mobile-gallery-items">
+              <div>
+                <img src="/images/main-page-mobile-img/select-4.jpg" alt="A woman with a jacket" />
+              </div>
+              <div class="section-4-main-container-mobile-gallery-items-text">
+                <h4>Biker Jacket</h4>
+                <h4>Explore</h4>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <!--imp! SECTION-4 -->
+    </div>
+    <hr class="hero-page-hr-4" />
 
-      <section class="section-4 common-div" aria-label="section-4">
-        <div class="main-gallery">
-          <img
-            src="/images/hero-page-img/gallery-1.jpg"
-            alt="A woman with a jacket"
-          />
-          <img
-            src="/images/hero-page-img/gallery-2.jpg"
-            alt="A man with a jacket"
-          />
-          <img
-            src="/images/hero-page-img/gallery-3.jpg"
-            alt="A woman with a jacket"
-          />
-        </div>
-      </section>
+    <!--imp! SECTION-5 -->
 
-      <div class="section-4-mobile">
-        <div class="section-4-main-container-mobile">
-          <div class="section-4-main-container-mobile-heading-div">
-            <h2>Selected Collections</h2>
+    <section class="section-5 common-div" aria-label="section-5">
+      <div class="section-5-main-container">
+        <div class="section-5-col-1">
+          <div class="section-5-common-text">
+            <p class="section-5-title-text-common">Free Shipping</p>
+            <p class="section-5-description-text-common">
+              "Enjoy Free Shipping on All Orders—No Minimum Purchase Required!
+              Shop Now and Get Your Favorites Delivered Straight to Your
+              Doorstep!"
+            </p>
           </div>
-          <div class="section-4-main-container-mobile-gallery">
-            <div class="section-4-main-container-mobile-gallery-1">
-              <div class="section-4-main-container-mobile-gallery-items">
-                <div>
-                  <img
-                    src="/images/main-page-mobile-img/select-1.jpg"
-                    alt="A woman with a jacket"
-                  />
-                </div>
-                <div class="section-4-main-container-mobile-gallery-items-text">
-                  <h4>Winter Jacket</h4>
-                  <h4>Explore</h4>
-                </div>
-              </div>
-              <div class="section-4-main-container-mobile-gallery-items">
-                <div>
-                  <img
-                    src="/images/main-page-mobile-img/select-2.jpg"
-                    alt="A man with a jacket"
-                  />
-                </div>
-                <div class="section-4-main-container-mobile-gallery-items-text">
-                  <h4>Hiking Jacket</h4>
-                  <h4>Explore</h4>
-                </div>
-              </div>
-            </div>
-            <div class="section-4-main-container-mobile-gallery-2">
-              <div class="section-4-main-container-mobile-gallery-items">
-                <div>
-                  <img
-                    src="/images/main-page-mobile-img/select-3.jpg"
-                    alt="A man with a jacket"
-                  />
-                </div>
-                <div class="section-4-main-container-mobile-gallery-items-text">
-                  <h4>Casual Jacket</h4>
-                  <h4>Explore</h4>
-                </div>
-              </div>
-              <div class="section-4-main-container-mobile-gallery-items">
-                <div>
-                  <img
-                    src="/images/main-page-mobile-img/select-4.jpg"
-                    alt="A woman with a jacket"
-                  />
-                </div>
-                <div class="section-4-main-container-mobile-gallery-items-text">
-                  <h4>Biker Jacket</h4>
-                  <h4>Explore</h4>
-                </div>
-              </div>
-            </div>
+          <div class="section-5-col-text-side-line"></div>
+        </div>
+
+        <div class="section-5-col-2">
+          <div class="section-5-common-text">
+            <p class="section-5-title-text-common">Fast Shipping</p>
+            <p class="section-5-description-text-common">
+              "Get It Fast! Enjoy Lightning-Quick Shipping Straight to Your
+              Doorstep—Shop Now and Have Your Order Delivered in No Time!"
+            </p>
+          </div>
+          <div class="section-5-col-text-side-line"></div>
+        </div>
+
+        <div class="section-5-col-3">
+          <div class="section-5-common-text">
+            <p class="section-5-title-text-common">Long Warranty</p>
+            <p class="section-5-description-text-common">
+              "Shop with Confidence! Our Extended Warranty Covers You for the
+              Long Haul—Enjoy Peace of Mind with Every Purchase!"
+            </p>
           </div>
         </div>
       </div>
-      <hr class="hero-page-hr-4" />
+    </section>
 
-      <!--imp! SECTION-5 -->
+    <hr class="hero-page-hr-5" />
 
-      <section class="section-5 common-div" aria-label="section-5">
-        <div class="section-5-main-container">
-          <div class="section-5-col-1">
-            <div class="section-5-common-text">
-              <p class="section-5-title-text-common">Free Shipping</p>
-              <p class="section-5-description-text-common">
-                "Enjoy Free Shipping on All Orders—No Minimum Purchase Required!
-                Shop Now and Get Your Favorites Delivered Straight to Your
-                Doorstep!"
-              </p>
-            </div>
-            <div class="section-5-col-text-side-line"></div>
-          </div>
+    <!--imp! SECTION-6 -->
 
-          <div class="section-5-col-2">
-            <div class="section-5-common-text">
-              <p class="section-5-title-text-common">Fast Shipping</p>
-              <p class="section-5-description-text-common">
-                "Get It Fast! Enjoy Lightning-Quick Shipping Straight to Your
-                Doorstep—Shop Now and Have Your Order Delivered in No Time!"
-              </p>
-            </div>
-            <div class="section-5-col-text-side-line"></div>
-          </div>
-
-          <div class="section-5-col-3">
-            <div class="section-5-common-text">
-              <p class="section-5-title-text-common">Long Warranty</p>
-              <p class="section-5-description-text-common">
-                "Shop with Confidence! Our Extended Warranty Covers You for the
-                Long Haul—Enjoy Peace of Mind with Every Purchase!"
-              </p>
-            </div>
-          </div>
+    <section class="section-6 common-div" aria-label="section-6">
+      <div class="section-6-main-container">
+        <div class="section-6-visa section-6-payment-common">
+          <img src="/images/payment icons/visa.svg" alt="Visa Card" />
         </div>
-      </section>
-
-      <hr class="hero-page-hr-5" />
-
-      <!--imp! SECTION-6 -->
-
-      <section class="section-6 common-div" aria-label="section-6">
-        <div class="section-6-main-container">
-          <div class="section-6-visa section-6-payment-common">
-            <img src="/images/payment icons/visa.svg" alt="Visa Card" />
-          </div>
-          <div class="section-6-master section-6-payment-common">
-            <img src="/images/payment icons/mastercard.svg" alt="Mastercard" />
-          </div>
-          <div class="section-6-paypal section-6-payment-common">
-            <img src="/images/payment icons/paypal.svg" alt="Paypal" />
-          </div>
-          <div class="section-6-klarna section-6-payment-common">
-            <img src="/images/payment icons/klarna.png" alt="Klarna" />
-          </div>
-          <div class="section-6-american section-6-payment-common">
-            <img src="/images/payment icons/amex.svg" alt="American Express" />
-          </div>
-          <div class="section-6-vipps section-6-payment-common">
-            <img src="/images/payment icons/vipps.png" alt="Vipps" />
-          </div>
+        <div class="section-6-master section-6-payment-common">
+          <img src="/images/payment icons/mastercard.svg" alt="Mastercard" />
         </div>
-      </section>
-
-      <hr class="hero-page-hr-6" />
-    </main>
-
-    <!--imp! FOOTER -->
-
-    <footer class="l-footer-main-1 common-div" aria-label="footer">
-      <div class="l-footer-row-1">
-        <div class="l-footer-col-1">
-          <div><img src="/images/Rainydays-whitelogo.png" alt="logo" /></div>
+        <div class="section-6-paypal section-6-payment-common">
+          <img src="/images/payment icons/paypal.svg" alt="Paypal" />
         </div>
+        <div class="section-6-klarna section-6-payment-common">
+          <img src="/images/payment icons/klarna.png" alt="Klarna" />
+        </div>
+        <div class="section-6-american section-6-payment-common">
+          <img src="/images/payment icons/amex.svg" alt="American Express" />
+        </div>
+        <div class="section-6-vipps section-6-payment-common">
+          <img src="/images/payment icons/vipps.png" alt="Vipps" />
+        </div>
+      </div>
+    </section>
 
-        <div class="l-footer-col-2">
-          <div class="l-footer-sub-col-1 l-footer-sub-col-common">
-            <h6>Help</h6>
-            <div class="l-footer-help-list">
-              <a href="">Shipping & Return Policy</a>
-              <a href="">Help Center</a>
-              <a href="">Terms & Conditions</a>
-              <a href="">Privacy Policy</a>
-            </div>
-          </div>
+    <hr class="hero-page-hr-6" />
+  </main>
 
-          <div class="l-footer-sub-col-2 l-footer-sub-col-common">
-            <h6>Company</h6>
-            <div class="l-footer-help-list">
-              <a href="/about.html">About us</a>
-              <a href="/contact.html">Contact</a>
-              <a href="">News</a>
-              <a href="">Support</a>
-            </div>
-          </div>
+  <!--imp! FOOTER -->
 
-          <div class="l-footer-sub-col-3 l-footer-sub-col-common">
-            <h6>Shop</h6>
-            <div class="l-footer-help-list">
-              <a href="">Products</a>
-              <a href="">Overview</a>
-              <a href="">Pricing</a>
-            </div>
+  <footer class="l-footer-main-1 common-div" aria-label="footer">
+    <div class="l-footer-row-1">
+      <div class="l-footer-col-1">
+        <div><img src="/images/Rainydays-whitelogo.png" alt="logo" /></div>
+      </div>
+
+      <div class="l-footer-col-2">
+        <div class="l-footer-sub-col-1 l-footer-sub-col-common">
+          <h6>Help</h6>
+          <div class="l-footer-help-list">
+            <a href="">Shipping & Return Policy</a>
+            <a href="">Help Center</a>
+            <a href="">Terms & Conditions</a>
+            <a href="">Privacy Policy</a>
           </div>
         </div>
 
-        <div class="l-footer-col-3">
-          <h6>Follow us</h6>
-          <div class="l-footer-col-3-sm-icon">
-            <i class="fa-brands fa-x-twitter"></i>
-            <i class="fa-brands fa-youtube"></i>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
+        <div class="l-footer-sub-col-2 l-footer-sub-col-common">
+          <h6>Company</h6>
+          <div class="l-footer-help-list">
+            <a href="/about.html">About us</a>
+            <a href="/contact.html">Contact</a>
+            <a href="">News</a>
+            <a href="">Support</a>
           </div>
         </div>
 
-        <div class="l-footer-col-4">
-          <a href=""
-            ><img
-              src="/images/hero-page-img/google-playstore-logo.png"
-              alt="Google playtore"
-          /></a>
-          <a href=""
-            ><img
-              src="/images/hero-page-img/apple-app store-logo.png"
-              alt="Apple app store"
-          /></a>
+        <div class="l-footer-sub-col-3 l-footer-sub-col-common">
+          <h6>Shop</h6>
+          <div class="l-footer-help-list">
+            <a href="">Products</a>
+            <a href="">Overview</a>
+            <a href="">Pricing</a>
+          </div>
         </div>
       </div>
 
-      <div class="l-footer-main-2">
-        <div class="l-footer-row-2-item-1">
-          <div class="l-footer-row-2-line"></div>
-          <div class="l-footer-row-2-text">
-            <a class="l-footer-row-2-text-1">Terms</a>
-            <a class="l-footer-row-2-text-2">Privacy</a>
-            <a class="l-footer-row-2-text-3">Conditions</a>
-          </div>
-        </div>
-
-        <div class="l-footer-row-2-item-2">
-          <p>
-            &copy; 2024 Rainydays. All rights reserved. (This is a student
-            project.)
-          </p>
+      <div class="l-footer-col-3">
+        <h6>Follow us</h6>
+        <div class="l-footer-col-3-sm-icon">
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
         </div>
       </div>
-    </footer>
 
-    <!--imp! FOOTER MOBILE -->
+      <div class="l-footer-col-4">
+        <a href=""><img src="/images/hero-page-img/google-playstore-logo.png" alt="Google playtore" /></a>
+        <a href=""><img src="/images/hero-page-img/apple-app store-logo.png" alt="Apple app store" /></a>
+      </div>
+    </div>
 
-    <footer class="l-footer">
-      <section class="c-footer-col">
-        <details class="c-footer-help">
-          <summary class="c-footer-summary">
-            Help <i class="fa-solid fa-plus"></i>
-          </summary>
-          <a href="/" class="c-summary-btn"> Shipping & Return Policy</a>
-          <a href="/" class="c-summary-btn"> Help Center</a>
-          <a href="/" class="c-summary-btn"> Terms & Conditions</a>
-          <a href="/" class="c-summary-btn"> Privacy Policy</a>
-        </details>
-
-        <details class="c-footer-info">
-          <summary class="c-footer-summary">
-            Company <i class="fa-solid fa-plus"></i>
-          </summary>
-          <a href="/about.html" class="c-summary-btn"> About us</a>
-          <a href="/contact.html" class="c-summary-btn"> Contact</a>
-          <a href="/" class="c-summary-btn"> News</a>
-          <a href="/" class="c-summary-btn"> Support</a>
-        </details>
-
-        <details class="c-footer-info">
-          <summary class="c-footer-summary">
-            Shop <i class="fa-solid fa-plus"></i>
-          </summary>
-          <a href="/" class="c-summary-btn"> Products</a>
-          <a href="/" class="c-summary-btn"> Overview</a>
-          <a href="/" class="c-summary-btn"> Pricing</a>
-        </details>
-
-        <details class="c-footer-info">
-          <summary class="c-footer-summary">
-            Join Now <i class="fa-solid fa-plus"></i>
-          </summary>
-        </details>
-
-        <div class="c-footer-region">
-          <div class="c-region-country">Norway</div>
-          <div class="c-region-change">Change Region</div>
-          <i class="fa-solid fa-chevron-down" class="c-region-icon"></i>
+    <div class="l-footer-main-2">
+      <div class="l-footer-row-2-item-1">
+        <div class="l-footer-row-2-line"></div>
+        <div class="l-footer-row-2-text">
+          <a class="l-footer-row-2-text-1">Terms</a>
+          <a class="l-footer-row-2-text-2">Privacy</a>
+          <a class="l-footer-row-2-text-3">Conditions</a>
         </div>
+      </div>
 
-        <div class="c-footer-follow">
-          <div class="c-follow-p">
-            <p>Follow us</p>
-            <div class="c-follow-icons">
-              <a href="https://x.com/"
-                ><i class="fa-brands fa-x-twitter"></i
-              ></a>
-              <a href="https://www.youtube.com/"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
-              <a href="https://www.facebook.com/"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-              <a href="https://www.instagram.com/"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-            </div>
-          </div>
-          <div class="c-follow-container">
-            <div class="c-apple-container">
-              <img
-                src="/images/hero-page-img/apple-app store-logo.png"
-                alt="App store logo"
-              />
-            </div>
-            <div class="c-google-container">
-              <img
-                src="/images/hero-page-img/google-playstore-logo.png"
-                alt="Google store logo"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="c-footer-last">
+      <div class="l-footer-row-2-item-2">
         <p>
           &copy; 2024 Rainydays. All rights reserved. (This is a student
           project.)
         </p>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+
+  <!--imp! FOOTER MOBILE -->
+
+  <footer class="l-footer">
+    <section class="c-footer-col">
+      <details class="c-footer-help">
+        <summary class="c-footer-summary">
+          Help <i class="fa-solid fa-plus"></i>
+        </summary>
+        <a href="/" class="c-summary-btn"> Shipping & Return Policy</a>
+        <a href="/" class="c-summary-btn"> Help Center</a>
+        <a href="/" class="c-summary-btn"> Terms & Conditions</a>
+        <a href="/" class="c-summary-btn"> Privacy Policy</a>
+      </details>
+
+      <details class="c-footer-info">
+        <summary class="c-footer-summary">
+          Company <i class="fa-solid fa-plus"></i>
+        </summary>
+        <a href="/about.html" class="c-summary-btn"> About us</a>
+        <a href="/contact.html" class="c-summary-btn"> Contact</a>
+        <a href="/" class="c-summary-btn"> News</a>
+        <a href="/" class="c-summary-btn"> Support</a>
+      </details>
+
+      <details class="c-footer-info">
+        <summary class="c-footer-summary">
+          Shop <i class="fa-solid fa-plus"></i>
+        </summary>
+        <a href="/" class="c-summary-btn"> Products</a>
+        <a href="/" class="c-summary-btn"> Overview</a>
+        <a href="/" class="c-summary-btn"> Pricing</a>
+      </details>
+
+      <details class="c-footer-info">
+        <summary class="c-footer-summary">
+          Join Now <i class="fa-solid fa-plus"></i>
+        </summary>
+      </details>
+
+      <div class="c-footer-region">
+        <div class="c-region-country">Norway</div>
+        <div class="c-region-change">Change Region</div>
+        <i class="fa-solid fa-chevron-down" class="c-region-icon"></i>
+      </div>
+
+      <div class="c-footer-follow">
+        <div class="c-follow-p">
+          <p>Follow us</p>
+          <div class="c-follow-icons">
+            <a href="https://x.com/"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="c-follow-container">
+          <div class="c-apple-container">
+            <img src="/images/hero-page-img/apple-app store-logo.png" alt="App store logo" />
+          </div>
+          <div class="c-google-container">
+            <img src="/images/hero-page-img/google-playstore-logo.png" alt="Google store logo" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="c-footer-last">
+      <p>
+        &copy; 2024 Rainydays. All rights reserved. (This is a student
+        project.)
+      </p>
+    </div>
+  </footer>
+</body>
+
 </html>

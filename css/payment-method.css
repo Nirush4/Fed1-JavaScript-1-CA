@@ -298,7 +298,7 @@
 }
 
 .c-btn-container button:hover {
-  background-color: rgb(20, 19, 19);
+  background-color: var(--background-color-addbtn-hover);
 }
 
 @media only screen and (width>600px) {

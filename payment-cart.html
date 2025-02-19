@@ -8,7 +8,8 @@
     content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on." />
   <title>Rainydays|Card details</title>
   <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/card.css" />
+  <link rel="stylesheet" href="/css/payment-cart.css" />
+  <script type="module" defer src="/js/payment-cart.mjs"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
     integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
@@ -91,7 +92,7 @@
   <main class="l-main">
     <section class="c-hero">
       <div class="c-back-btn">
-        <a href="checkout.html" aria-label="link you back to payment page"><i
+        <a href="/payment-method.html" aria-label="link you back to payment page"><i
             class="fa-solid fa-arrow-left"></i>Back</a>
       </div>
       <div class="c-main-header">Guest checkout</div>
@@ -126,53 +127,48 @@
       </div>
     </section>
 
-    <section class="c-card">
+    <section role="section-2" class="c-card">
       <div class="c-info-container">
-        <div class="c-card-container">
-          <div class="c-master-img-container">
-            <img src="/images/payment icons/master-card-page.svg" alt="" />
-          </div>
-
-          <div class="c-card-number">**** **** **** 5529</div>
-          <div class="c-card-holder-container">
-            <div class="c-card-holder-text">Cardholder Name</div>
-            <div class="c-expire-text">Expiry Date</div>
-          </div>
-          <div class="c-card-name-date-container">
-            <div class="c-card-name">Thomas K. Wilson</div>
-            <div class="c-card-date">12/35</div>
-          </div>
+        <div class="c-visa-img-container">
+          <img src="/images/payment-cart/card.png" alt="visa card image" />
         </div>
 
-        <form action="success.html" aria-label="form link to success page" class="c-card-input-container">
+        <form name="paymentCart" aria-label="form link to success page" class="c-card-input-container">
           <div class="c-input">
-            <input type="number" id="input" placeholder="4466 7328 2390 5529" required />
+            <input class="input-pay" type="number" name="cart-number" autocomplete="cartnumber" id=""
+              placeholder="4466 7328 2390 4571" minlength="16" maxlength="16" required />
             <label class="c-label">Card Number</label>
           </div>
 
           <div class="c-input">
-            <input type="text" id="input" placeholder="Thomas K. Wilson" required />
+            <input class="input-pay" type="text" name="cartholder-name" autocomplete="name" id=""
+              placeholder="Lucas Las" minlength="2" maxlength="30" required />
             <label class="c-label">Cardholder Name</label>
           </div>
 
           <div class="c-date-container">
             <div class="c-input">
-              <input type="month" id="input" placeholder="august 2024" required />
+              <input class="input-pay" type="month" name="expiry/valid-date" autocomplete="month" id=""
+                placeholder="august 2024" minlength="2" maxlength="20" required />
               <label class="c-label">Expiry Date / Valid Thru</label>
             </div>
 
             <div class="c-input">
-              <input type="number" id="input" placeholder="756" required />
+              <input class="input-pay" type="number" name="ccv/cvc" autocomplete="cvv" id="" placeholder="346"
+                minlength="3" maxlength="3" required />
               <label class="c-label">CVV / CVC</label>
             </div>
           </div>
 
           <div class="c-btn-container">
-            <input type="submit" name="submit" id="submit" value="Submit" aria-label="submit link to success page" />
+            <button id="submit" value="Submit" aria-label="Submit to checkout">Pay
+              Now</button>
           </div>
         </form>
       </div>
     </section>
+
+
   </main>
 
   <!--imp! FOOTER -->

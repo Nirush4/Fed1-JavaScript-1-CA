@@ -9,6 +9,8 @@
     <title>Rainydays|Contact</title>
     <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/contact.css">
+    <script type="module" defer src="/js/contact.mjs"></script>
+
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css'
         integrity='sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=='
@@ -128,44 +130,43 @@
 
 
         <section class="section-3-contact">
-            <div class="section-3-title-contact">
-                <h3>Submit a request</h3>
-            </div>
 
-            <div class="form-container"">
-                <table class=" table">
-                <form action="" class="form">
+            <div class="main-form-container">
+                <div class="section-3-title-contact">
+                    <h3>Submit a request</h3>
+                </div>
 
-                    <label for="">First name <br>
-                        <input class="form-input-contact" type="text" name="firstname" id="firstname"
-                            placeholder="Enter your first name">
+                <form name="contactForm" class="form-container">
+                    <label for=" firstname">First name <span>*</span> <br>
+                        <input name="fist-name" class=" form-input-contact" type="text" name="firstname" id="firstname"
+                            placeholder="Enter your first name" minlength="2" maxlength="20" required>
                     </label>
-                    <label for="">Last name <br>
-                        <input class="form-input-contact" type="text" name="lastname" id="lastname"
-                            placeholder="Enter your last name">
+                    <label for="lastname">Last name <span>*</span><br>
+                        <input name="last-name" class="form-input-contact" type="text" name="lastname" id="lastname"
+                            placeholder="Enter your last name" minlength="2" maxlength="20" required>
                     </label>
-                    <label for="">Email <br>
-                        <input class="form-input-contact" type="email" name="email" id="email"
-                            placeholder="Enter your email">
+                    <label for="email">Email <span>*</span><br>
+                        <input name="email" class="form-input-contact" type="email" name="email" id="email"
+                            placeholder="Enter your email" minlength="2" maxlength="20" required>
                     </label>
-                    <label for="">Phone number <br>
-                        <input class="form-input-contact" type="number" name="phonenumber" id="phonenumber"
-                            placeholder="Enter your ohone number">
+                    <label for="phonenumber">Phone number <span>*</span><br>
+                        <input name="mobile-number" class="form-input-contact" type="number" name="phonenumber"
+                            id="phonenumber" placeholder="Enter your ohone number" minlength="8" required>
                     </label>
-                    <label for="">Order number (optional) <br>
-                        <input class="form-input-contact" type="number" name="ordernumber" id="ordernumber"
-                            placeholder="Enter your order number">
+                    <label for="ordernumber">Order number (optional) <br>
+                        <input name="order-number" class="form-input-contact" type="number" name="ordernumber"
+                            id="ordernumber" placeholder="Enter your order number">
                     </label>
-                    <label for="">Subject (optional) <br>
-                        <input class="form-input-contact" type="text" name="subject" id="subject"
+                    <label for="subject">Subject (optional) <br>
+                        <input name="subject" class="form-input-contact" type="text" name="subject" id="subject"
                             placeholder="Enter the subject">
                     </label>
-                    <label class="area-lable" for="">Message <textarea name="message" id="message"></textarea></label>
+                    <label class="area-lable" for="message">Message<textarea name="message" id="message"
+                            required></textarea></label>
 
                     <input class="form-i-submit-contact" type="submit" value="Submit" name="submit" id="submit">
 
                 </form>
-                </table>
             </div>
         </section>
 

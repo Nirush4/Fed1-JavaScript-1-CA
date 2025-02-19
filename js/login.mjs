@@ -1,20 +1,20 @@
-const summaryFormEl = document.forms.checkout;
+const loginFormEl = document.forms.loginForm;
 
 formData();
 
 async function formData() {
-  if (!summaryFormEl) {
+  if (!loginFormEl) {
     console.warn('JS cannot run!!!');
     return;
   }
 
-  summaryFormEl.addEventListener('submit', (e) => {
+  loginFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(summaryFormEl);
+    const formData = new FormData(loginFormEl);
     const data = Object.fromEntries(formData);
 
-    window.localStorage.setItem('shippingInfo', JSON.stringify(data));
+    window.localStorage.setItem('Login', JSON.stringify(data));
 
     sendDataToAPI(data);
 
@@ -34,7 +34,7 @@ async function formData() {
       return 'Success';
     }
 
-    summaryFormEl.reset();
-    window.location = '/payment-method.html';
+    loginFormEl.reset();
+    window.location = '/index.html';
   });
 }

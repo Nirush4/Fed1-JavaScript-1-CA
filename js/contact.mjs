@@ -1,20 +1,20 @@
-const summaryFormEl = document.forms.checkout;
+const contactFormEl = document.forms.contactForm;
 
 formData();
 
 async function formData() {
-  if (!summaryFormEl) {
+  if (!contactFormEl) {
     console.warn('JS cannot run!!!');
     return;
   }
 
-  summaryFormEl.addEventListener('submit', (e) => {
+  contactFormEl.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const formData = new FormData(summaryFormEl);
+    const formData = new FormData(contactFormEl);
     const data = Object.fromEntries(formData);
 
-    window.localStorage.setItem('shippingInfo', JSON.stringify(data));
+    window.localStorage.setItem('Contact', JSON.stringify(data));
 
     sendDataToAPI(data);
 
@@ -34,7 +34,6 @@ async function formData() {
       return 'Success';
     }
 
-    summaryFormEl.reset();
-    window.location = '/payment-method.html';
+    contactFormEl.reset();
   });
 }
