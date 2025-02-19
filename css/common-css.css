@@ -14,6 +14,23 @@
 
 }
 
+:root {
+    --h1-size: 35px;
+    --h2-size: 30px;
+    --h3-size: 25px;
+    --h4-size: 20px;
+    --h5-size: 18px;
+    --h6-size: 16px;
+
+    --size-xxs: 14px;
+    --size-xs: 16px;
+    --size-s: 18px;
+    --size-m: 20px;
+    --size-l: 25px;
+    --size-xl: 30px;
+    --size-xxl: 35px;
+}
+
 /*imp! COMMON CSS */
 
 html {
@@ -37,6 +54,8 @@ header {
     background-color: white;
     box-shadow: 0rem 0.25rem 0.938rem #00000010;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 50;
     display: flex;
     align-items: center;
@@ -87,6 +106,8 @@ header {
 
 @media (width>850px) {
 
+
+
     .nav-links li {
         display: flex;
         align-items: center;
@@ -95,10 +116,17 @@ header {
         min-width: 6rem;
         padding: 0rem 0.5rem;
         transition: all 0.2s ease-in-out;
+
     }
 
     .nav-links li:hover {
-        background-color: var(--background-color-addbtn-hover);
+        background-color: #e40d0d;
+
+    }
+
+    .nav-links li a:hover {
+        color: #fff;
+
     }
 }
 

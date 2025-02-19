@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on." />
-  <title>Rainydays|Card details</title>
+  <title>Rainydays|Checkout</title>
   <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/card.css" />
+  <link rel="stylesheet" href="/css/payment-method.css" />
+  <script type="module" defer src="/js/payment-method.mjs"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
     integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
@@ -91,7 +92,7 @@
   <main class="l-main">
     <section class="c-hero">
       <div class="c-back-btn">
-        <a href="checkout.html" aria-label="link you back to payment page"><i
+        <a href="/summary-of-the-cart.html" aria-label="link you back to info cart page"><i
             class="fa-solid fa-arrow-left"></i>Back</a>
       </div>
       <div class="c-main-header">Guest checkout</div>
@@ -126,52 +127,81 @@
       </div>
     </section>
 
-    <section class="c-card">
-      <div class="c-info-container">
-        <div class="c-card-container">
-          <div class="c-master-img-container">
-            <img src="/images/payment icons/master-card-page.svg" alt="" />
-          </div>
+    <section class="c-form-container">
+      <form name="paymentMethod" aria-label="link you to card page" class="c-payment" required>
+        <div class="c-payment-container">
+          <div class="c-pay-header">Choose payment method</div>
 
-          <div class="c-card-number">**** **** **** 5529</div>
-          <div class="c-card-holder-container">
-            <div class="c-card-holder-text">Cardholder Name</div>
-            <div class="c-expire-text">Expiry Date</div>
-          </div>
-          <div class="c-card-name-date-container">
-            <div class="c-card-name">Thomas K. Wilson</div>
-            <div class="c-card-date">12/35</div>
-          </div>
-        </div>
-
-        <form action="success.html" aria-label="form link to success page" class="c-card-input-container">
-          <div class="c-input">
-            <input type="number" id="input" placeholder="4466 7328 2390 5529" required />
-            <label class="c-label">Card Number</label>
-          </div>
-
-          <div class="c-input">
-            <input type="text" id="input" placeholder="Thomas K. Wilson" required />
-            <label class="c-label">Cardholder Name</label>
-          </div>
-
-          <div class="c-date-container">
-            <div class="c-input">
-              <input type="month" id="input" placeholder="august 2024" required />
-              <label class="c-label">Expiry Date / Valid Thru</label>
+          <div class="c-all-cards-container">
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="visa/mastercard" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Visa/Mastercard</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/visa-small.jpg" alt="visa card image" />
+                <img src="/images/payment icons/master-small.jpg" alt="Mastercard image" />
+              </div>
             </div>
 
-            <div class="c-input">
-              <input type="number" id="input" placeholder="756" required />
-              <label class="c-label">CVV / CVC</label>
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="paypal" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Paypal</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/paypal-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="klarna" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Klarna</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/klarna-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="american-express" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">American Express</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/amex-small.jpg" alt="visa card image" />
+              </div>
+            </div>
+
+            <div class="c-card-container">
+              <div class="c-checkbox-container">
+                <input type="checkbox" name="vipps" id="visa" class="c-checkbox" />
+              </div>
+              <div class="c-card-name-container">
+                <div class="c-card-name">Vipps</div>
+              </div>
+              <div class="c-card-img-container">
+                <img src="/images/payment icons/vipps-small.jpg" alt="visa card image" />
+              </div>
             </div>
           </div>
 
           <div class="c-btn-container">
-            <input type="submit" name="submit" id="submit" value="Submit" aria-label="submit link to success page" />
+            <button id="submit" value="Submit" aria-label="Links to card page" />
+            Submit
+            </button>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
     </section>
   </main>
 

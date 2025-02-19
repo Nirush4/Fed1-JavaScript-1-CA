@@ -8,8 +8,9 @@
     display: flex;
     flex: 1 1 100%;
     flex-direction: row;
-    background-image: url(/images/main-img.jpg);
+    background-image: url(/images/img.jpg);
     background-repeat: no-repeat;
+    filter: grayscale(0.2);
     background-size: cover;
     padding: 4.5rem 6rem;
     width: 100%;
@@ -45,11 +46,13 @@
 
 .hero-img:hover .Durable {
     transform: translateX(0rem);
+    text-shadow: 2px 2px 7px #000000;
 }
 
 
 .All-Weather {
     transform: translateX(130rem);
+    text-shadow: 2px 2px 7px #000000;
     transition: all .6s cubic-bezier(0.71, -0.12, 0, 1.23);
 }
 
@@ -59,6 +62,7 @@
 
 .Adventure {
     transform: translateX(-70rem);
+    text-shadow: 2px 2px 7px #000000;
     transition: all .6s cubic-bezier(0.71, -0.12, 0, 1.23);
 }
 
@@ -77,7 +81,7 @@
 
 .act-btn-hero {
     color: white;
-    background-color: #039BE5;
+    background-color: #e40d0d;
     text-decoration: none;
     font-size: 1.2rem;
     font-family: 'Roboto';
@@ -86,7 +90,7 @@
     margin-bottom: 16%;
 
     &:hover {
-        background-color: #F6B30B;
+        background-color: #930505;
         ;
     }
 }

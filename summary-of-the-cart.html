@@ -8,7 +8,8 @@
     content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on." />
   <title>Rainydays|Guest checkout</title>
   <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/info.css" />
+  <link rel="stylesheet" href="/css/summary-of-the-cart.css" />
+  <script type="module" defer src="/js/summary-of-the-cart.mjs"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
     integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
@@ -129,8 +130,9 @@
     </section>
 
     <section class="c-form-container">
-      <form action="checkout.html" aria-label="Links to checkout">
+      <form aria-label="Links to checkout" name="checkout">
         <div class="c-shipping-summary-container">
+
           <div class="c-shipping-container">
             <div class="c-email-header">
               <i class="fa-solid fa-user"></i>
@@ -139,7 +141,8 @@
 
             <div class="c-input-container">
               <div class="c-input">
-                <input type="email" id="input" placeholder="bob@gmail.com" required />
+                <input type="email" name="email" id="input" placeholder="bob@gmail.com" minlength="3" maxlength="20"
+                  value="john@gmail.com" />
                 <label class="c-label">Email</label>
               </div>
 
@@ -149,23 +152,27 @@
 
               <div class="c-city-zip-container">
                 <div class="c-input">
-                  <input type="text" id="input" placeholder="Bob" required />
+                  <input type="text" name="first-name" id="input" placeholder="Bob" minlength="3" maxlength="20"
+                    required value="Bob" />
                   <label class="c-label">First Name</label>
                 </div>
 
                 <div class="c-input">
-                  <input type="text" id="input" placeholder="Bernad" required />
+                  <input type="text" name="last-name" id="input" placeholder="Bernad" minlength="3" maxlength="20"
+                    required value="Bernad" />
                   <label class="c-label">Last Name</label>
                 </div>
               </div>
 
               <div class="c-input">
-                <input type="number" id="input" placeholder="91 56 62 82" required />
+                <input type="number" name="number" id="input" placeholder="91 56 62 82" minlength="8" maxlength="13"
+                  required value="91566282" />
                 <label class="c-label">Phone Number</label>
               </div>
 
               <div class="c-input">
-                <input type="text" id="input" placeholder="Norway" required />
+                <input type="text" name="country" id="input" placeholder="Norway" minlength="2" maxlength="20" required
+                  value="Norway" />
                 <label class="c-label">Country</label>
               </div>
             </div>
@@ -177,23 +184,27 @@
 
             <div class="c-input-container">
               <div class="c-input">
-                <input type="text" id="input" placeholder="Norway" required />
+                <input type="text" name="country-shipping" id="input" placeholder="Norway" minlength="2" required
+                  value="Norway" />
                 <label class="c-label">Country</label>
               </div>
 
               <div class="c-input">
-                <input type="text" id="input" placeholder="Møllerparken 4" required />
+                <input type="text" name="address-shipping" id="input" placeholder="Møllerparken 4" minlength="3"
+                  required value="Møllerparken 4" />
                 <label class="c-label">Street Address</label>
               </div>
 
               <div class="c-city-zip-container">
                 <div class="c-input">
-                  <input type="text" id="input" placeholder="Oslo" />
+                  <input type="text" name="city-shipping" id="input" placeholder="Oslo" minlength="3" required
+                    value="Olso" />
                   <label class="c-label">City</label>
                 </div>
 
                 <div class="c-input">
-                  <input type="number" id="input" placeholder="0459" required />
+                  <input type="number" name="zip-shipping" id="input" placeholder="0459" minlength="4" required
+                    value="0459" />
                   <label class="c-label">Zip/Postal code</label>
                 </div>
               </div>
@@ -202,13 +213,14 @@
             <div class="c-shipping-method-container">
               <div class="c-method-header">Shipping Method</div>
               <div class="c-method-container">
+
                 <div class="c-method-row">
                   <div class="c-check-container">
-                    <input type="checkbox" id="delivery" />
+                    <input type="checkbox" name="bring-home-delivery" id="delivery" />
                     <i class="fa-solid fa-truck"></i>
                   </div>
                   <div class="c-delivery-text">
-                    <p class="c-text-top">BRING Home Delivery</p>
+                    <label class="c-text-top">BRING Home Delivery</label>
                     <p class="c-text-bottom">
                       Standard delivery: 2-6 working days
                     </p>
@@ -220,11 +232,11 @@
 
                 <div class="c-method-row">
                   <div class="c-check-container">
-                    <input type="checkbox" id="delivery" />
+                    <input type="checkbox" name="bring-pick-up-point" id="delivery" />
                     <i class="fa-solid fa-truck"></i>
                   </div>
                   <div class="c-delivery-text">
-                    <p class="c-text-top">BRING Pick-Up Point</p>
+                    <label class="c-text-top">BRING Pick-Up Point</label>
                     <p class="c-text-bottom">
                       Standard delivery: 2-6 working days
                     </p>
@@ -299,7 +311,8 @@
           </div>
         </div>
         <div class="c-btn-container">
-          <input type="submit" name="submit" id="submit" value="Submit" aria-label="Submit to checkout" />
+          <button id="submit" value="Submit" aria-label="Submit to checkout">Place
+            Order</button>
         </div>
       </form>
     </section>
