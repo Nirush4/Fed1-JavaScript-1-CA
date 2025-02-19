@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="The jackets are mid-range in price and emphasize durability and being suitable for a range of different weather types ensuring customers are comfortable whatever adventure they go on." />
-  <title>Rainydays|Checkout</title>
+  <title>Rainydays|Guest checkout</title>
   <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
-  <link rel="stylesheet" href="/css/checkout.css" />
+  <link rel="stylesheet" href="/css/summary-of-the-cart.css" />
+  <script type="module" defer src="/js/summary-of-the-cart.mjs"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
     integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
@@ -18,7 +19,7 @@
     href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
     rel="stylesheet" />
 
-  <link href="https://fonts.googleapis.com/css?family=Prata:regular" rel="stylesheet" s />
+  <link href="https://fonts.googleapis.com/css?family=Prata:regular" rel="stylesheet" />
 
   <link
     href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
@@ -31,7 +32,6 @@
 </head>
 
 <body>
-
 
   <!--imp! HEADER -->
 
@@ -88,10 +88,11 @@
   </header>
 
 
+
   <main class="l-main">
     <section class="c-hero">
       <div class="c-back-btn">
-        <a href="info-cart.html" aria-label="link you back to info cart page"><i
+        <a href="jacket-specific.html" aria-label="Links back to jacket desctribtion page"><i
             class="fa-solid fa-arrow-left"></i>Back</a>
       </div>
       <div class="c-main-header">Guest checkout</div>
@@ -99,20 +100,18 @@
         <div class="c-line-container">
           <div class="c-line-black-container">
             <div class="c-line-text">Cart</div>
-            <div class="c-line-checked-container">
-              <div class="c-line-checked">
-                <div class="c-dot-checked"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="c-line-black-container">
-            <div class="c-line-text">Checkout</div>
             <div class="c-line-dobbel-container">
               <div class="c-line-black">
                 <div class="c-dot-black"></div>
               </div>
               <div class="c-line-filler"></div>
+            </div>
+          </div>
+
+          <div class="c-line-grey-container">
+            <div class="c-line-text">Checkout</div>
+            <div class="c-line-grey">
+              <div class="c-dot-grey"></div>
             </div>
           </div>
 
@@ -126,77 +125,194 @@
       </div>
     </section>
 
+    <section class="c-shipping-header-container">
+      <div class="c-shipping-header">Shipping Information</div>
+    </section>
+
     <section class="c-form-container">
-      <form action="card.html" aria-label="link you to card page" class="c-payment">
-        <div class="c-payment-container">
-          <div class="c-pay-header">Choose payment method</div>
+      <form aria-label="Links to checkout" name="checkout">
+        <div class="c-shipping-summary-container">
 
-          <div class="c-all-cards-container">
-            <div class="c-card-container">
-              <div class="c-checkbox-container">
-                <input type="checkbox" name="visa" id="visa" class="c-checkbox" required />
+          <div class="c-shipping-container">
+            <div class="c-email-header">
+              <i class="fa-solid fa-user"></i>
+              <p>Enter your email</p>
+            </div>
+
+            <div class="c-input-container">
+              <div class="c-input">
+                <input type="email" name="email" id="input" placeholder="bob@gmail.com" required minlength="3"
+                  maxlength="20" value="john@gmail.com" />
+                <label class="c-label">Email</label>
               </div>
-              <div class="c-card-name-container">
-                <div class="c-card-name">Visa/Mastercard</div>
+
+              <div class="c-text-create-account">
+                <p>You can create an account after checkout</p>
               </div>
-              <div class="c-card-img-container">
-                <img src="/images/payment icons/visa-small.jpg" alt="visa card image" />
-                <img src="/images/payment icons/master-small.jpg" alt="Mastercard image" />
+
+              <div class="c-city-zip-container">
+                <div class="c-input">
+                  <input type="text" name="first-name" id="input" placeholder="Bob" required minlength="3"
+                    maxlength="20" value="Bob" />
+                  <label class="c-label">First Name</label>
+                </div>
+
+                <div class="c-input">
+                  <input type="text" name="last-name" id="input" placeholder="Bernad" required minlength="3"
+                    maxlength="20" value="Bernad" />
+                  <label class="c-label">Last Name</label>
+                </div>
+              </div>
+
+              <div class="c-input">
+                <input type="number" name="number" id="input" placeholder="91 56 62 82" required minlength="8"
+                  maxlength="13" value="91566282" />
+                <label class="c-label">Phone Number</label>
+              </div>
+
+              <div class="c-input">
+                <input type="text" name="country" id="input" placeholder="Norway" required minlength="2" maxlength="20"
+                  value="Norway" />
+                <label class="c-label">Country</label>
               </div>
             </div>
 
-            <div class="c-card-container">
-              <div class="c-checkbox-container">
-                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
+            <div class="c-address-header">
+              <i class="fa-solid fa-box"></i>
+              <p>Enter your shipping address</p>
+            </div>
+
+            <div class="c-input-container">
+              <div class="c-input">
+                <input type="text" name="country-shipping" id="input" placeholder="Norway" required minlength="2"
+                  value="Norway" />
+                <label class="c-label">Country</label>
               </div>
-              <div class="c-card-name-container">
-                <div class="c-card-name">Paypal</div>
+
+              <div class="c-input">
+                <input type="text" name="address-shipping" id="input" placeholder="Møllerparken 4" required
+                  minlength="3" value="Møllerparken 4" />
+                <label class="c-label">Street Address</label>
               </div>
-              <div class="c-card-img-container">
-                <img src="/images/payment icons/paypal-small.jpg" alt="visa card image" />
+
+              <div class="c-city-zip-container">
+                <div class="c-input">
+                  <input type="text" name="city-shipping" id="input" placeholder="Oslo" required minlength="3"
+                    value="Olso" />
+                  <label class="c-label">City</label>
+                </div>
+
+                <div class="c-input">
+                  <input type="number" name="zip-shipping" id="input" placeholder="0459" required minlength="4"
+                    value="0459" />
+                  <label class="c-label">Zip/Postal code</label>
+                </div>
               </div>
             </div>
 
-            <div class="c-card-container">
-              <div class="c-checkbox-container">
-                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
-              </div>
-              <div class="c-card-name-container">
-                <div class="c-card-name">Klarna</div>
-              </div>
-              <div class="c-card-img-container">
-                <img src="/images/payment icons/klarna-small.jpg" alt="visa card image" />
-              </div>
-            </div>
+            <div class="c-shipping-method-container">
+              <div class="c-method-header">Shipping Method</div>
+              <div class="c-method-container">
 
-            <div class="c-card-container">
-              <div class="c-checkbox-container">
-                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
-              </div>
-              <div class="c-card-name-container">
-                <div class="c-card-name">American Express</div>
-              </div>
-              <div class="c-card-img-container">
-                <img src="/images/payment icons/amex-small.jpg" alt="visa card image" />
-              </div>
-            </div>
+                <div class="c-method-row">
+                  <div class="c-check-container">
+                    <input type="checkbox" name="bring-home-delivery" id="delivery" />
+                    <i class="fa-solid fa-truck"></i>
+                  </div>
+                  <div class="c-delivery-text">
+                    <label class="c-text-top">BRING Home Delivery</label>
+                    <p class="c-text-bottom">
+                      Standard delivery: 2-6 working days
+                    </p>
+                  </div>
+                  <div class="c-delivery-price">
+                    <p>0kr</p>
+                  </div>
+                </div>
 
-            <div class="c-card-container">
-              <div class="c-checkbox-container">
-                <input type="checkbox" name="visa" id="visa" class="c-checkbox" />
-              </div>
-              <div class="c-card-name-container">
-                <div class="c-card-name">Vipps</div>
-              </div>
-              <div class="c-card-img-container">
-                <img src="/images/payment icons/vipps-small.jpg" alt="visa card image" />
+                <div class="c-method-row">
+                  <div class="c-check-container">
+                    <input type="checkbox" name="bring-pick-up-point" id="delivery" />
+                    <i class="fa-solid fa-truck"></i>
+                  </div>
+                  <div class="c-delivery-text">
+                    <label class="c-text-top">BRING Pick-Up Point</label>
+                    <p class="c-text-bottom">
+                      Standard delivery: 2-6 working days
+                    </p>
+                  </div>
+                  <div class="c-delivery-price">
+                    <p>0kr</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="c-btn-container">
-            <input type="submit" name="submit" id="submit" value="Submit" aria-label="Links to card page" />
+          <div class="c-summary">
+            <div class="c-express-container">
+              <div class="c-express-text">Sign in for express checkout</div>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <div class="c-summary-container">
+              <div class="c-summary-header">
+                <p>Order Summary</p>
+              </div>
+
+              <div class="c-summary-line"></div>
+
+              <div class="c-under-line-container">
+                <div class="c-container-item">1 Item</div>
+                <div class="c-container">
+                  <i class="fa-solid fa-pen"></i>
+                  <div>Edit cart</div>
+                </div>
+              </div>
+              <div class="c-summary-produckt-container">
+                <div class="c-img-container">
+                  <img src="/images/jacket-specific/image-1.jpg" alt="picture of a model with a red jacket" />
+                </div>
+
+                <div class="c-info-container">
+                  <div class="c-header">Nordsjo Winter Parka</div>
+                  <div class="c-pcs">
+                    <div>5.399kr</div>
+                    <div>Color: Red</div>
+                    <div>Size: M</div>
+                  </div>
+                  <div class="c-add-more">
+                    <div class="c-minus">
+                      <i class="fa-solid fa-minus"></i>
+                    </div>
+
+                    <div class="c-item-count">1</div>
+
+                    <div class="c-plus">
+                      <i class="fa-solid fa-plus"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="c-summary-line"></div>
+
+              <div class="c-subtotal-container">
+                <div>Subtotal</div>
+                <div>5.399kr</div>
+              </div>
+
+              <div class="c-summary-line"></div>
+
+              <div class="c-ordertotal-container">
+                <div>Order total</div>
+                <div>5.399kr</div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div class="c-btn-container">
+          <button id="submit" value="Submit" aria-label="Submit to checkout">Place
+            Order</button>
         </div>
       </form>
     </section>
