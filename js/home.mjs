@@ -1,13 +1,13 @@
-import { createHTML, clearNode } from "./utils.mjs";
-import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from "./constants.mjs";
+import { createHTML, clearNode } from './utils.mjs';
+import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
 // import { addToCart } from './cart.mjs';
 
-const containerEl = document.querySelector("#js-products-section");
-const sortByEl = document.querySelector("#js-sort-by");
-const filterEl = document.querySelector("#js-filter-by");
-const inputSearch = document.querySelector("#search-input");
-const Section2 = document.querySelector(".section-2");
-const Section3 = document.querySelector(".section-3");
+const containerEl = document.querySelector('#js-products-section');
+const sortByEl = document.querySelector('#js-sort-by');
+const filterEl = document.querySelector('#js-filter-by');
+const inputSearch = document.querySelector('#search-input');
+const Section2 = document.querySelector('.section-2');
+const Section3 = document.querySelector('.section-3');
 
 let products = [];
 
@@ -15,13 +15,13 @@ setup();
 
 function setup() {
   if (!containerEl || !sortByEl) {
-    console.error("JS cannot run!!!");
+    console.error('JS cannot run!!!');
   } else {
     getProducts();
   }
 }
 
-inputSearch.addEventListener("input", (event) => {
+inputSearch.addEventListener('input', (event) => {
   Section2.scrollIntoView();
 
   const inputVal = event.target.value;
@@ -32,22 +32,22 @@ inputSearch.addEventListener("input", (event) => {
   createProductsListEl(filteredProductsSearch);
 });
 
-sortByEl.addEventListener("change", (event) => {
+sortByEl.addEventListener('change', (event) => {
   const val = event.target.value;
 
-  if (val === "asc") {
+  if (val === 'asc') {
     sortByPriceDescending();
-  } else if (val === "desc") {
+  } else if (val === 'desc') {
     sortByPriceAscending();
   }
 
   createProductsListEl(products);
 });
 
-filterEl.addEventListener("change", (event) => {
+filterEl.addEventListener('change', (event) => {
   const val = event.target.value;
 
-  if (val === "Male" || val === "Female") {
+  if (val === 'Male' || val === 'Female') {
     filterProductsByGender(val);
   } else {
     createProductsListEl(products); // Pass the original products list when no gender filter is selected
@@ -72,7 +72,7 @@ async function getProducts() {
     const { data } = await response.json();
     products = data;
 
-    window.localStorage.setItem("products", JSON.stringify(products));
+    window.localStorage.setItem('products', JSON.stringify(products));
 
     sortByPriceDescending();
     createProductsListEl(products);
@@ -81,7 +81,7 @@ async function getProducts() {
   }
 }
 
-const productsList = JSON.parse(localStorage.getItem("products"));
+const productsList = JSON.parse(localStorage.getItem('products'));
 const onSaleProductList = productsList.filter((product) => {
   return product.onSale;
 });
@@ -90,25 +90,13 @@ const limitedSale = onSaleProductList.slice(0, 6);
 
 createproductTemplateOnSale(limitedSale);
 
-// discountedAmount(limitedSale);
-
-// function discountedAmount(limitedSale) {
-//   limitedSale.forEach((product) => {
-//     createLoadingSkeleton(5);
-//     const discountPercentage =
-//       ((product.price - product.discountedPrice) / product.price) * 100;
-//     console.log('discountPercent for product:', discountPercentage + '%');
-//     return discountPercentage;
-//   });
-// }
-
 function productTemplate({
   id,
-  title = "Unknown Item",
+  title = 'Unknown Item',
   imgUrl,
   imgAl,
   price = 0,
-  description = "Missing description",
+  description = 'Missing description',
   index,
 }) {
   const detailsUrl = `/jacket-specific.html?id=${id}`;
@@ -139,12 +127,12 @@ function productTemplate({
 
 function productTemplateOnSale({
   id,
-  title = "Unknown Item",
+  title = 'Unknown Item',
   imgUrl,
   imgAl,
   price = 0,
   discountedPrice = 0,
-  description = "Missing description",
+  description = 'Missing description',
   discountPercentage = 0,
   index,
 }) {
@@ -205,33 +193,37 @@ function createLoadingSkeleton(count = 3) {
   });
 }
 
-function createProductsListEl(list = products) {
+async function createProductsListEl(list = products) {
   clearNode(containerEl);
 
-  list.forEach(({ id, title, image, price, description }) => {
-    const template = productTemplate({
-      id,
-      title,
-      imgUrl: image.url,
-      imgAl: image.alt,
-      price,
-      description,
+  try {
+    list.forEach(({ id, title, image, price, description }) => {
+      const template = productTemplate({
+        id,
+        title,
+        imgUrl: image.url,
+        imgAl: image.alt,
+        price,
+        description,
+      });
+
+      const newEl = createHTML(template);
+      const btn = newEl.querySelector('button');
+
+      // btn.addEventListener("click", () => {
+      //   addToCart({
+      //     id,
+      //     title,
+      //     imgUrl: image.url,
+      //     price,
+      //   });
+      // });
+
+      containerEl.append(newEl);
     });
-
-    const newEl = createHTML(template);
-    const btn = newEl.querySelector("button");
-
-    // btn.addEventListener("click", () => {
-    //   addToCart({
-    //     id,
-    //     title,
-    //     imgUrl: image.url,
-    //     price,
-    //   });
-    // });
-
-    containerEl.append(newEl);
-  });
+  } catch (error) {
+    console.error(ERROR_MESSAGE_DEFAULT, error?.message);
+  }
 }
 
 function createproductTemplateOnSale(list = products) {
