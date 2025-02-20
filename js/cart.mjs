@@ -184,8 +184,6 @@ function changeQuantity(productId, type) {
   addToCartHTML();
 }
 
-//// Section 2
-
 const productSectionTwo = document.querySelector('#section-3');
 
 productSectionTwo.addEventListener('click', (event) => {
