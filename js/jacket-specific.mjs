@@ -183,3 +183,64 @@ function createproductTemplateOnSale(list = products) {
     onSaleSection.append(newElOnSale);
   });
 }
+
+// function breadcrumbsTemplate({ id = '' }) {
+//   const detailsUrl = `/jacket-specific.html?id=${id}`;
+
+//   return `<a href="/index.html">Home</a> <a href="${detailsUrl}" class="products-breadcrumbs">Products</a>`;
+// }
+
+// async function createBreadcrumbs(productId) {
+//   const { id } = await fetchProductDetails(productId);
+
+//   const template = breadcrumbsTemplate({
+//     id,
+//   });
+
+//   const detailsEl = createHTML(template);
+//   clearNode(productsBreadcrumbs);
+//   productsBreadcrumbs.appendChild(detailsEl);
+// }
+
+// createBreadcrumbs(productId);
+
+// function breadcrumbsTemplate({ id = '' }) {
+//   const detailsUrl = `/jacket-specific.html?id=${id}`;
+//   return `
+//     <a href="/index.html">Home</a>
+//     <a href="${detailsUrl}" class="products-breadcrumbs">Products</a>
+//   `;
+// }
+
+// // function createHTML(template) {
+// //   // Create a new element and insert the template HTML into it
+// //   const el = document.createElement('div');
+// //   el.innerHTML = template;
+// //   return el.firstElementChild; // returns the first child of the created element (the anchor tags)
+// // }
+
+// async function createBreadcrumbs(productId) {
+//   try {
+//     const { id } = await fetchProductDetails(productId);
+
+//     const template = breadcrumbsTemplate({ id });
+//     const detailsEl = createHTML(template);
+
+//     const productsBreadcrumbs = document.getElementById('breadcrumbs'); // Ensure the element exists in the DOM
+//     debugger;
+//     if (!productsBreadcrumbs) {
+//       console.error('Breadcrumb container not found');
+//       return;
+//     }
+
+//     // Clear the existing breadcrumbs and append the new one
+//     productsBreadcrumbs.innerHTML = ''; // or clearNode() if it's a custom function
+//     productsBreadcrumbs.appendChild(detailsEl);
+//   } catch (error) {
+//     console.error('Error creating breadcrumbs:', error);
+//   }
+// }
+
+// // Call the createBreadcrumbs function with a valid productId (make sure productId is defined somewhere)
+// const productId = '123'; // Example productId, replace with actual
+// createBreadcrumbs(productId);
