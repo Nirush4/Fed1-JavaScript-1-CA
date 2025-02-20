@@ -13,11 +13,11 @@ getCartSaleItemToLocalStorage();
 setupCart();
 // setCartItemToLocalStorage();
 
-function setCartItemToLocalStorage(cart = []) {
+export function setCartItemToLocalStorage(cart = []) {
   window.localStorage.setItem('Cart', JSON.stringify(cart));
 }
 
-function getCartSaleItemToLocalStorage() {
+export function getCartSaleItemToLocalStorage() {
   JSON.parse(localStorage.getItem('productsOnSale'));
   addToCartHTML();
 }
@@ -39,7 +39,7 @@ productSection.addEventListener('click', (event) => {
   addToCartHTML();
 });
 
-function addToCart(productId) {
+export function addToCart(productId) {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
   let itemPositionInCart = cart.findIndex(
     (value) => value.productId === productId
@@ -55,7 +55,7 @@ function addToCart(productId) {
   setCartItemToLocalStorage(cart);
 }
 
-function calcTotal() {
+export function calcTotal() {
   const productsList = JSON.parse(localStorage.getItem('products')) || [];
   const limitedSaleProducts =
     JSON.parse(localStorage.getItem('productsOnSale')) || [];
@@ -70,7 +70,7 @@ function calcTotal() {
   return newTotal;
 }
 
-function addToCartHTML() {
+export function addToCartHTML() {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
   const productsList = JSON.parse(localStorage.getItem('products')) || [];
   const limitedSaleProducts =
@@ -147,7 +147,7 @@ cartProductList.addEventListener('click', (event) => {
   }
 });
 
-function removeItem(productId) {
+export function removeItem(productId) {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
 
   let itemPositionInCart = cart.findIndex(
@@ -160,7 +160,7 @@ function removeItem(productId) {
   addToCartHTML();
 }
 
-function changeQuantity(productId, type) {
+export function changeQuantity(productId, type) {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
 
   let itemPositionInCart = cart.findIndex(

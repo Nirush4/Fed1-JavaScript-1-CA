@@ -1,8 +1,224 @@
 import { createHTML, clearNode } from './utils.mjs';
 import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
 
-const containerEl = document.querySelector('#product-details');
+const cartIcon = document.querySelector('#js-cart-icon');
+const shoppingCartEl = document.querySelector('#js-shopping-cart');
+const closeCartBtn = document.querySelector('#js-close-cart');
+const cartProductList = document.querySelector('#js-cart-product-list');
+const displayTotalPrice = document.querySelector('#js-total-price');
+const cartIconSpan = document.querySelector('#js-icon-cart-span');
 const onSaleSection = document.querySelector('#section-3');
+const productDetailsSection = document.querySelector('#product-details');
+const inputQuantity = document.querySelector('#quantity');
+
+inputQuantity.addEventListener('input', (event) => {
+  debugger;
+  console.log('something');
+  let val = event.target.value;
+  debugger;
+  console.log(val);
+});
+
+productDetailsSection.addEventListener('click', (event) => {
+  event.preventDefault();
+  let positionClick = event.target;
+  if (positionClick.classList.contains('add-to-cart')) {
+    let productId = positionClick.dataset.id;
+    addToCart(productId);
+  }
+  addToCartHTML();
+});
+
+function setupCart() {
+  let storedItem = window.localStorage.getItem('Cart');
+  if (storedItem) {
+    const cart = JSON.parse(storedItem);
+    setCartItemToLocalStorage(cart);
+    addToCartHTML();
+  }
+}
+
+getCartSaleItemToLocalStorage();
+setupCart();
+
+function setCartItemToLocalStorage(cart = []) {
+  window.localStorage.setItem('Cart', JSON.stringify(cart));
+}
+
+function getCartSaleItemToLocalStorage() {
+  JSON.parse(localStorage.getItem('productsOnSale'));
+  addToCartHTML();
+}
+
+cartIcon.addEventListener('click', () => {
+  shoppingCartEl.classList.toggle('open');
+});
+
+closeCartBtn.addEventListener('click', () => {
+  shoppingCartEl.classList.remove('open');
+});
+
+onSaleSection.addEventListener('click', (event) => {
+  let positionClick = event.target;
+  if (positionClick.classList.contains('c-add-to-cart-2')) {
+    let productId = positionClick.dataset.id;
+    addToCart(productId);
+  }
+  addToCartHTML();
+});
+
+function addToCart(productId) {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  let itemPositionInCart = cart.findIndex(
+    (value) => value.productId === productId
+  );
+  if (itemPositionInCart === -1) {
+    cart.push({
+      productId: productId,
+      quantity: 1,
+    });
+  } else {
+    cart[itemPositionInCart].quantity += 1;
+  }
+  setCartItemToLocalStorage(cart);
+}
+
+function calcTotal() {
+  const productsList = JSON.parse(localStorage.getItem('products')) || [];
+  const limitedSaleProducts =
+    JSON.parse(localStorage.getItem('productsOnSale')) || [];
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  const newTotal = cart.reduce((total, cartItem) => {
+    let jacket = [...productsList, ...limitedSaleProducts].find(
+      (jacket) => jacket.id === cartItem.productId
+    );
+
+    return jacket ? total + jacket.price * cartItem.quantity : 0;
+  }, 0);
+  return newTotal;
+}
+
+export function addToCartHTML() {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  const productsList = JSON.parse(localStorage.getItem('products')) || [];
+  const limitedSaleProducts =
+    JSON.parse(localStorage.getItem('productsOnSale')) || [];
+  cartProductList.innerHTML = '';
+  let totalQuantity = 0;
+  if (cart.length > 0) {
+    cart.forEach((jacket) => {
+      totalQuantity += jacket.quantity;
+      let newCart = document.createElement('div');
+      newCart.classList.add('shopping-card-col-1');
+      newCart.dataset.id = jacket.productId;
+      let positionProduct = [...productsList, ...limitedSaleProducts].findIndex(
+        (value) => value.id === jacket.productId
+      );
+      let info = [...productsList, ...limitedSaleProducts][positionProduct];
+
+      if (!info) {
+        return;
+      }
+      const totalPrice = info.price * jacket.quantity; //
+      newCart.innerHTML = `
+          <div class="shopping-card-img-div">
+            <img src="${info.image.url}" alt="A man with a jacket">
+           </div>
+           <div class="shopping-card-text-div">
+              <h3>${info.title}</h3>
+                <p>${totalPrice.toFixed(2)}</p>
+                <p>Color:${info.baseColor}</p>
+                  <div class="shopping-card-count">
+                    <div class="shopping-card-count-text">
+                      <div>
+                        <i class="fa-solid fa-minus quantity-btn"></i>
+                      </div>
+                      <p>${jacket.quantity}</p>
+                      <div> <i class="fa-solid fa-plus quantity-btn"></i></div>
+                  </div>
+                   <div class="shopping-card-count-trash">
+                    <i class="fa-regular fa-trash-can"></i>
+                  </div>
+                </div>
+    `;
+
+      cartProductList.appendChild(newCart);
+    });
+    displayTotalPrice.innerHTML = calcTotal().toFixed(2) + ' kr';
+  } else {
+    displayTotalPrice.innerHTML = '0 kr';
+  }
+  cartIconSpan.textContent = totalQuantity;
+  if (totalQuantity > 0) {
+    cartIconSpan.classList.remove('hidden');
+  } else if (totalQuantity === 0) {
+    cartIconSpan.classList.add('hidden');
+  }
+}
+
+cartProductList.addEventListener('click', (event) => {
+  let positionClick = event.target;
+
+  if (positionClick.classList.contains('quantity-btn')) {
+    let closestParentWithDataId = positionClick.closest('[data-id]');
+    let productId = closestParentWithDataId.dataset.id;
+    let type = 'minus';
+    if (positionClick.classList.contains('fa-plus')) {
+      type = 'plus';
+    }
+    changeQuantity(productId, type);
+  }
+  if (positionClick.classList.contains('fa-trash-can')) {
+    let closestParentWithDataId = positionClick.closest('[data-id]');
+    let productId = closestParentWithDataId.dataset.id;
+    removeItem(productId);
+  }
+});
+
+function removeItem(productId) {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+
+  let itemPositionInCart = cart.findIndex(
+    (value) => value.productId === productId
+  );
+  if (itemPositionInCart >= 0) {
+    cart.splice(itemPositionInCart, 1);
+    setCartItemToLocalStorage(cart);
+  }
+  addToCartHTML();
+}
+
+function changeQuantity(productId, type) {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+
+  let itemPositionInCart = cart.findIndex(
+    (value) => value.productId === productId
+  );
+  if (itemPositionInCart >= 0) {
+    switch (type) {
+      case 'plus':
+        cart[itemPositionInCart].quantity += 1;
+        setCartItemToLocalStorage(cart);
+        break;
+
+      default:
+        let valueChange = cart[itemPositionInCart].quantity - 1;
+        if (valueChange > 0) {
+          cart[itemPositionInCart].quantity = valueChange;
+          setCartItemToLocalStorage(cart);
+        } else {
+          cart.splice(itemPositionInCart, 1);
+          setCartItemToLocalStorage(cart);
+        }
+        break;
+    }
+  }
+  addToCartHTML();
+}
+
+/////// MORTEN IS ABOVE THIS LINE OF CODE!!!!
+
+const containerEl = document.querySelector('#product-details');
 
 async function fetchProductDetails(productId = '') {
   const Id = getId();
@@ -31,7 +247,7 @@ function getId() {
 }
 
 function detailsTemplate({
-  id = '',
+  id,
   primaryImgUrl = 'https://placehold.co/400x500',
   title = 'Unknown Product',
   price = 0,
@@ -84,7 +300,7 @@ function detailsTemplate({
             />
           </div>
 
-          <button type="submit" class="add-to-cart">Add to Cart</button>
+          <button type="submit" data-id="${id}" class="add-to-cart">Add to Cart</button>
         </form>
       </div>
     </article>
@@ -92,11 +308,12 @@ function detailsTemplate({
 }
 
 async function renderProductDetails(productId) {
-  const { image, title, price, description } = await fetchProductDetails(
+  const { image, title, price, description, id } = await fetchProductDetails(
     productId
   );
 
   const template = detailsTemplate({
+    id,
     primaryImgUrl: image.url,
     alt: image.alt,
     title,
@@ -148,7 +365,7 @@ function productTemplateOnSale({
 
                   </div>
               </a>
-                      <button class="c-add-to-cart-2" id="js-add-to-cart-${id}">Add to Cart</button>
+                      <button class="c-add-to-cart-2" data-id="${id}" id="js-add-to-cart-${id}">Add to Cart</button>
              </div>
     </article>
  `;
