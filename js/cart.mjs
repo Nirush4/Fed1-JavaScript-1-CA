@@ -9,20 +9,17 @@ const cartProductList = document.querySelector('#js-cart-product-list');
 const displayTotalPrice = document.querySelector('#js-total-price');
 const cartIconSpan = document.querySelector('#js-icon-cart-span');
 
-emptyCartSaleItemToLocalStorage();
-
+getCartSaleItemToLocalStorage();
 setupCart();
+// setCartItemToLocalStorage();
 
 function setCartItemToLocalStorage(cart = []) {
   window.localStorage.setItem('Cart', JSON.stringify(cart));
 }
 
-function emptyCartSaleItemToLocalStorage() {
-  JSON.parse(localStorage.getItem('productsOnSale'));
-}
-
 function getCartSaleItemToLocalStorage() {
-  JSON.parse(window.localStorage.getItem('productsOnSale'));
+  JSON.parse(localStorage.getItem('productsOnSale'));
+  addToCartHTML();
 }
 
 cartIcon.addEventListener('click', () => {
@@ -75,6 +72,9 @@ function calcTotal() {
 
 function addToCartHTML() {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  const productsList = JSON.parse(localStorage.getItem('products')) || [];
+  const limitedSaleProducts =
+    JSON.parse(localStorage.getItem('productsOnSale')) || [];
   cartProductList.innerHTML = '';
   let totalQuantity = 0;
   if (cart.length > 0) {
@@ -130,6 +130,7 @@ function addToCartHTML() {
 
 cartProductList.addEventListener('click', (event) => {
   let positionClick = event.target;
+
   if (positionClick.classList.contains('quantity-btn')) {
     let closestParentWithDataId = positionClick.closest('[data-id]');
     let productId = closestParentWithDataId.dataset.id;
@@ -148,6 +149,7 @@ cartProductList.addEventListener('click', (event) => {
 
 function removeItem(productId) {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+
   let itemPositionInCart = cart.findIndex(
     (value) => value.productId === productId
   );
@@ -159,6 +161,8 @@ function removeItem(productId) {
 }
 
 function changeQuantity(productId, type) {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+
   let itemPositionInCart = cart.findIndex(
     (value) => value.productId === productId
   );
