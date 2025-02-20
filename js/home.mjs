@@ -9,23 +9,39 @@ const inputSearch = document.querySelector('#search-input');
 const Section2 = document.querySelector('.section-2');
 const Section3 = document.querySelector('.section-3');
 
-let products = [];
-
 setup();
 
-function setup() {
+async function setup() {
   if (!containerEl || !sortByEl) {
     console.error('JS cannot run!!!');
   } else {
-    getProducts();
+    clearNode(containerEl);
+    createLoadingSkeleton();
+
+    // NOTE: This is for the first time rendering the page
+    const products = await getProducts();
+    const sortProducts = sortByPriceDescending(products);
+
+    setProductsToLS(sortProducts);
+
+    // Can only be called after setting products to localstorage
+    const limitedSaleProducts = getSaleProductsFromProducts(products);
+
+    // note: need this for the cart
+    setSaleProductsToLS(limitedSaleProducts);
+
+    createProductsListEl(sortProducts);
+    createproductTemplateOnSale(limitedSaleProducts);
   }
 }
 
 inputSearch.addEventListener('input', (event) => {
   Section2.scrollIntoView();
 
+  const storedProducts = getProductsFromLS();
+
   const inputVal = event.target.value;
-  const filteredProductsSearch = products.filter(({ title }) =>
+  const filteredProductsSearch = storedProducts.filter(({ title }) =>
     title.trim().toLowerCase().includes(inputVal.trim().toLowerCase())
   );
 
@@ -34,62 +50,66 @@ inputSearch.addEventListener('input', (event) => {
 
 sortByEl.addEventListener('change', (event) => {
   const val = event.target.value;
+  const storedProducts = getProductsFromLS();
+  let sortedProducts = [];
 
   if (val === 'asc') {
-    sortByPriceDescending();
+    sortedProducts = sortByPriceDescending(storedProducts);
   } else if (val === 'desc') {
-    sortByPriceAscending();
+    sortedProducts = sortByPriceAscending(storedProducts);
   }
 
-  createProductsListEl(products);
+  createProductsListEl(sortedProducts);
 });
 
 filterEl.addEventListener('change', (event) => {
   const val = event.target.value;
+  const storedProducts = getProductsFromLS();
+  let filteredProducts = storedProducts;
 
   if (val === 'Male' || val === 'Female') {
-    filterProductsByGender(val);
-  } else {
-    createProductsListEl(products); // Pass the original products list when no gender filter is selected
+    filteredProducts = filterProductsByGender(val);
   }
+
+  createProductsListEl(filteredProducts); // Pass the original products list when no gender filter is selected
 });
 
 function filterProductsByGender(gender) {
-  const list = products;
+  const storedProducts = getProductsFromLS();
+  const list = storedProducts;
   const filteredProducts = list.filter((product) => {
     return product.gender === gender;
   });
-  createProductsListEl(filteredProducts);
-  console.log(filteredProducts);
+
+  return filteredProducts;
 }
 
 async function getProducts() {
-  clearNode(containerEl);
-  createLoadingSkeleton();
-
   try {
     const response = await fetch(API_URL);
     const { data } = await response.json();
-    products = data;
 
-    window.localStorage.setItem('products', JSON.stringify(products));
-
-    sortByPriceDescending();
-    createProductsListEl(products);
+    return data;
   } catch (error) {
     console.error(ERROR_MESSAGE_DEFAULT, error?.message);
   }
 }
 
-const productsList = JSON.parse(localStorage.getItem('products'));
-const onSaleProductList = productsList.filter((product) => {
-  return product.onSale;
-});
+function setProductsToLS(products = []) {
+  window.localStorage.setItem('products', JSON.stringify(products));
+}
 
-const limitedSale = onSaleProductList.slice(0, 6);
-window.localStorage.setItem('productsOnSale', JSON.stringify(limitedSale));
+function getProductsFromLS() {
+  return JSON.parse(localStorage.getItem('products'));
+}
 
-createproductTemplateOnSale(limitedSale);
+function setSaleProductsToLS(products = []) {
+  window.localStorage.setItem('productsOnSale', JSON.stringify(products));
+}
+
+function getSaleProductsFromLS() {
+  return JSON.parse(localStorage.getItem('productsOnSale'));
+}
 
 function productTemplate({
   id,
@@ -194,7 +214,7 @@ function createLoadingSkeleton(count = 3) {
   });
 }
 
-async function createProductsListEl(list = products) {
+async function createProductsListEl(list = []) {
   clearNode(containerEl);
 
   try {
@@ -227,7 +247,7 @@ async function createProductsListEl(list = products) {
   }
 }
 
-function createproductTemplateOnSale(list = products) {
+function createproductTemplateOnSale(list = []) {
   clearNode(Section3);
 
   list.forEach(({ id, title, image, price, description, discountedPrice }) => {
@@ -248,15 +268,26 @@ function createproductTemplateOnSale(list = products) {
   });
 }
 
-function sortByPriceDescending(list = products) {
-  list.sort((a, b) => a.price - b.price);
+function sortByPriceDescending(list = []) {
+  return list.sort((a, b) => a.price - b.price);
 }
 
-function sortByPriceAscending(list = products) {
-  list.sort((a, b) => b.price - a.price);
+function sortByPriceAscending(list = []) {
+  return list.sort((a, b) => b.price - a.price);
 }
 
 // Example usage:
 // filterProductsByGender('male');
 // filterProductsByGender('female');
 // filterProductsByGender('unisex');
+
+function getSaleProductsFromProducts() {
+  const products = getProductsFromLS();
+  const onSaleProductList = products.filter((product) => {
+    return product.onSale;
+  });
+
+  const limitedSale = onSaleProductList.slice(0, 6);
+
+  return limitedSale;
+}
