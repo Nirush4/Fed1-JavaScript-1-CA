@@ -84,7 +84,6 @@ header {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
     background-color: #fff;
     z-index: 80;
 }
@@ -216,7 +215,7 @@ header {
     top: 5rem;
     overflow: hidden;
     background-color: #fff;
-    min-width: 13rem;
+    width: 6.7rem;
     max-height: 14rem;
     opacity: 0;
     visibility: hidden;
@@ -337,7 +336,7 @@ header {
         top: 15rem;
         overflow: hidden;
         background-color: #fff;
-        min-width: 13rem;
+        width: 6.7rem;
         max-height: 7rem;
         opacity: 0;
         visibility: hidden;
