@@ -70,11 +70,12 @@ function calcTotal() {
   return newTotal;
 }
 
-function addToCartHTML() {
+export function addToCartHTML() {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
   const productsList = JSON.parse(localStorage.getItem('products')) || [];
   const limitedSaleProducts =
     JSON.parse(localStorage.getItem('productsOnSale')) || [];
+
   cartProductList.innerHTML = '';
   let totalQuantity = 0;
   if (cart.length > 0) {
@@ -98,7 +99,10 @@ function addToCartHTML() {
            </div>
            <div class="shopping-card-text-div">
               <h3>${info.title}</h3>
-                <p>${totalPrice.toFixed(2)}</p>
+              <div class="cart-price-container">
+              <p>(${info.price.toFixed(2)})</p>
+                <p>${totalPrice.toFixed(2)}kr</p>
+              </div>
                 <p>Color:${info.baseColor}</p>
                   <div class="shopping-card-count">
                     <div class="shopping-card-count-text">
