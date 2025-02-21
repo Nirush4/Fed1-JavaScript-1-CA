@@ -1,205 +1,210 @@
 .shopping-card {
-    position: fixed;
-    top: 0px;
-    right: 0;
-    width: 25rem;
-    height: 100dvh;
-    background-color: #fff;
-    z-index: 110;
-    box-shadow: -3px 0px 8px -2px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 25rem;
+  height: 100dvh;
+  background-color: #fff;
+  z-index: 110;
+  box-shadow: -3px 0px 8px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* transform: translateX(400px); */
+  visibility: hidden;
+  transform: translateX(0%);
+  transition: all 0.2s ease-in;
+
+  h2 {
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000000;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    text-align: start;
+  }
+
+  .shopping-card-col-1 {
+    display: flex;
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .cart-price-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .shopping-card-img-div {
+    width: 7rem;
+    height: auto;
+  }
+
+  .shopping-card-img-div img {
+    width: 100%;
+  }
+
+  .shopping-card-text-div {
     display: flex;
     flex-direction: column;
+    line-height: 1rem;
+    gap: 0.5rem;
+    text-align: start;
+  }
+
+  .shopping-card-text-div h4 {
+    font-family: 'Prompt';
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  .shopping-card-text-div p {
+    font-family: Prompt;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+  }
+
+  .shopping-card-count {
+    display: flex;
+    flex: 1 1 100%;
     justify-content: space-between;
-    /* transform: translateX(400px); */
-    visibility: hidden;
-    transform: translateX(0%);
-    transition: all 0.2s ease-in;
+  }
 
-    h2 {
-        font-family: "Roboto";
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #000000;
-        margin-top: 2rem;
-        padding-bottom: 2rem;
-        padding-left: 2rem;
-        text-align: start;
-    }
+  .shopping-card-count-text {
+    display: flex;
+    flex: 1 1 50%;
+    align-items: center;
+    gap: 1rem;
+  }
 
-    .shopping-card-col-1 {
-        display: flex;
-        padding: 2rem;
-        gap: 1rem;
-    }
+  .shopping-card-count-text div {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgb(183, 183, 183);
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .shopping-card-img-div {
-        width: 7rem;
-        height: auto;
-    }
+  .shopping-card-count-trash i {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
 
-    .shopping-card-img-div img {
-        width: 100%;
-    }
+  .fa-minus,
+  .fa-plus {
+    padding-left: 0;
+  }
 
-    .shopping-card-text-div {
-        display: flex;
-        flex-direction: column;
-        line-height: 1rem;
-        gap: 0.5rem;
-        text-align: start;
-    }
+  .shopping-card-col-2 {
+    width: 100%;
+    height: 16rem;
+    padding: 2rem;
+    background-color: #bfbfbf9e;
+  }
 
-    .shopping-card-text-div h4 {
-        font-family: "Prompt";
-        font-size: 1rem;
-        font-weight: 500;
-        color: #000000;
-    }
+  .shopping-card-sub-total {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .shopping-card-text-div p {
-        font-family: Prompt;
-        font-size: 1rem;
-        font-weight: 400;
-        color: #000000;
-    }
+  .shopping-card-sub-total h4 {
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
 
-    .shopping-card-count {
-        display: flex;
-        flex: 1 1 100%;
-        justify-content: space-between;
-    }
+  .shopping-card-col-2-container p {
+    padding: 0rem 0rem 1rem 0rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+  }
 
-    .shopping-card-count-text {
-        display: flex;
-        flex: 1 1 50%;
-        align-items: center;
-        gap: 1rem;
-    }
+  .shopping-card-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    .shopping-card-count-text div {
-        width: 2rem;
-        height: 2rem;
-        border: 1px solid rgb(183, 183, 183);
-        border-radius: 0.3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .shopping-card-btn button {
+    width: 100%;
+    height: 3rem;
+  }
 
-    .shopping-card-count-trash i {
-        font-size: 1.5rem;
-        padding-top: 0.5rem;
-    }
+  .shopping-card-btn button:active {
+    background-color: var(--background-color-addbtn-hover);
+  }
 
-    .fa-minus,
-    .fa-plus {
-        padding-left: 0;
-    }
+  .shopping-card-btn button a {
+    width: 100%;
+    text-decoration: none;
+    font-family: Prompt;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
 
-    .shopping-card-col-2 {
-        width: 100%;
-        height: 16rem;
-        padding: 2rem;
-        background-color: #bfbfbf9e;
-    }
+  .shopping-card-btn-checkout {
+    background-color: var(--background-color-addbtn);
+    border-radius: 0.3rem;
+    border: transparent;
+  }
 
-    .shopping-card-sub-total {
-        display: flex;
-        justify-content: space-between;
-    }
+  .shopping-card-btn-checkout a {
+    color: #fff;
+  }
 
-    .shopping-card-sub-total h4 {
-        font-family: "Roboto";
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
+  .shopping-card-btn-gotocard {
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+  }
 
-    .shopping-card-col-2-container p {
-        padding: 0rem 0rem 1rem 0rem;
-        font-family: Roboto;
-        font-size: 1rem;
-        font-weight: 300;
-        display: flex;
-        justify-content: flex-start;
-        text-align: start;
-    }
-
-    .shopping-card-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .shopping-card-btn button {
-        width: 100%;
-        height: 3rem;
-    }
-
-    .shopping-card-btn button:active {
-        background-color: var(--background-color-addbtn-hover);
-    }
-
-    .shopping-card-btn button a {
-        width: 100%;
-        text-decoration: none;
-        font-family: Prompt;
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-    }
-
-    .shopping-card-btn-checkout {
-        background-color: var(--background-color-addbtn);
-        border-radius: 0.3rem;
-        border: transparent;
-    }
-
-    .shopping-card-btn-checkout a {
-        color: #fff;
-    }
-
-    .shopping-card-btn-gotocard {
-        background-color: #fff;
-        border: 2px solid black;
-        border-radius: 0.3rem;
-    }
-
-    .shopping-card-btn-gotocard a {
-        color: #000000;
-    }
+  .shopping-card-btn-gotocard a {
+    color: #000000;
+  }
 }
 
 @media (width<600px) {
-    .shopping-card {
-        width: 80%;
-    }
+  .shopping-card {
+    width: 80%;
+  }
 }
 
 @media (width<465px) {
-    .shopping-card-col-1 {
-        flex-direction: column;
-    }
+  .shopping-card-col-1 {
+    flex-direction: column;
+  }
 }
 
 .shopping-card-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-    background-color: rgb(0, 0, 0, 0.3);
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.2s ease-in;
-    z-index: 105;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: rgb(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+  z-index: 105;
 }
 
 .open {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }
