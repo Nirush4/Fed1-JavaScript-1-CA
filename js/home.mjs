@@ -229,17 +229,6 @@ async function createProductsListEl(list = []) {
       });
 
       const newEl = createHTML(template);
-      const btn = newEl.querySelector('button');
-
-      // btn.addEventListener("click", () => {
-      //   addToCart({
-      //     id,
-      //     title,
-      //     imgUrl: image.url,
-      //     price,
-      //   });
-      // });
-
       containerEl.append(newEl);
     });
   } catch (error) {

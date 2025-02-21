@@ -131,13 +131,13 @@
       </div>
       <div class="c-jacket-header">
         <a href="/index.html" aria-label="link back to home page">Home </a>
-        <a href="/men.html" aria-label="link to men page"> > Men</a>
+        <a href="" aria-label="link to men page"> Men</a>
       </div>
 
       <div class="c-hero">
         <div class="c-hero-container">
           <img src="/images/men-img/hero-men.jpg" alt="Model on top of a mountain" class="c-hero-img" />
-          <div class="c-hero-text">Men's Clothing</div>
+          <div class="c-hero-text">Men's Jackets</div>
         </div>
       </div>
     </section>
@@ -146,154 +146,86 @@
       <a href="/men.html" aria-label="link to men page"> > Men</a>
     </div>
     <section class="section-filter">
-      <div class="c-jacket-filter">
-        <div class="c-hide-filter">
-          <p>Hide Filter</p>
-        </div>
-
-        <div class="c-header-items">
-          <p>60 items</p>
-        </div>
-
-        <div class="c-header-sort">
-          <i class="fa-solid fa-arrow-up-long"></i>
-          <i class="fa-solid fa-arrow-down-long"></i>
-          <p>Sort by</p>
-        </div>
+      <div class="filter-main-div">
 
         <div class="c-header-filter">
           <i class="fa-solid fa-arrow-down-wide-short"></i>
           <p>Filter</p>
         </div>
+
+        <div class="sort-by-section">
+          <form>
+            <select name="sort-by" id="js-sort-by" class="short-by">
+              <option disabled selected hidden>SORT BY</option>
+              <option value="asc">View All</option>
+              <option value="asc">Price low-high</option>
+              <option value="desc">Price high-low</option>
+            </select>
+          </form>
+        </div>
+
       </div>
     </section>
 
     <section class="c-jackets">
       <div class="c-activity">
         <div class="c-activity-container">
-          <div class="c-activity-header">
-            <div>Activity</div>
-            <i class="fa-regular fa-circle-xmark"></i>
-          </div>
-          <div class="c-activity-choose">
-            <input type="checkbox" id="Outdoor" class="c-activity-checkbox" />
-            <p>Outdoor</p>
-          </div>
-
-          <div class="c-activity-choose">
-            <input type="checkbox" id="Back Country/Ski Touring" class="c-activity-checkbox" />
-            <p>Back Country/Ski Touring</p>
-          </div>
-
-          <div class="c-activity-choose">
-            <input type="checkbox" id="Camping" class="c-activity-checkbox" />
-            <p>Camping & Hiking</p>
-          </div>
-
-          <div class="c-activity-choose">
-            <input type="checkbox" id="Coastal" class="c-activity-checkbox" />
-            <p>Caostal Sailing</p>
-          </div>
-
-          <div class="c-activity-choose">
-            <input type="checkbox" id="Commuting" class="c-activity-checkbox" />
-            <p>Commuting</p>
-          </div>
-
-          <div class="c-activity-btn">View more</div>
-
-          <div class="c-line-activity"></div>
 
           <div class="c-activity-choosecolor">
             <div>Colour</div>
-            <i class="fa-regular fa-circle-xmark"></i>
+            <i id="clr-reset-btn" class="fa-solid fa-xmark"></i>
           </div>
 
           <div class="c-activity-color-container">
-            <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-beige"></div>
-              <div class="c-activity-color-name">Beige</div>
-            </div>
 
             <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-black"></div>
+              <div value="Black" id="blackColor" class="c-activity-color-ball c-color-black"></div>
               <div class="c-activity-color-name">Black</div>
             </div>
 
             <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-blue"></div>
+              <div value="Blue" id="blueColor" class="c-activity-color-ball c-color-blue"></div>
               <div class="c-activity-color-name">Blue</div>
             </div>
 
             <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-grey"></div>
+              <div value="Gray" id="grayColor" class="c-activity-color-ball c-color-grey"></div>
               <div class="c-activity-color-name">Grey</div>
             </div>
 
             <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-yellow"></div>
-              <div class="c-activity-color-name">Yellow</div>
-            </div>
-
-            <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-red"></div>
+              <div value="Red" id="redColor" class="c-activity-color-ball c-color-red"></div>
               <div class="c-activity-color-name">Red</div>
             </div>
 
             <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-cactus"></div>
-              <div class="c-activity-color-name">Cactus</div>
-            </div>
-
-            <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-pink"></div>
-              <div class="c-activity-color-name">Pink</div>
-            </div>
-
-            <div class="c-activity-color-item">
-              <div class="c-activity-color-ball c-color-green"></div>
+              <div value="Green" id="greenColor" class="c-activity-color-ball c-color-green"></div>
               <div class="c-activity-color-name">Green</div>
             </div>
+
+            <div class="c-activity-color-item">
+              <div value="Purple" id="purpleColor" class="c-activity-color-ball c-color-purple"></div>
+              <div class="c-activity-color-name">Purple</div>
+            </div>
+
+            <div class="c-activity-color-item">
+              <div value="Yellow" id="yellowColor" class="c-activity-color-ball c-color-yellow"></div>
+              <div class="c-activity-color-name">Yellow</div>
+            </div>
           </div>
-
-          <div class="c-activity-btn">View more</div>
-
+          <hr>
           <div class="c-activity-size-container">
             <div class="c-activity-size-title">
               <h3>Size</h3>
-              <i class="fa-regular fa-circle-xmark"></i>
+              <i id="size-reset-btn" class="fa-solid fa-xmark"></i>
             </div>
             <div class="c-activity-size-list">
-              <p class="c-activity-size">xs</p>
-              <p class="c-activity-size">s</p>
-              <p class="c-activity-size">m</p>
-              <p class="c-activity-size">l</p>
-              <p class="c-activity-size">xl</p>
-              <p class="c-activity-size">xxl</p>
-              <p class="c-activity-size">3xl</p>
-              <p class="c-activity-size">4xl</p>
-            </div>
-          </div>
-          <div class="c-activity-btn">View more</div>
-          <div class="c-line-activity"></div>
-          <div class="c-activity-fit-container">
-            <div class="c-activity-fit-title">
-              <h3>Size</h3>
-              <i class="fa-regular fa-circle-xmark"></i>
-            </div>
-            <div class="c-activity-fit-list">
-              <div class="c-activity-fit-list-sub">
-                <input type="checkbox" name="" id="" />
-                <label for="" class="c-activity-fit">Fitted</label>
-              </div>
-              <div class="c-activity-fit-list-sub">
-                <input type="checkbox" name="" id="" />
-                <label for="" class="c-activity-fit">Relaxed</label>
-              </div>
-              <div class="c-activity-fit-list-sub">
-                <input type="checkbox" name="" id="" />
-                <label for="" class="c-activity-fit">Regular</label>
-              </div>
+              <p value="XS" id="size-xs" class="c-activity-size size-of-products">xs</p>
+              <p value="S" id="size-s" class="c-activity-size size-of-products">s</p>
+              <p value="M" id="size-m" class="c-activity-size size-of-products">m</p>
+              <p value="L" id="size-l" class="c-activity-size size-of-products">l</p>
+              <p value="XL" id="size-xl" class="c-activity-size size-of-products">xl</p>
+              <p value="XXL" id="size-xxl" class="c-activity-size size-of-products">xxl</p>
             </div>
           </div>
         </div>
@@ -301,339 +233,9 @@
 
       <div id="js-products-section" class="section-2-article"></div>
 
-      <!-- <div class="c-jacket-list">
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img src="/images/men-img/image.jpg"
-                alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-text-container">
-            <div class="c-item-col">
-              <div class="c-color-container">
-                <div class="c-color-btn-common-b">
-                  <div class="c-color-btn-black"></div>
-                </div>
-                <div class="c-color-btn-common-b">
-                  <div class="c-color-btn-blue"></div>
-                </div>
-                <div class="c-color-btn-common-b">
-                  <div class="c-color-btn-red"></div>
-                </div>
-              </div>
-              <h3>Men's Everdown Jacket</h3>
-              <div class="c-item-price">
-                <p>3.100kr</p>
-                <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-1.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Lightweight Vest</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-2.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Nordsjo Winter Parka</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-3.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Munich Raincoat</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-4.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Alpha 4.0 Ski Jacket</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-5.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Stretch Insulator</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-6.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Active Long Coat</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-7.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Sailing Jacket</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page">
-              <img src="/images/men-img/image-8.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Softshell Jacket</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-9.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Victor Jacket</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-10.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Swift Ski Jacket</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="c-jacket-item">
-          <div class="c-jacket-img-conatiner">
-            <a href="/jacket-specific.html" aria-label="view jackets spesific page"><img
-                src="/images/men-img/image-11.jpg" alt="A man with a jacket" /></a>
-          </div>
-
-          <div class="c-item-col">
-            <div class="c-color-container">
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-black"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-blue"></div>
-              </div>
-              <div class="c-color-btn-common-b">
-                <div class="c-color-btn-red"></div>
-              </div>
-            </div>
-            <h3>Men's Reine Parka</h3>
-            <div class="c-item-price">
-              <p>3.100kr</p>
-              <a href="/jacket-specific.html" aria-label="view jackets spesific page">View</a>
-            </div>
-          </div>
-        </div>
-      </div> -->
-    </section>
-
-    <section class="c-view-more">
-      <div class="c-view-more-container">
-        <p>You have looked at 12 out of 60 products</p>
-        <div class="c-line-products-container">
-          <div class="c-line-products-left"></div>
-          <div class="c-line-products-right"></div>
-        </div>
-
-        <div class="c-load-more-btn">
-          <a href="/men.html" aria-label="view more jackets men page">Load more</a>
-        </div>
-      </div>
     </section>
 
     <hr class="hero-page-hr-4" />
-
     <!--imp! SECTION-5 -->
 
     <section class="section-5 common-div" aria-label="section-5">
