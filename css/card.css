@@ -1,4 +1,10 @@
 .shopping-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+}
+
+.shopping-card {
     position: fixed;
     top: 0px;
     right: 0;
@@ -20,16 +26,20 @@
         font-size: 1.5rem;
         font-weight: 500;
         color: #000000;
-        margin-top: 2rem;
-        padding-bottom: 2rem;
         padding-left: 2rem;
         text-align: start;
     }
 
+    .shopping-cart-id {
+        height: 5rem;
+    }
+
     .shopping-card-col-1 {
         display: flex;
-        padding: 2rem;
+        padding: 1rem 1rem;
+        margin: 0 1rem;
         gap: 1rem;
+        border-bottom: 1px solid lightgray;
     }
 
     .shopping-card-img-div {
@@ -49,7 +59,7 @@
         text-align: start;
     }
 
-    .shopping-card-text-div h4 {
+    .shopping-card-text-div h3 {
         font-family: "Prompt";
         font-size: 1rem;
         font-weight: 500;
@@ -72,8 +82,9 @@
     .shopping-card-count-text {
         display: flex;
         flex: 1 1 50%;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
+
     }
 
     .shopping-card-count-text div {
@@ -88,7 +99,6 @@
 
     .shopping-card-count-trash i {
         font-size: 1.5rem;
-        padding-top: 0.5rem;
     }
 
     .fa-minus,
@@ -97,10 +107,13 @@
     }
 
     .shopping-card-col-2 {
+        position: fixed;
+        bottom: 0;
+        right: 0;
         width: 100%;
-        height: 16rem;
+        height: 14.5rem;
         padding: 2rem;
-        background-color: #bfbfbf9e;
+        background-color: #e1e1e1;
     }
 
     .shopping-card-sub-total {
@@ -168,6 +181,24 @@
     .shopping-card-btn-gotocard a {
         color: #000000;
     }
+}
+
+.shopping-cart-id {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+
+    #js-close-cart {
+        font-size: 2rem;
+        margin-right: 2rem;
+        cursor: pointer;
+    }
+}
+
+#js-cart-product-list {
+    overflow-y: scroll;
+    height: 64dvh;
 }
 
 @media (width<600px) {
