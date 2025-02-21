@@ -105,7 +105,7 @@
         flex: 1 1 100%;
         flex-direction: column;
         align-items: center;
-        background-image: url(/images/hero-img-mobile-1.jpg);
+        background-image: url(/images/hero-img-mobile.jpeg);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 75% 5% 20% 5%;
@@ -159,35 +159,6 @@
         background-color: #fff;
     }
 
-    .categories-list-2-item-1 button {
-        border: 0px transparent;
-        background-color: #fff;
-    }
-
-    .categories-list-2-item-1 button a {
-        color: #000000;
-        text-decoration: none;
-        font-family: 'Roboto';
-        font-size: 1rem;
-        padding: 0.8rem 4.54rem;
-        background-color: #fff;
-    }
-
-    .categories-list-2-item-2 button {
-        height: 2.7rem;
-        width: 11rem;
-        border: 0px transparent;
-        background-color: #fff;
-    }
-
-    .categories-list-2-item-2 button a {
-        color: #000000;
-        text-decoration: none;
-        font-family: 'Roboto';
-        font-size: 1rem;
-        padding: 0.8rem 3.2rem;
-    }
-
     .categories-list-1 {
         display: flex;
         gap: 0.5rem;
@@ -204,11 +175,6 @@
         flex-wrap: wrap;
     }
 
-    .categories-list-1-item-1-common button a:hover {
-        background-color: #C91F2D;
-        transition: all 0.2s ease-in-out;
-        color: white;
-    }
 }
 
 @media (400px<width<600px) {

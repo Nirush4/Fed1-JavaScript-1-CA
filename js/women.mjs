@@ -52,57 +52,57 @@ sortByEl.addEventListener('change', (event) => {
 });
 
 const productsList = JSON.parse(localStorage.getItem('products'));
-const mensJackets = productsList.filter((product) => {
-  return product.gender === 'Male';
+const femaleJackets = productsList.filter((product) => {
+  return product.gender === 'Female';
 });
 
-window.localStorage.setItem('Mens Jackets', JSON.stringify(mensJackets));
+window.localStorage.setItem('Female Jackets', JSON.stringify(femaleJackets));
 
 clrBlack.addEventListener('click', () => {
-  const blackProducts = mensJackets.filter(
+  const blackProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Black'
   );
   createProductsListEl(blackProducts);
 });
 clrBlue.addEventListener('click', () => {
-  const blueProducts = mensJackets.filter(
+  const blueProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Blue'
   );
   createProductsListEl(blueProducts);
 });
 clrGray.addEventListener('click', () => {
-  const grayProducts = mensJackets.filter(
+  const grayProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Gray'
   );
   createProductsListEl(grayProducts);
 });
 clrRed.addEventListener('click', () => {
-  const redProducts = mensJackets.filter(
+  const redProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Red'
   );
   createProductsListEl(redProducts);
 });
 clrGreen.addEventListener('click', () => {
-  const greenProducts = mensJackets.filter(
+  const greenProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Green'
   );
   createProductsListEl(greenProducts);
 });
 clrPurple.addEventListener('click', () => {
-  const purpleProducts = mensJackets.filter(
+  const purpleProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Purple'
   );
   createProductsListEl(purpleProducts);
 });
 clrYellow.addEventListener('click', () => {
-  const yellowProducts = mensJackets.filter(
+  const yellowProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Yellow'
   );
   createProductsListEl(yellowProducts);
 });
 
 clrRestBtn.addEventListener('click', () => {
-  createProductsListEl(mensJackets);
+  createProductsListEl(femaleJackets);
 });
 
 async function getProducts() {
@@ -117,7 +117,7 @@ async function getProducts() {
     window.localStorage.setItem('products', JSON.stringify(products));
 
     sortByPriceDescending();
-    createProductsListEl(mensJackets);
+    createProductsListEl(femaleJackets);
   } catch (error) {
     console.error(ERROR_MESSAGE_DEFAULT, error?.message);
   }

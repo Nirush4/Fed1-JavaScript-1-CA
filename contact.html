@@ -9,7 +9,10 @@
     <title>Rainydays|Contact</title>
     <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/card.css" />
     <script type="module" defer src="/js/contact.mjs"></script>
+    <script type="module" defer src="/js/cart.mjs"></script>
+
 
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css'
@@ -37,52 +40,82 @@
 
 
     <!--imp! HEADER -->
-
     <header>
         <nav class="desktop-nav">
             <div class="logo-div">
                 <a role="logo" href="index.html" class="logo"><img src="/images/rainydays-logo.png" alt="logo"
-                        aria-label="logo"></a>
+                        aria-label="logo" /></a>
             </div>
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" />
             <div class="nav-links">
-                <li role="home" aria-label="home"> <a href="index.html" class="nav-item">Home</a></li>
+                <li role="home" aria-label="home">
+                    <a href="index.html" class="nav-item">Home</a>
+                </li>
                 <li role="jackets" id="jacket-links" aria-label="jackets-links">
-                    <a href="#" class="nav-item nav-item-link ">Jackets</a>
+                    <a href="#" class="nav-item nav-item-link">Jackets</a>
                     <div class="jacket-categories-main">
                         <div class="jacket-categories-sub">
                             <ul>
-                                <li aria-label="men"> <a href="/men.html">Men's</a></li>
-                                <li aria-label="women"> <a href="/women.html">Women's</a></li>
-                                <li aria-label="kids"> <a href="#">Kids</a></li>
+                                <li aria-label="men"><a href="/men.html">Men's</a></li>
+                                <li aria-label="women"><a href="/women.html">Women's</a></li>
                             </ul>
                         </div>
                     </div>
                 </li>
-                <details class=" jacket-links-mobile">
-                    <summary class="jacket-summary">
-                        Jackets
-                    </summary>
+                <details class="jacket-links-mobile">
+                    <summary class="jacket-summary">Jackets</summary>
                     <a href="/men.html" class="c-summary-btn"> Men's</a>
                     <a href="/women.html" class="c-summary-btn"> Women's</a>
-                    <a href="/" class="c-summary-btn"> Kids</a>
                 </details>
-                <li role=" aboutus"> <a href="about.html" class="nav-item">About us</a></li>
-                <li role="contact"> <a href="contact.html" class="nav-item">Contact</a></li>
+                <li role=" aboutus">
+                    <a href="about.html" class="nav-item">About us</a>
+                </li>
+                <li role="contact">
+                    <a href="contact.html" class="nav-item">Contact</a>
+                </li>
                 <label for="check" class="c-close-menu">
                     <i class="fa-solid fa-x"></i>
                 </label>
             </div>
             <div class="nav-icons">
-                <div class="search-box">
-                    <a href="" aria-label="search for items">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
-                    <input type="search" placeholder="Search...">
-                </div>
+                <section class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="search-input" placeholder="Search..." />
+                </section>
+
                 <a href="/login.html" class="nav-login" aria-label="login to the account"><i
                         class="fa-solid fa-user"></i></a>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <div>
+                    <i class="fa-solid fa-cart-shopping" id="js-cart-icon"></i>
+                    <span class="icon-cart-span hidden" id="js-icon-cart-span">0</span>
+                </div>
+
+                <div class="shopping-card" id="js-shopping-cart">
+                    <div class="shopping-card-col-1-main">
+                        <div for="shopping-card-id" class="shopping-cart-id">
+                            <h2>Shopping Cart</h2>
+                            <i class="fa-solid fa-xmark" id="js-close-cart"></i>
+                        </div>
+                        <div id="js-cart-product-list"></div>
+                    </div>
+                    <div class="shopping-card-col-2">
+                        <div class="shopping-card-col-2-container">
+                            <div class="shopping-card-sub-total">
+                                <h4>Subtotal</h4>
+                                <h4 id="js-total-price">0 kr</h4>
+                            </div>
+                            <p>Shipping & Taxes calculated at checkout.</p>
+                            <div class="shopping-card-btn">
+                                <button class="shopping-card-btn-checkout">
+                                    <a href="/info-cart.html"> Go to checkout</a>
+                                </button>
+                                <button class="shopping-card-btn-gotocard">
+                                    <a href="/info-cart.html"> Go to cart</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <label for="check" class="c-open-menu">
