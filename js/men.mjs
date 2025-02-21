@@ -1,19 +1,27 @@
+'use strict';
+
 import { createHTML, clearNode } from './utils.mjs';
 import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
-// import { addToCart } from './cart.mjs';
 
 const containerEl = document.querySelector('#js-products-section');
-// const sortByEl = document.querySelector('#js-sort-by');
-// const filterEl = document.querySelector('#js-filter-by');
+const sortByEl = document.querySelector('#js-sort-by');
 const inputSearch = document.querySelector('#search-input');
-const jacketSection = document.querySelector('.c-jackets');
+const jacketSection = document.querySelector('.section-filter');
+const clrBlack = document.querySelector('#blackColor');
+const clrBlue = document.querySelector('#blueColor');
+const clrGray = document.querySelector('#grayColor');
+const clrRed = document.querySelector('#redColor');
+const clrGreen = document.querySelector('#greenColor');
+const clrPurple = document.querySelector('#purpleColor');
+const clrYellow = document.querySelector('#yellowColor');
+const clrRestBtn = document.querySelector('#clr-reset-btn');
 
 let products = [];
 
 setup();
 
 function setup() {
-  if (!containerEl) {
+  if (!containerEl || !sortByEl) {
     console.error('JS cannot run!!!');
   } else {
     getProducts();
@@ -31,36 +39,71 @@ inputSearch.addEventListener('input', (event) => {
   createProductsListEl(filteredProductsSearch);
 });
 
-// sortByEl.addEventListener('change', (event) => {
-//   const val = event.target.value;
+sortByEl.addEventListener('change', (event) => {
+  const val = event.target.value;
 
-//   if (val === 'asc') {
-//     sortByPriceDescending();
-//   } else if (val === 'desc') {
-//     sortByPriceAscending();
-//   }
+  if (val === 'asc') {
+    sortByPriceDescending();
+  } else if (val === 'desc') {
+    sortByPriceAscending();
+  }
 
-//   createProductsListEl(products);
-// });
+  createProductsListEl(products);
+});
 
-// filterEl.addEventListener('change', (event) => {
-//   const val = event.target.value;
+const productsList = JSON.parse(localStorage.getItem('products'));
+const mensJackets = productsList.filter((product) => {
+  return product.gender === 'Male';
+});
 
-//   if (val === 'Male' || val === 'Female') {
-//     filterProductsByGender(val);
-//   } else {
-//     createProductsListEl(products); // Pass the original products list when no gender filter is selected
-//   }
-// });
+window.localStorage.setItem('Mens Jackets', JSON.stringify(mensJackets));
 
-function filterProductsByGender(gender) {
-  const list = products;
-  const filteredProducts = list.filter((product) => {
-    return product.gender === gender;
-  });
-  createProductsListEl(filteredProducts);
-  console.log(filteredProducts);
-}
+clrBlack.addEventListener('click', () => {
+  const blackProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Black'
+  );
+  createProductsListEl(blackProducts);
+});
+clrBlue.addEventListener('click', () => {
+  const blueProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Blue'
+  );
+  createProductsListEl(blueProducts);
+});
+clrGray.addEventListener('click', () => {
+  const grayProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Gray'
+  );
+  createProductsListEl(grayProducts);
+});
+clrRed.addEventListener('click', () => {
+  const redProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Red'
+  );
+  createProductsListEl(redProducts);
+});
+clrGreen.addEventListener('click', () => {
+  const greenProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Green'
+  );
+  createProductsListEl(greenProducts);
+});
+clrPurple.addEventListener('click', () => {
+  const purpleProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Purple'
+  );
+  createProductsListEl(purpleProducts);
+});
+clrYellow.addEventListener('click', () => {
+  const yellowProducts = mensJackets.filter(
+    (product) => product.baseColor === 'Yellow'
+  );
+  createProductsListEl(yellowProducts);
+});
+
+clrRestBtn.addEventListener('click', () => {
+  createProductsListEl(mensJackets);
+});
 
 async function getProducts() {
   clearNode(containerEl);
@@ -74,19 +117,11 @@ async function getProducts() {
     window.localStorage.setItem('products', JSON.stringify(products));
 
     sortByPriceDescending();
-    createProductsListEl(products);
+    createProductsListEl(mensJackets);
   } catch (error) {
     console.error(ERROR_MESSAGE_DEFAULT, error?.message);
   }
 }
-
-const productsList = JSON.parse(localStorage.getItem('products'));
-const onSaleProductList = productsList.filter((product) => {
-  return product.onSale;
-});
-
-const limitedSale = onSaleProductList.slice(0, 6);
-window.localStorage.setItem('productsOnSale', JSON.stringify(limitedSale));
 
 function productTemplate({
   id,
@@ -163,17 +198,6 @@ async function createProductsListEl(list = []) {
       });
 
       const newEl = createHTML(template);
-      // const btn = newEl.querySelector('button');
-
-      // btn.addEventListener("click", () => {
-      //   addToCart({
-      //     id,
-      //     title,
-      //     imgUrl: image.url,
-      //     price,
-      //   });
-      // });
-
       containerEl.append(newEl);
     });
   } catch (error) {
@@ -189,7 +213,6 @@ function sortByPriceAscending(list = products) {
   list.sort((a, b) => b.price - a.price);
 }
 
-// Example usage:
-// filterProductsByGender('male');
-// filterProductsByGender('female');
-// filterProductsByGender('unisex');
+function getMensProductsFromLS() {
+  return JSON.parse(localStorage.getItem('mensJackets'));
+}

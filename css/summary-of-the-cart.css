@@ -348,24 +348,6 @@ input#input {
   gap: 1rem;
 }
 
-.c-express-container {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  border: 1px solid #d9d9d9;
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-.c-express-text {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  font-size: var(--size-m);
-  font-weight: 600;
-}
 
 .c-summary-container {
   display: flex;
@@ -396,17 +378,6 @@ input#input {
   align-items: center;
   font-size: var(--size-s);
   padding: 24px 0px;
-}
-
-.c-container-item {
-  display: flex;
-  font-weight: 600;
-}
-
-.c-under-line-container .c-container {
-  display: flex;
-  color: #a3a3a3;
-  cursor: pointer;
 }
 
 .c-summary-produckt-container {
@@ -454,44 +425,11 @@ input#input {
   padding: 0.5rem 0rem;
 }
 
-.c-add-more {
-  display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-}
-
-.c-minus {
-  display: flex;
-  width: 45px;
-  height: 45px;
-  border: 1px solid #6f6d6d;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: var(--size-l);
-  cursor: pointer;
-}
-
 .c-item-count {
   display: flex;
   align-items: center;
   font-family: 'Prompt';
   font-size: var(--size-l);
-}
-
-.c-plus {
-  display: flex;
-  width: 45px;
-  height: 45px;
-  border: 1px solid #6f6d6d;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: var(--size-l);
-  cursor: pointer;
 }
 
 .c-subtotal-container {
@@ -569,9 +507,6 @@ input#input {
     gap: 2rem;
   }
 
-  .c-express-text {
-    font-size: var(--size-l);
-  }
 
   input#submit {
     padding: 1rem 3rem;
