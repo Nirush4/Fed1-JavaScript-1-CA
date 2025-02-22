@@ -325,7 +325,7 @@
   text-decoration: none;
 }
 
-input#submit {
+.c-btn-container a {
   padding: 1rem 1.2rem;
   text-decoration: none;
   color: white;
@@ -339,7 +339,7 @@ input#submit {
   letter-spacing: 1px;
 }
 
-input#submit:hover {
+.c-btn-container a:hover {
   background-color: rgb(20, 19, 19);
 }
 
@@ -372,11 +372,11 @@ input#submit:hover {
     font-size: var(--size-xxl);
   }
 
-  input#submit {
+  .c-btn-container a {
     font-size: var(--size-xs);
   }
 
-  input#submit:hover {
+  .c-btn-container a:hover {
     background-color: rgb(20, 19, 19);
   }
 }

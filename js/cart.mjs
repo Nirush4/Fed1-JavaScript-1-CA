@@ -91,10 +91,13 @@ export function addToCartHTML() {
       if (!info) {
         return;
       }
+      const detailsUrl = `/jacket-specific.html?id=${info.id}`;
       const totalPrice = info.price * jacket.quantity; //
       newCart.innerHTML = `
           <div class="shopping-card-img-div">
+                    <a href="${detailsUrl}">
             <img src="${info.image.url}" alt="A man with a jacket">
+                    </a>
            </div>
            <div class="shopping-card-text-div">
               <h3>${info.title}</h3>

@@ -362,12 +362,16 @@ input#input {
   font-size: 20px;
   font-weight: 400;
   padding: 1.5rem 0rem;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: capitalize;
 }
 
 .c-summary-line {
   display: flex;
   width: 100%;
   border-top: 2px solid #d9d9d9;
+  padding-top: 1rem;
   flex-direction: column;
 }
 
@@ -383,7 +387,8 @@ input#input {
 .c-summary-produckt-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  flex: 1 1 100%;
+  gap: 1rem;
   padding-bottom: 2rem;
   flex-wrap: wrap;
   width: 100%;
@@ -391,25 +396,27 @@ input#input {
 
 .c-img-container {
   display: flex;
+  flex: 1 1 30%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .c-img-container img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
 }
 
 .c-info-container {
   display: flex;
+  flex: 1 1 70%;
   flex-direction: column;
   max-width: 100%;
 }
 
 .c-info-container .c-header {
   display: flex;
-  font-size: var(--size-s);
+  font-size: 1.1rem;
   font-weight: 600;
   font-family: 'Prompt';
   color: #021526;
@@ -418,9 +425,8 @@ input#input {
 .c-pcs {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   font-family: 'Prompt';
-  font-size: var(--size-s);
+  font-size: 1.1rem;
   font-weight: 400;
   padding: 0.5rem 0rem;
 }
@@ -440,7 +446,7 @@ input#input {
   text-align: center;
   font-size: var(--size-s);
   font-weight: 400;
-  padding: 1rem 0rem;
+  padding: 0.5rem 0rem;
 }
 
 .c-ordertotal-container {
@@ -451,7 +457,11 @@ input#input {
   text-align: center;
   font-size: var(--size-m);
   font-weight: 600;
-  padding: 1rem 0rem;
+}
+
+.shopping-card-count-trash i {
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .c-btn-container {
@@ -496,7 +506,7 @@ input#input {
     flex-direction: row;
 
     .c-img-container img {
-      max-width: 200px;
+      width: 100%;
     }
   }
 
@@ -512,6 +522,7 @@ input#input {
   }
 }
 
+
 @media only screen and (width>999px) {
   .c-shipping-header-container {
     align-items: start;
@@ -523,16 +534,30 @@ input#input {
     justify-content: space-between;
 
     .c-shipping-container {
-      max-width: 50%;
+      max-width: 70%;
     }
 
     .c-summary {
-      max-width: 50%;
+      max-width: 30%;
     }
   }
 
   input#submit {
     padding: 1.2rem 5rem;
+  }
+}
+
+@media (width<999px) {
+  .c-summary-produckt-container {
+    max-width: 10rem;
+  }
+
+  .c-info-container .c-header {
+    font-size: 1rem;
+  }
+
+  .c-pcs {
+    font-size: 1rem;
   }
 }
 

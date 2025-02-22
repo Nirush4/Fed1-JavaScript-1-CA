@@ -40,19 +40,20 @@ function getCartSummary() {
       if (!info) {
         return;
       }
+      const detailsUrl = `/jacket-specific.html?id=${info.id}`;
       const totalPrice = info.price * product.quantity;
       newCart.innerHTML = `
             <div class="c-img-container">
+                    <a href="${detailsUrl}">
                   <img src="${
                     info.image.url
                   }" alt="picture of a model with a red jacket" />
+                    </a>
                 </div>
-
                 <div class="c-info-container">
                   <div class="c-header">${info.title}</div>
                   <div class="c-pcs">
-                    <div>${info.price.toFixed(2)}kr</div>
-                    <div>${totalPrice}kr</div>
+                    <div>(${info.price.toFixed(2)}kr) ${totalPrice}kr</div>
                     <div>Color: ${info.baseColor}</div>
                     <div>Size: M</div>
                     <div>Quantity: ${product.quantity}</div>
@@ -66,7 +67,7 @@ function getCartSummary() {
       orderSummaryContainerEl.appendChild(newCart);
     });
     orderTotalSum.textContent = calcTotal().toFixed(2) + ' kr';
-    orderTotalText.textContent = 'Ordertotal:';
+    orderTotalText.textContent = 'Total:';
     orderTotalEl.append(orderTotalText, orderTotalSum);
     orderSummaryContainerEl.append(subtotalEl, summaryLineEl, orderTotalEl);
   }
@@ -112,22 +113,7 @@ function calcTotal() {
   }, 0);
   return newTotal;
 }
-/*
 
-                <div class="c-subtotal-container">
-                  <!-- <div>Subtotal</div>
-                <div>5.399kr</div> -->
-                </div>
-
-                <div class="c-summary-line"></div>
-
-                <div class="c-ordertotal-container">
-                  <!-- <div>Order total</div>
-                <div>5.399kr</div> -->
-                </div>
-*/
-
-/// Morten is above this line of code
 formData();
 
 async function formData() {
