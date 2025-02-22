@@ -56,6 +56,29 @@
     padding-top: 25rem;
 }
 
+.c-jacket-header-2 {
+    display: flex;
+    font-size: 16px;
+    font-family: 'Prompt';
+
+    a {
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    a:after {
+        content: '>';
+    }
+
+    a:last-child::after {
+        content: '';
+    }
+
+    a:first-child:hover {
+        text-decoration: underline;
+    }
+}
+
 @media (width<600px) {
     .sec-1-main-title-div h4 {
         font-size: 1.6rem;
