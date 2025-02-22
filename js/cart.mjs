@@ -8,7 +8,6 @@ const limitedSaleProducts =
 const cartProductList = document.querySelector('#js-cart-product-list');
 const displayTotalPrice = document.querySelector('#js-total-price');
 const cartIconSpan = document.querySelector('#js-icon-cart-span');
-debugger;
 getCartSaleItemToLocalStorage();
 setupCart();
 // setCartItemToLocalStorage();
