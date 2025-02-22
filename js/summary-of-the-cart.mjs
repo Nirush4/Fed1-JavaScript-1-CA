@@ -13,6 +13,8 @@ function getCartSummary() {
   const limitedSaleProducts =
     JSON.parse(localStorage.getItem('productsOnSale')) || [];
   let storedItem = window.localStorage.getItem('Cart');
+  orderSummaryContainerEl.innerHTML = '';
+
   if (storedItem.length > 0) {
     const cart = JSON.parse(storedItem);
 
@@ -60,31 +62,28 @@ function setCartItemToLocalStorage(cart = []) {
   window.localStorage.setItem('Cart', JSON.stringify(cart));
 }
 
-// orderSummaryContainerEl.addEventListener('click', (event) => {
-//   let positionClick = event.target;
+orderSummaryContainerEl.addEventListener('click', (event) => {
+  let positionClick = event.target;
 
-//   if (positionClick.classList.contains('fa-trash-can')) {
-//     debugger;
-//     let closestParentWithDataId = positionClick.closest('[data-id]');
-//     let productId = closestParentWithDataId.dataset.id;
-//     debugger;
-//     removeItem(productId);
-//   }
-// });
+  if (positionClick.classList.contains('fa-trash-can')) {
+    let closestParentWithDataId = positionClick.closest('[data-id]');
+    let productId = closestParentWithDataId.dataset.id;
+    removeItem(productId);
+  }
+});
 
-// function removeItem(productId) {
-//   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+function removeItem(productId) {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
 
-//   let itemPositionInCart = cart.findIndex(
-//     (value) => value.productId === productId
-//   );
-//   if (itemPositionInCart >= 0) {
-//     cart.splice(itemPositionInCart, 1);
-//     setCartItemToLocalStorage(cart);
-//     getCartSummary();
-//     debugger;
-//   }
-// }
+  let itemPositionInCart = cart.findIndex(
+    (value) => value.productId === productId
+  );
+  if (itemPositionInCart >= 0) {
+    cart.splice(itemPositionInCart, 1);
+    setCartItemToLocalStorage(cart);
+    getCartSummary();
+  }
+}
 
 /// Morten is above this line of code
 formData();
