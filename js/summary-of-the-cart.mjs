@@ -8,11 +8,22 @@ const orderSummaryContainerEl = document.querySelector(
 getCartSummary();
 
 function getCartSummary() {
+  const subtotalEl = document.createElement('div');
+  const summaryLineEl = document.createElement('div');
+  const orderTotalEl = document.createElement('div');
+  const orderTotalSum = document.createElement('p');
+  const orderTotalText = document.createElement('p');
+
+  subtotalEl.classList.add('c-subtotal-container');
+  summaryLineEl.classList.add('c-summary-line');
+  orderTotalEl.classList.add('c-ordertotal-container');
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
   const productsList = JSON.parse(localStorage.getItem('products')) || [];
   const limitedSaleProducts =
     JSON.parse(localStorage.getItem('productsOnSale')) || [];
   let storedItem = window.localStorage.getItem('Cart');
+  orderSummaryContainerEl.innerHTML = '';
+
   if (storedItem.length > 0) {
     const cart = JSON.parse(storedItem);
 
@@ -29,7 +40,7 @@ function getCartSummary() {
       if (!info) {
         return;
       }
-
+      const totalPrice = info.price * product.quantity;
       newCart.innerHTML = `
             <div class="c-img-container">
                   <img src="${
@@ -41,9 +52,10 @@ function getCartSummary() {
                   <div class="c-header">${info.title}</div>
                   <div class="c-pcs">
                     <div>${info.price.toFixed(2)}kr</div>
+                    <div>${totalPrice}kr</div>
                     <div>Color: ${info.baseColor}</div>
                     <div>Size: M</div>
-                    <div>Quantity:${product.quantity}</div>
+                    <div>Quantity: ${product.quantity}</div>
                   </div>
                     <div class="shopping-card-count-trash">
                     <i class="fa-regular fa-trash-can"></i>
@@ -53,6 +65,10 @@ function getCartSummary() {
     `;
       orderSummaryContainerEl.appendChild(newCart);
     });
+    orderTotalSum.textContent = calcTotal().toFixed(2) + ' kr';
+    orderTotalText.textContent = 'Ordertotal:';
+    orderTotalEl.append(orderTotalText, orderTotalSum);
+    orderSummaryContainerEl.append(subtotalEl, summaryLineEl, orderTotalEl);
   }
 }
 
@@ -60,31 +76,56 @@ function setCartItemToLocalStorage(cart = []) {
   window.localStorage.setItem('Cart', JSON.stringify(cart));
 }
 
-// orderSummaryContainerEl.addEventListener('click', (event) => {
-//   let positionClick = event.target;
+orderSummaryContainerEl.addEventListener('click', (event) => {
+  let positionClick = event.target;
 
-//   if (positionClick.classList.contains('fa-trash-can')) {
-//     debugger;
-//     let closestParentWithDataId = positionClick.closest('[data-id]');
-//     let productId = closestParentWithDataId.dataset.id;
-//     debugger;
-//     removeItem(productId);
-//   }
-// });
+  if (positionClick.classList.contains('fa-trash-can')) {
+    let closestParentWithDataId = positionClick.closest('[data-id]');
+    let productId = closestParentWithDataId.dataset.id;
+    removeItem(productId);
+  }
+});
 
-// function removeItem(productId) {
-//   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+function removeItem(productId) {
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
 
-//   let itemPositionInCart = cart.findIndex(
-//     (value) => value.productId === productId
-//   );
-//   if (itemPositionInCart >= 0) {
-//     cart.splice(itemPositionInCart, 1);
-//     setCartItemToLocalStorage(cart);
-//     getCartSummary();
-//     debugger;
-//   }
-// }
+  let itemPositionInCart = cart.findIndex(
+    (value) => value.productId === productId
+  );
+  if (itemPositionInCart >= 0) {
+    cart.splice(itemPositionInCart, 1);
+    setCartItemToLocalStorage(cart);
+    getCartSummary();
+  }
+}
+
+function calcTotal() {
+  const productsList = JSON.parse(localStorage.getItem('products')) || [];
+  const limitedSaleProducts =
+    JSON.parse(localStorage.getItem('productsOnSale')) || [];
+  const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  const newTotal = cart.reduce((total, cartItem) => {
+    let jacket = [...productsList, ...limitedSaleProducts].find(
+      (jacket) => jacket.id === cartItem.productId
+    );
+    return jacket ? total + jacket.price * cartItem.quantity : 0;
+  }, 0);
+  return newTotal;
+}
+/*
+
+                <div class="c-subtotal-container">
+                  <!-- <div>Subtotal</div>
+                <div>5.399kr</div> -->
+                </div>
+
+                <div class="c-summary-line"></div>
+
+                <div class="c-ordertotal-container">
+                  <!-- <div>Order total</div>
+                <div>5.399kr</div> -->
+                </div>
+*/
 
 /// Morten is above this line of code
 formData();
