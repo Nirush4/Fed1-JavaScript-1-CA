@@ -1,4 +1,4 @@
-@import url("common-css.css");
+@import url('common-css.css');
 
 /* Layout main */
 
@@ -348,7 +348,6 @@ input#input {
   gap: 1rem;
 }
 
-
 .c-summary-container {
   display: flex;
   flex-direction: column;
@@ -369,6 +368,7 @@ input#input {
   display: flex;
   width: 100%;
   border-top: 2px solid #d9d9d9;
+  flex-direction: column;
 }
 
 .c-under-line-container {
@@ -506,7 +506,6 @@ input#input {
     justify-content: space-between;
     gap: 2rem;
   }
-
 
   input#submit {
     padding: 1rem 3rem;
