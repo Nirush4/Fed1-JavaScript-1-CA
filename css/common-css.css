@@ -59,6 +59,7 @@ header {
     z-index: 50;
     display: flex;
     align-items: center;
+    transition: all 0.3s ease-in-out;
 }
 
 

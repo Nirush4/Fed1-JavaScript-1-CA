@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +10,7 @@
   <link rel="shortcut icon" href="/images/rainydays-logo.png" type="image/x-icon" />
   <link rel="stylesheet" href="/css/jacket-specific.css" />
   <link rel="stylesheet" href="/css/card.css" />
+  <script type="module" defer src="/js/navbar-disappering.mjs"></script>
   <script type="module" defer src="/js/jacket-specific.mjs"></script>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
@@ -56,32 +56,6 @@
                 <li aria-label="men"><a href="/men.html">Men's</a></li>
                 <li aria-label="women"><a href="/women.html">Women's</a></li>
               </ul>
-
-          <div class="shopping-card" id="js-shopping-cart">
-            <div class="shopping-card-col-1-main">
-              <div for="shopping-card-id" class="shopping-cart-id">
-                <h2>Shopping Cart</h2>
-                <i class="fa-solid fa-xmark" id="js-close-cart"></i>
-              </div>
-              <div id="js-cart-product-list"></div>
-            </div>
-            <div class="shopping-card-col-2">
-              <div class="shopping-card-col-2-container">
-                <div class="shopping-card-sub-total">
-                  <h4>Subtotal</h4>
-                  <h4 id="js-total-price">0 kr</h4>
-                </div>
-                <p>Shipping & Taxes calculated at checkout.</p>
-                <div class="shopping-card-btn">
-                  <button class="shopping-card-btn-checkout">
-                    <a href="/summary-of-the-cart.html"> Go to checkout</a>
-                  </button>
-                  <button class="shopping-card-btn-gotocard">
-                    <a href="/info-cart.html"> Go to cart</a>
-                  </button>
-                </div>
-              </div>
-
             </div>
           </div>
         </li>
@@ -128,12 +102,8 @@
               </div>
               <p>Shipping & Taxes calculated at checkout.</p>
               <div class="shopping-card-btn">
-                <button class="shopping-card-btn-checkout">
-                  <a href="/info-cart.html"> Go to checkout</a>
-                </button>
-                <button class="shopping-card-btn-gotocard">
-                  <a href="/info-cart.html"> Go to cart</a>
-                </button>
+                <a class="shopping-card-btn-checkout" href="/summary-of-the-cart.html"> Go to checkout</a>
+                <a class="shopping-card-btn-gotocard" href="/info-cart.html"> Clear cart</a>
               </div>
             </div>
           </div>

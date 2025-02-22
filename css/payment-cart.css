@@ -918,12 +918,14 @@
   .shopping-card-btn-checkout {
     background-color: var(--background-color-addbtn);
     border-radius: 0.3rem;
+    font-family: 'Roboto';
+    font-size: 1rem;
+    padding: 1;
     border: transparent;
+    color: #fff;
+    text-decoration: none;
   }
 
-  .shopping-card-btn-checkout a {
-    color: #fff;
-  }
 
   .shopping-card-btn-gotocard {
     background-color: #fff;
@@ -931,7 +933,7 @@
     border-radius: 0.3rem;
   }
 
-  .shopping-card-btn-gotocard a {
+  .shopping-card-btn-gotocard {
     color: #000000;
   }
 }

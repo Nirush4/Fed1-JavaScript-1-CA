@@ -1,4 +1,4 @@
-const summaryFormEl = document.forms.checkout;
+const body = document.querySelector('body');
 const successEl = document.querySelector('#success-el');
 const orderSummaryContainerEl = document.querySelector(
   '#js-order-summary-container'
@@ -55,68 +55,15 @@ function setCartItemToLocalStorage(cart = []) {
   window.localStorage.setItem('Cart', JSON.stringify(cart));
 }
 
-// orderSummaryContainerEl.addEventListener('click', (event) => {
-//   let positionClick = event.target;
+document.body.addEventListener('click', (event) => {
+  const target = event.target;
 
-//   if (positionClick.classList.contains('fa-trash-can')) {
-//     debugger;
-//     let closestParentWithDataId = positionClick.closest('[data-id]');
-//     let productId = closestParentWithDataId.dataset.id;
-//     debugger;
-//     removeItem(productId);
-//   }
-// });
-
-// function removeItem(productId) {
-//   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
-
-//   let itemPositionInCart = cart.findIndex(
-//     (value) => value.productId === productId
-//   );
-//   if (itemPositionInCart >= 0) {
-//     cart.splice(itemPositionInCart, 1);
-//     setCartItemToLocalStorage(cart);
-//     getCartSummary();
-//     debugger;
-//   }
-// }
-
-/// Morten is above this line of code
-formData();
-
-async function formData() {
-  if (!summaryFormEl || !orderSummaryEl) {
-    console.warn('JS cannot run!!!');
-    return;
-  }
-
-  summaryFormEl.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(summaryFormEl);
-    const data = Object.fromEntries(formData);
-
-    window.localStorage.setItem('shippingInfo', JSON.stringify(data));
-
-    sendDataToAPI(data);
-
-    async function sendDataToAPI(data) {
-      try {
-        const res = await fetch('https://dummyjson.com/products/add', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
-        const json = await res.json();
-
-        return json;
-      } catch (error) {
-        console.error(error?.message);
-      }
-      return 'Success';
+  // Check if the clicked element is an anchor (<a>) and has an href attribute
+  if (target.tagName.toLowerCase() === 'a' && target.href) {
+    // Check if the href contains 'http' (to ensure it's an external link)
+    if (target.href.includes('http')) {
+      // Clear the cart in localStorage by setting it to an empty array
+      window.localStorage.setItem('cart', JSON.stringify([]));
     }
-
-    summaryFormEl.reset();
-    window.location = '/payment-method.html';
-  });
-}
+  }
+});
