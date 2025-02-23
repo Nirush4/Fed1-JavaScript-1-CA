@@ -8,6 +8,8 @@ const limitedSaleProducts =
 const cartProductList = document.querySelector('#js-cart-product-list');
 const displayTotalPrice = document.querySelector('#js-total-price');
 const cartIconSpan = document.querySelector('#js-icon-cart-span');
+const clearCartBtn = document.querySelector('#js-clear-cart-btn');
+
 getCartSaleItemToLocalStorage();
 setupCart();
 // setCartItemToLocalStorage();
@@ -29,15 +31,16 @@ closeCartBtn.addEventListener('click', () => {
   shoppingCartEl.classList.remove('open');
 });
 
-productSection.addEventListener('click', (event) => {
-  let positionClick = event.target;
-  if (positionClick.classList.contains('c-add-to-cart')) {
-    let productId = positionClick.dataset.id;
-    addToCart(productId);
-  }
-  addToCartHTML();
-});
-
+if (productSection) {
+  productSection.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains('c-add-to-cart')) {
+      let productId = positionClick.dataset.id;
+      addToCart(productId);
+    }
+    addToCartHTML();
+  });
+}
 function addToCart(productId) {
   const cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
   let itemPositionInCart = cart.findIndex(
@@ -91,10 +94,13 @@ export function addToCartHTML() {
       if (!info) {
         return;
       }
+      const detailsUrl = `/jacket-specific.html?id=${info.id}`;
       const totalPrice = info.price * jacket.quantity; //
       newCart.innerHTML = `
           <div class="shopping-card-img-div">
+                    <a href="${detailsUrl}">
             <img src="${info.image.url}" alt="A man with a jacket">
+                    </a>
            </div>
            <div class="shopping-card-text-div">
               <h3>${info.title}</h3>
@@ -193,14 +199,16 @@ function changeQuantity(productId, type) {
 
 const productSectionTwo = document.querySelector('#section-3');
 
-productSectionTwo.addEventListener('click', (event) => {
-  let positionClick = event.target;
-  if (positionClick.classList.contains('c-add-to-cart-2')) {
-    let productId = positionClick.dataset.id;
-    addToCart(productId);
-  }
-  addToCartHTML();
-});
+if (productSectionTwo) {
+  productSectionTwo.addEventListener('click', (event) => {
+    let positionClick = event.target;
+    if (positionClick.classList.contains('c-add-to-cart-2')) {
+      let productId = positionClick.dataset.id;
+      addToCart(productId);
+    }
+    addToCartHTML();
+  });
+}
 
 export function setupCart() {
   let storedItem = window.localStorage.getItem('Cart');
@@ -210,3 +218,9 @@ export function setupCart() {
     addToCartHTML();
   }
 }
+
+clearCartBtn.addEventListener('click', () => {
+  let cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  window.localStorage.setItem('Cart', JSON.stringify((cart = [])));
+  addToCartHTML();
+});

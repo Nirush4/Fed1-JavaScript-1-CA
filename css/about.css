@@ -16,6 +16,29 @@
 
 }
 
+.c-jacket-header-2 {
+    display: flex;
+    font-size: 16px;
+    font-family: 'Prompt';
+
+    a {
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    a:after {
+        content: '>';
+    }
+
+    a:last-child::after {
+        content: '';
+    }
+
+    a:first-child:hover {
+        text-decoration: underline;
+    }
+}
+
 .sec-1-title-div-about {
     display: flex;
     flex-direction: column;

@@ -130,7 +130,9 @@ function productTemplate({
                         <img src="${imgUrl}" alt="${imgAl}" >
                     </a>
                 </div>
+                 <a href="${detailsUrl}">
                 <p class="section-2-gallery-text-p">${title}</p>
+                    </a>
                 <div class="c-product-preview-rating">
                 <span>&#9733;</span>
                 <span>&#9733;</span>

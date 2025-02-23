@@ -72,6 +72,15 @@ header {
     width: 100%;
 }
 
+.logo-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6rem;
+    text-align: center;
+    width: 100%;
+}
+
 .logo-div {
     width: 6rem;
     height: 3.0125rem;

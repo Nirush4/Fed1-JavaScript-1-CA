@@ -8,9 +8,6 @@ const sortByEl = document.querySelector('#js-sort-by');
 const inputSearch = document.querySelector('#search-input');
 const jacketSection = document.querySelector('.section-filter');
 const clrBlack = document.querySelector('#blackColor');
-const clrBlue = document.querySelector('#blueColor');
-const clrGray = document.querySelector('#grayColor');
-const clrRed = document.querySelector('#redColor');
 const clrGreen = document.querySelector('#greenColor');
 const clrPurple = document.querySelector('#purpleColor');
 const clrYellow = document.querySelector('#yellowColor');
@@ -43,12 +40,12 @@ sortByEl.addEventListener('change', (event) => {
   const val = event.target.value;
 
   if (val === 'asc') {
-    sortByPriceDescending();
+    sortByPriceDescending(femaleJackets);
   } else if (val === 'desc') {
-    sortByPriceAscending();
+    sortByPriceAscending(femaleJackets);
   }
 
-  createProductsListEl(products);
+  createProductsListEl(femaleJackets);
 });
 
 const productsList = JSON.parse(localStorage.getItem('products'));
@@ -63,24 +60,6 @@ clrBlack.addEventListener('click', () => {
     (product) => product.baseColor === 'Black'
   );
   createProductsListEl(blackProducts);
-});
-clrBlue.addEventListener('click', () => {
-  const blueProducts = femaleJackets.filter(
-    (product) => product.baseColor === 'Blue'
-  );
-  createProductsListEl(blueProducts);
-});
-clrGray.addEventListener('click', () => {
-  const grayProducts = femaleJackets.filter(
-    (product) => product.baseColor === 'Gray'
-  );
-  createProductsListEl(grayProducts);
-});
-clrRed.addEventListener('click', () => {
-  const redProducts = femaleJackets.filter(
-    (product) => product.baseColor === 'Red'
-  );
-  createProductsListEl(redProducts);
 });
 clrGreen.addEventListener('click', () => {
   const greenProducts = femaleJackets.filter(
@@ -205,10 +184,10 @@ async function createProductsListEl(list = []) {
   }
 }
 
-function sortByPriceDescending(list = products) {
+function sortByPriceDescending(list = []) {
   list.sort((a, b) => a.price - b.price);
 }
 
-function sortByPriceAscending(list = products) {
+function sortByPriceAscending(list = []) {
   list.sort((a, b) => b.price - a.price);
 }

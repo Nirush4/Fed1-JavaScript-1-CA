@@ -13,8 +13,6 @@
   <script type="module" defer src="/js/women.mjs"></script>
   <script type="module" defer src="/js/cart.mjs"></script>
 
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css"
     integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw=="
     crossorigin="anonymous" />
@@ -37,7 +35,6 @@
 </head>
 
 <body>
-
   <!--imp! HEADER -->
 
   <header>
@@ -105,12 +102,10 @@
               </div>
               <p>Shipping & Taxes calculated at checkout.</p>
               <div class="shopping-card-btn">
-                <button class="shopping-card-btn-checkout">
-                  <a href="/info-cart.html"> Go to checkout</a>
-                </button>
-                <button class="shopping-card-btn-gotocard">
-                  <a href="/info-cart.html"> Go to cart</a>
-                </button>
+                <a class="shopping-card-btn-checkout" href="/summary-of-the-cart.html">
+                  Go to checkout</a>
+                <a class="shopping-card-btn-gotocard" id="js-clear-cart-btn">
+                  Clear cart</a>
               </div>
             </div>
           </div>
@@ -122,7 +117,6 @@
       </label>
     </nav>
   </header>
-
 
   <main>
     <section class="c-adjust">
@@ -147,7 +141,6 @@
     </div>
     <section class="section-filter">
       <div class="filter-main-div">
-
         <div class="c-header-filter">
           <i class="fa-solid fa-arrow-down-wide-short"></i>
           <p>Filter</p>
@@ -163,41 +156,22 @@
             </select>
           </form>
         </div>
-
       </div>
     </section>
 
     <section class="c-jackets">
       <div class="c-activity">
         <div class="c-activity-container">
-
           <div class="c-activity-choosecolor">
             <div>Colour</div>
             <i id="clr-reset-btn" class="fa-solid fa-xmark"></i>
           </div>
 
           <div class="c-activity-color-container">
-
             <div class="c-activity-color-item">
               <div value="Black" id="blackColor" class="c-activity-color-ball c-color-black"></div>
               <div class="c-activity-color-name">Black</div>
             </div>
-
-            <div class="c-activity-color-item">
-              <div value="Blue" id="blueColor" class="c-activity-color-ball c-color-blue"></div>
-              <div class="c-activity-color-name">Blue</div>
-            </div>
-
-            <div class="c-activity-color-item">
-              <div value="Gray" id="grayColor" class="c-activity-color-ball c-color-grey"></div>
-              <div class="c-activity-color-name">Grey</div>
-            </div>
-
-            <div class="c-activity-color-item">
-              <div value="Red" id="redColor" class="c-activity-color-ball c-color-red"></div>
-              <div class="c-activity-color-name">Red</div>
-            </div>
-
             <div class="c-activity-color-item">
               <div value="Green" id="greenColor" class="c-activity-color-ball c-color-green"></div>
               <div class="c-activity-color-name">Green</div>
@@ -213,19 +187,31 @@
               <div class="c-activity-color-name">Yellow</div>
             </div>
           </div>
-          <hr>
+          <hr />
           <div class="c-activity-size-container">
             <div class="c-activity-size-title">
               <h3>Size</h3>
               <i id="size-reset-btn" class="fa-solid fa-xmark"></i>
             </div>
             <div class="c-activity-size-list">
-              <p value="XS" id="size-xs" class="c-activity-size size-of-products">xs</p>
-              <p value="S" id="size-s" class="c-activity-size size-of-products">s</p>
-              <p value="M" id="size-m" class="c-activity-size size-of-products">m</p>
-              <p value="L" id="size-l" class="c-activity-size size-of-products">l</p>
-              <p value="XL" id="size-xl" class="c-activity-size size-of-products">xl</p>
-              <p value="XXL" id="size-xxl" class="c-activity-size size-of-products">xxl</p>
+              <p value="XS" id="size-xs" class="c-activity-size size-of-products">
+                xs
+              </p>
+              <p value="S" id="size-s" class="c-activity-size size-of-products">
+                s
+              </p>
+              <p value="M" id="size-m" class="c-activity-size size-of-products">
+                m
+              </p>
+              <p value="L" id="size-l" class="c-activity-size size-of-products">
+                l
+              </p>
+              <p value="XL" id="size-xl" class="c-activity-size size-of-products">
+                xl
+              </p>
+              <p value="XXL" id="size-xxl" class="c-activity-size size-of-products">
+                xxl
+              </p>
             </div>
           </div>
         </div>
@@ -369,7 +355,10 @@
       </div>
 
       <div class="l-footer-row-2-item-2">
-        <p>&copy; 2024 Rainydays. All rights reserved. (This is a student project.)</p>
+        <p>
+          &copy; 2024 Rainydays. All rights reserved. (This is a student
+          project.)
+        </p>
       </div>
     </div>
   </footer>
@@ -440,7 +429,10 @@
       </div>
     </section>
     <div class="c-footer-last">
-      <p>&copy; 2024 Rainydays. All rights reserved. (This is a student project.)</p>
+      <p>
+        &copy; 2024 Rainydays. All rights reserved. (This is a student
+        project.)
+      </p>
     </div>
   </footer>
 </body>

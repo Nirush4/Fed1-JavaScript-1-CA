@@ -11,9 +11,6 @@ const clrBlack = document.querySelector('#blackColor');
 const clrBlue = document.querySelector('#blueColor');
 const clrGray = document.querySelector('#grayColor');
 const clrRed = document.querySelector('#redColor');
-const clrGreen = document.querySelector('#greenColor');
-const clrPurple = document.querySelector('#purpleColor');
-const clrYellow = document.querySelector('#yellowColor');
 const clrRestBtn = document.querySelector('#clr-reset-btn');
 
 let products = [];
@@ -43,12 +40,12 @@ sortByEl.addEventListener('change', (event) => {
   const val = event.target.value;
 
   if (val === 'asc') {
-    sortByPriceDescending();
+    sortByPriceDescending(mensJackets);
   } else if (val === 'desc') {
-    sortByPriceAscending();
+    sortByPriceAscending(mensJackets);
   }
 
-  createProductsListEl(products);
+  createProductsListEl(mensJackets);
 });
 
 const productsList = JSON.parse(localStorage.getItem('products'));
@@ -81,24 +78,6 @@ clrRed.addEventListener('click', () => {
     (product) => product.baseColor === 'Red'
   );
   createProductsListEl(redProducts);
-});
-clrGreen.addEventListener('click', () => {
-  const greenProducts = mensJackets.filter(
-    (product) => product.baseColor === 'Green'
-  );
-  createProductsListEl(greenProducts);
-});
-clrPurple.addEventListener('click', () => {
-  const purpleProducts = mensJackets.filter(
-    (product) => product.baseColor === 'Purple'
-  );
-  createProductsListEl(purpleProducts);
-});
-clrYellow.addEventListener('click', () => {
-  const yellowProducts = mensJackets.filter(
-    (product) => product.baseColor === 'Yellow'
-  );
-  createProductsListEl(yellowProducts);
 });
 
 clrRestBtn.addEventListener('click', () => {
@@ -205,10 +184,10 @@ async function createProductsListEl(list = []) {
   }
 }
 
-function sortByPriceDescending(list = products) {
+function sortByPriceDescending(list = []) {
   list.sort((a, b) => a.price - b.price);
 }
 
-function sortByPriceAscending(list = products) {
+function sortByPriceAscending(list = []) {
   list.sort((a, b) => b.price - a.price);
 }

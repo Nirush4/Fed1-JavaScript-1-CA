@@ -12,6 +12,7 @@ const inputQuantity = document.querySelector('#quantity');
 const onSaleSection = document.querySelector('#section-3');
 
 const containerEl = document.querySelector('#product-details');
+const clearCartBtn = document.querySelector('#js-clear-cart-btn');
 
 setup();
 setupCart();
@@ -31,14 +32,6 @@ async function setup() {
 
   createproductTemplateOnSale(onSaleProducts);
   getCartSaleItemToLocalStorage();
-  // const productsList = JSON.parse(localStorage.getItem('products'));
-  // const onSaleProductList = productsList.filter((product) => {
-  //   return product.onSale;
-  // });
-
-  // const limitedSale = onSaleProductList.slice(0, 6);
-
-  // createproductTemplateOnSale(limitedSale);
 }
 
 async function getProducts() {
@@ -435,6 +428,12 @@ function createproductTemplateOnSale(list = products) {
     onSaleSection.append(newElOnSale);
   });
 }
+
+clearCartBtn.addEventListener('click', () => {
+  let cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+  window.localStorage.setItem('Cart', JSON.stringify((cart = [])));
+  addToCartHTML();
+});
 
 // function breadcrumbsTemplate({ id = '' }) {
 //   const detailsUrl = `/jacket-specific.html?id=${id}`;
