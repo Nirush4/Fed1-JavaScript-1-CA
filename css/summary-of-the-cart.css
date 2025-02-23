@@ -24,6 +24,11 @@
   align-items: center;
   font-size: var(--size-s);
   padding-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
 }
 
 .c-main-header {
@@ -365,12 +370,12 @@ input#input {
   font-weight: 500;
   font-size: 20px;
   text-transform: capitalize;
+  border-bottom: 2px solid #d9d9d9;
 }
 
 .c-summary-line {
   display: flex;
   width: 100%;
-  border-top: 2px solid #d9d9d9;
   padding-top: 1rem;
   flex-direction: column;
 }
@@ -392,6 +397,11 @@ input#input {
   padding-bottom: 2rem;
   flex-wrap: wrap;
   width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+
+.c-summary-produckt-container:last-child {
+  border-bottom: none;
 }
 
 .c-img-container {
@@ -438,16 +448,6 @@ input#input {
   font-size: var(--size-l);
 }
 
-.c-subtotal-container {
-  display: flex;
-  justify-content: space-between;
-  color: #a3a3a3;
-  align-items: center;
-  text-align: center;
-  font-size: var(--size-s);
-  font-weight: 400;
-  padding: 0.5rem 0rem;
-}
 
 .c-ordertotal-container {
   display: flex;
@@ -549,7 +549,7 @@ input#input {
 
 @media (width<999px) {
   .c-summary-produckt-container {
-    max-width: 10rem;
+    /* max-width: 10rem; */
   }
 
   .c-info-container .c-header {
