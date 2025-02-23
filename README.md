@@ -17,6 +17,7 @@ Using your new skills writing JavaScript, create an interactive online store to 
 ## Required Pages
 
 The following pages are required to complete this assignment.
+
 - Home Page containing product list /index.html
 - Product Page showing all details of a specific product /product/index.html
 - Checkout Page showing all items in the basket /checkout/index.html
@@ -24,7 +25,7 @@ The following pages are required to complete this assignment.
 - Category Pages (e.g. Male/Female Clothing, Movie Genres)
 - Terms and Conditions page (this may be AI generated)
 - Privacy Policy (this may be AI generated) - My Profile Process
-Decide if you will use your existing project, or a fresh project.
+  Decide if you will use your existing project, or a fresh project.
 
 ---
 
@@ -37,18 +38,16 @@ Decide if you will use your existing project, or a fresh project.
 - [Production deploy](https://rainydays-webshop-no.netlify.app/)
 - [Deployment CI](https://app.netlify.com/sites/rainydays-webshop-no/overview)
 
-
 ## Report
 
 - [Report](https://docs.google.com/document/d/17TJjRxLILkgv8cztgKqTxpbnHoFzGau5cbmkD82aHME/edit?usp=sharing)
- 
+
 ## Features
 
 - SEO friendly
 - Responsive
 - Prebuilt components
 - E2E testing with every pull request
-
 
 ### Production
 
@@ -60,18 +59,14 @@ Staging is the enviroment where the team can test the latest features and bug fi
 
 ## Built with
 
-![HTML](/images/html-logo.png) ![CSS](/images/css-logo.webp) ![JAVASCRIPT](/images/js-logo.png)
+<img src="/images/html-logo.png" width="200" height="300"> <img src="/images/css-logo.webp" width="200" height="300"> <img src="/images/js-logo.png" width="200" height="300">
 
 ## Testing and debug:
 
-* https://validator.w3.org/
-* https://wave.webaim.org/
-
-
-
+- https://validator.w3.org/
+- https://wave.webaim.org/
 
 Note: Resources and templates are provided under the project resources folder.
 
 - [Prettier](https://prettier.io/) - An opinionated code formatter
 - [Eslint](https://eslint.org/) - Find and fix problems in your JavaScript code
-
