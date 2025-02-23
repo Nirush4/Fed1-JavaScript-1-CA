@@ -15,7 +15,35 @@ const clrRestBtn = document.querySelector('#clr-reset-btn');
 
 let products = [];
 
-setup();
+setupTest();
+
+//// testing
+async function setupTest() {
+  clearNode(containerEl);
+
+  const productsList = await getProductsTest();
+  const mensJackets = productsList.filter((product) => {
+    return product.gender === 'Male';
+  });
+  window.localStorage.setItem('Mens Jackets', JSON.stringify(mensJackets));
+  window.localStorage.setItem('products', JSON.stringify(productsList));
+  createProductsListEl(mensJackets);
+}
+
+async function getProductsTest() {
+  try {
+    const response = await fetch(API_URL);
+    const { data } = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error(ERROR_MESSAGE_DEFAULT, error?.message);
+  }
+}
+
+///// Testing
+
+// setup();
 
 function setup() {
   if (!containerEl || !sortByEl) {
@@ -24,12 +52,14 @@ function setup() {
     getProducts();
   }
 }
+const productsList = JSON.parse(localStorage.getItem('products'));
+const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
 
 inputSearch.addEventListener('input', (event) => {
   jacketSection.scrollIntoView();
 
   const inputVal = event.target.value;
-  const filteredProductsSearch = products.filter(({ title }) =>
+  const filteredProductsSearch = productsList.filter(({ title }) =>
     title.trim().toLowerCase().includes(inputVal.trim().toLowerCase())
   );
 
@@ -37,6 +67,8 @@ inputSearch.addEventListener('input', (event) => {
 });
 
 sortByEl.addEventListener('change', (event) => {
+  const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
+
   const val = event.target.value;
 
   if (val === 'asc') {
@@ -48,32 +80,35 @@ sortByEl.addEventListener('change', (event) => {
   createProductsListEl(mensJackets);
 });
 
-const productsList = JSON.parse(localStorage.getItem('products'));
-const mensJackets = productsList.filter((product) => {
-  return product.gender === 'Male';
-});
-
 window.localStorage.setItem('Mens Jackets', JSON.stringify(mensJackets));
 
 clrBlack.addEventListener('click', () => {
+  const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
+
   const blackProducts = mensJackets.filter(
     (product) => product.baseColor === 'Black'
   );
   createProductsListEl(blackProducts);
 });
 clrBlue.addEventListener('click', () => {
+  const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
+
   const blueProducts = mensJackets.filter(
     (product) => product.baseColor === 'Blue'
   );
   createProductsListEl(blueProducts);
 });
 clrGray.addEventListener('click', () => {
+  const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
+
   const grayProducts = mensJackets.filter(
     (product) => product.baseColor === 'Gray'
   );
   createProductsListEl(grayProducts);
 });
 clrRed.addEventListener('click', () => {
+  const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
+
   const redProducts = mensJackets.filter(
     (product) => product.baseColor === 'Red'
   );
@@ -81,6 +116,8 @@ clrRed.addEventListener('click', () => {
 });
 
 clrRestBtn.addEventListener('click', () => {
+  const mensJackets = JSON.parse(window.localStorage.getItem('Mens Jackets'));
+
   createProductsListEl(mensJackets);
 });
 

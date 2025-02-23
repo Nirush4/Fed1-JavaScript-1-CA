@@ -1,5 +1,4 @@
 const paymentCartEl = document.forms.paymentCart;
-console.log(paymentCartEl);
 formData();
 
 async function formData() {
