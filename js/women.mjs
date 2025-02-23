@@ -15,7 +15,34 @@ const clrRestBtn = document.querySelector('#clr-reset-btn');
 
 let products = [];
 
-setup();
+setupTest();
+//// testing
+async function setupTest() {
+  clearNode(containerEl);
+
+  const productsList = await getProductsTest();
+  const femaleJackets = productsList.filter((product) => {
+    return product.gender === 'Female';
+  });
+  window.localStorage.setItem('Female Jackets', JSON.stringify(femaleJackets));
+  window.localStorage.setItem('products', JSON.stringify(productsList));
+  createProductsListEl(femaleJackets);
+}
+
+async function getProductsTest() {
+  try {
+    const response = await fetch(API_URL);
+    const { data } = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error(ERROR_MESSAGE_DEFAULT, error?.message);
+  }
+}
+
+///// Testing
+
+// setup();
 
 function setup() {
   if (!containerEl || !sortByEl) {
@@ -27,9 +54,10 @@ function setup() {
 
 inputSearch.addEventListener('input', (event) => {
   jacketSection.scrollIntoView();
+  const productsList = JSON.parse(localStorage.getItem('products'));
 
   const inputVal = event.target.value;
-  const filteredProductsSearch = products.filter(({ title }) =>
+  const filteredProductsSearch = productsList.filter(({ title }) =>
     title.trim().toLowerCase().includes(inputVal.trim().toLowerCase())
   );
 
@@ -37,6 +65,10 @@ inputSearch.addEventListener('input', (event) => {
 });
 
 sortByEl.addEventListener('change', (event) => {
+  const femaleJackets = JSON.parse(
+    window.localStorage.getItem('Female Jackets')
+  );
+
   const val = event.target.value;
 
   if (val === 'asc') {
@@ -49,31 +81,48 @@ sortByEl.addEventListener('change', (event) => {
 });
 
 const productsList = JSON.parse(localStorage.getItem('products'));
-const femaleJackets = productsList.filter((product) => {
-  return product.gender === 'Female';
-});
+const femaleJackets = JSON.parse(window.localStorage.getItem('Female Jackets'));
 
 window.localStorage.setItem('Female Jackets', JSON.stringify(femaleJackets));
 
 clrBlack.addEventListener('click', () => {
+  const femaleJackets = JSON.parse(
+    window.localStorage.getItem('Female Jackets')
+  );
+
   const blackProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Black'
   );
   createProductsListEl(blackProducts);
 });
+
 clrGreen.addEventListener('click', () => {
+  const femaleJackets = JSON.parse(
+    window.localStorage.getItem('Female Jackets')
+  );
+
   const greenProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Green'
   );
   createProductsListEl(greenProducts);
 });
+
 clrPurple.addEventListener('click', () => {
+  const femaleJackets = JSON.parse(
+    window.localStorage.getItem('Female Jackets')
+  );
+
   const purpleProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Purple'
   );
   createProductsListEl(purpleProducts);
 });
+
 clrYellow.addEventListener('click', () => {
+  const femaleJackets = JSON.parse(
+    window.localStorage.getItem('Female Jackets')
+  );
+
   const yellowProducts = femaleJackets.filter(
     (product) => product.baseColor === 'Yellow'
   );
@@ -81,6 +130,10 @@ clrYellow.addEventListener('click', () => {
 });
 
 clrRestBtn.addEventListener('click', () => {
+  const femaleJackets = JSON.parse(
+    window.localStorage.getItem('Female Jackets')
+  );
+
   createProductsListEl(femaleJackets);
 });
 
