@@ -3,9 +3,11 @@ const orderSummaryEl = document.querySelector('#order-summary');
 const orderSummaryContainerEl = document.querySelector(
   '#js-order-summary-container'
 );
-
+let cart = window.localStorage.getItem('Cart') || [];
 // I need to get the cart ID and link it to the products..
-getCartSummary();
+if (cart.length > 0) {
+  getCartSummary();
+}
 
 function getCartSummary() {
   const subtotalEl = document.createElement('div');
