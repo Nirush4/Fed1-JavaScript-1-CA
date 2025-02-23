@@ -27,21 +27,13 @@ The following pages are required to complete this assignment.
 Decide if you will use your existing project, or a fresh project.
 
 ---
- 
-1. Decide if you will use your existing project, or a fresh project.
-2. Open your project in GitHub Desktop and VS Code.
-3. Select one of the three provided endpoints from the list below.
-4. Checkout the API documentation for your chosen endpoint.
-5. Work through the requirements in JavaScript one by one.
-6. Test your work thoroughly and ask for peer review.
-7. Offer to review two other student's work.
+
 8. Make any final changes and submit for delivery.
 
 ## Resources
 
 - [Brief](https://lms.noroff.no/pluginfile.php/339034/mod_resource/content/5/HTML__CSS_CA.pdf)
-- [Design-desktop](https://www.figma.com/proto/5cbdGCgNqnogjUstZbU3ng/Community-Science-Museum-Superman?page-id=0%3A1&node-id=1-3&node-type=canvas&viewport=164%2C57%2C0.06&t=f9NRTR0t2drpXXrw-1&scaling=min-zoom&content-scaling=fixed)
-- [Design-mobile](https://www.figma.com/proto/5cbdGCgNqnogjUstZbU3ng/Community-Science-Museum-Superman?page-id=447%3A6866&node-id=447-6901&node-type=canvas&viewport=-311%2C1368%2C0.31&t=IvxFJwo4SmocGHjb-1&scaling=scale-down&content-scaling=fixed)
+- [Design-desktop](https://www.figma.com/proto/hgQ4WNNGSHOxg9DViYzdIA/Rainydays-Superman?page-id=0%3A1&node-id=2-2&node-type=canvas&viewport=399%2C197%2C0.11&t=RfCGWTH6doE0euxU-1&scaling=scale-down&content-scaling=fixed)
 - [Production deploy](https://rainydays-webshop-no.netlify.app/)
 - [Deployment CI](https://app.netlify.com/sites/rainydays-webshop-no/overview)
 
@@ -68,7 +60,7 @@ Staging is the enviroment where the team can test the latest features and bug fi
 
 ## Built with
 
-![HTML](/images/Readme/html.png) ![CSS](/images/Readme/css.png)
+![HTML](/images/html-logo.png) ![CSS](/images/css-logo.webp) ![JAVASCRIPT](/images/js-logo.png)
 
 ## Testing and debug:
 
