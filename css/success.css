@@ -1,7 +1,16 @@
-@import url("common-css.css");
-
+@import url('common-css.css');
 
 /* Layout main */
+
+.logo {
+  display: block;
+  height: fit-content;
+  width: fit-content;
+}
+
+.logo-div img {
+  pointer-events: none;
+}
 
 .l-main {
   flex: 2 1 auto;
@@ -207,8 +216,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .order-details-h2 {
@@ -289,7 +296,7 @@
 
   .c-pcs {
     display: flex;
-    gap: 1.success-elrem;
+    gap: 1success-elrem;
   }
 }
 

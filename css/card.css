@@ -1,228 +1,228 @@
 .shopping-card {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%;
 }
 
 .shopping-card {
-    position: fixed;
-    top: 0px;
-    right: 0;
-    width: 25rem;
-    height: 100dvh;
-    background-color: #fff;
-    z-index: 110;
-    box-shadow: -3px 0px 8px -2px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0px;
+  right: 0;
+  width: 25rem;
+  height: 100dvh;
+  background-color: #fff;
+  z-index: 110;
+  box-shadow: -3px 0px 8px -2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* transform: translateX(400px); */
+  visibility: hidden;
+  transform: translateX(0%);
+  transition: all 0.2s ease-in;
+
+  h2 {
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000000;
+    padding-left: 2rem;
+    text-align: start;
+  }
+
+  .shopping-cart-id {
+    height: 5rem;
+  }
+
+  .shopping-card-col-1 {
+    display: flex;
+    padding: 1rem 1rem;
+    margin: 0 1rem;
+    gap: 1rem;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .shopping-card-img-div {
+    width: 7rem;
+    height: auto;
+  }
+
+  .shopping-card-img-div img {
+    width: 100%;
+  }
+
+  .shopping-card-text-div {
     display: flex;
     flex-direction: column;
+    line-height: 1rem;
+    gap: 0.5rem;
+    text-align: start;
+  }
+
+  .shopping-card-text-div h3 {
+    font-family: 'Prompt';
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  .shopping-card-text-div p {
+    font-family: Prompt;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+  }
+
+  .shopping-card-count {
+    display: flex;
+    flex: 1 1 100%;
     justify-content: space-between;
-    /* transform: translateX(400px); */
-    visibility: hidden;
-    transform: translateX(0%);
-    transition: all 0.2s ease-in;
+  }
 
-    h2 {
-        font-family: "Roboto";
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #000000;
-        padding-left: 2rem;
-        text-align: start;
-    }
+  .shopping-card-count-text {
+    display: flex;
+    flex: 1 1 50%;
+    align-items: flex-start;
+    gap: 1rem;
+  }
 
-    .shopping-cart-id {
-        height: 5rem;
-    }
+  .shopping-card-count-text div {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgb(183, 183, 183);
+    border-radius: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .shopping-card-col-1 {
-        display: flex;
-        padding: 1rem 1rem;
-        margin: 0 1rem;
-        gap: 1rem;
-        border-bottom: 1px solid lightgray;
-    }
+  .shopping-card-count-trash i {
+    font-size: 1.5rem;
+  }
 
-    .shopping-card-img-div {
-        width: 7rem;
-        height: auto;
-    }
+  .fa-minus,
+  .fa-plus {
+    padding-left: 0;
+  }
 
-    .shopping-card-img-div img {
-        width: 100%;
-    }
+  .shopping-card-col-2 {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 14.5rem;
+    padding: 2rem;
+    background-color: #e1e1e1;
+  }
 
-    .shopping-card-text-div {
-        display: flex;
-        flex-direction: column;
-        line-height: 1rem;
-        gap: 0.5rem;
-        text-align: start;
-    }
+  .shopping-card-sub-total {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .shopping-card-text-div h3 {
-        font-family: "Prompt";
-        font-size: 1rem;
-        font-weight: 500;
-        color: #000000;
-    }
+  .shopping-card-sub-total h4 {
+    font-family: 'Roboto';
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
 
-    .shopping-card-text-div p {
-        font-family: Prompt;
-        font-size: 1rem;
-        font-weight: 400;
-        color: #000000;
-    }
+  .shopping-card-col-2-container p {
+    padding: 0rem 0rem 1rem 0rem;
+    font-family: Roboto;
+    font-size: 1rem;
+    font-weight: 300;
+    display: flex;
+    justify-content: flex-start;
+    text-align: start;
+  }
 
-    .shopping-card-count {
-        display: flex;
-        flex: 1 1 100%;
-        justify-content: space-between;
-    }
+  .shopping-card-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
-    .shopping-card-count-text {
-        display: flex;
-        flex: 1 1 50%;
-        align-items: flex-start;
-        gap: 1rem;
+  .shopping-card-btn a:active {
+    background-color: var(--background-color-addbtn-hover);
+  }
 
-    }
+  .shopping-card-btn a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-decoration: none;
+    padding: 0.9rem;
+    font-family: Prompt;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
 
-    .shopping-card-count-text div {
-        width: 2rem;
-        height: 2rem;
-        border: 1px solid rgb(183, 183, 183);
-        border-radius: 0.3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .shopping-card-btn-checkout {
+    background-color: var(--background-color-addbtn);
+    border-radius: 0.3rem;
+    border: transparent;
+    color: #fff;
+  }
 
-    .shopping-card-count-trash i {
-        font-size: 1.5rem;
-    }
-
-    .fa-minus,
-    .fa-plus {
-        padding-left: 0;
-    }
-
-    .shopping-card-col-2 {
-        position: fixed;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 14.5rem;
-        padding: 2rem;
-        background-color: #e1e1e1;
-    }
-
-    .shopping-card-sub-total {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .shopping-card-sub-total h4 {
-        font-family: "Roboto";
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-
-    .shopping-card-col-2-container p {
-        padding: 0rem 0rem 1rem 0rem;
-        font-family: Roboto;
-        font-size: 1rem;
-        font-weight: 300;
-        display: flex;
-        justify-content: flex-start;
-        text-align: start;
-    }
-
-    .shopping-card-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .shopping-card-btn a:active {
-        background-color: var(--background-color-addbtn-hover);
-    }
-
-    .shopping-card-btn a {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        text-decoration: none;
-        padding: 0.9rem;
-        font-family: Prompt;
-        font-size: 1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.1rem;
-    }
-
-    .shopping-card-btn-checkout {
-        background-color: var(--background-color-addbtn);
-        border-radius: 0.3rem;
-        border: transparent;
-        color: #fff;
-    }
-
-    .shopping-card-btn-gotocard {
-        background-color: #fff;
-        border: 2px solid black;
-        border-radius: 0.3rem;
-        color: #000000;
-    }
+  .shopping-card-btn-gotocard {
+    background-color: #fff;
+    border: 2px solid black;
+    border-radius: 0.3rem;
+    color: #000000;
+  }
 }
 
 .shopping-cart-id {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
 
-    #js-close-cart {
-        font-size: 2rem;
-        margin-right: 2rem;
-        cursor: pointer;
-    }
+  #js-close-cart {
+    font-size: 2rem;
+    margin-right: 2rem;
+    cursor: pointer;
+  }
 }
 
 #js-cart-product-list {
-    overflow-y: scroll;
-    height: 64dvh;
+  overflow-y: scroll;
+  height: 64dvh;
 }
 
 @media (width<600px) {
-    .shopping-card {
-        width: 80%;
-    }
+  .shopping-card {
+    width: 80%;
+  }
 }
 
 @media (width<465px) {
-    .shopping-card-col-1 {
-        flex-direction: column;
-    }
+  .shopping-card-col-1 {
+    flex-direction: column;
+  }
 }
 
 .shopping-card-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100dvh;
-    background-color: rgb(0, 0, 0, 0.3);
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.2s ease-in;
-    z-index: 105;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: rgb(0, 0, 0, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease-in;
+  z-index: 105;
 }
 
 .open {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 .hidden {
-    visibility: hidden;
+  visibility: hidden;
 }

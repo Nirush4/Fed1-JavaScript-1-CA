@@ -43,12 +43,12 @@ sortByEl.addEventListener('change', (event) => {
   const val = event.target.value;
 
   if (val === 'asc') {
-    sortByPriceDescending();
+    sortByPriceDescending(femaleJackets);
   } else if (val === 'desc') {
-    sortByPriceAscending();
+    sortByPriceAscending(femaleJackets);
   }
 
-  createProductsListEl(products);
+  createProductsListEl(femaleJackets);
 });
 
 const productsList = JSON.parse(localStorage.getItem('products'));
@@ -205,10 +205,10 @@ async function createProductsListEl(list = []) {
   }
 }
 
-function sortByPriceDescending(list = products) {
+function sortByPriceDescending(list = []) {
   list.sort((a, b) => a.price - b.price);
 }
 
-function sortByPriceAscending(list = products) {
+function sortByPriceAscending(list = []) {
   list.sort((a, b) => b.price - a.price);
 }

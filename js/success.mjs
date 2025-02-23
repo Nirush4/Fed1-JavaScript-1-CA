@@ -4,7 +4,6 @@ const orderSummaryContainerEl = document.querySelector(
   '#js-order-summary-container'
 );
 
-// I need to get the cart ID and link it to the products..
 getCartSummary();
 
 function getCartSummary() {
@@ -58,12 +57,8 @@ function setCartItemToLocalStorage(cart = []) {
 document.body.addEventListener('click', (event) => {
   const target = event.target;
 
-  // Check if the clicked element is an anchor (<a>) and has an href attribute
-  if (target.tagName.toLowerCase() === 'a' && target.href) {
-    // Check if the href contains 'http' (to ensure it's an external link)
-    if (target.href.includes('http')) {
-      // Clear the cart in localStorage by setting it to an empty array
-      window.localStorage.setItem('cart', JSON.stringify([]));
-    }
+  if (target.href.includes('http')) {
+    let cart = JSON.parse(window.localStorage.getItem('Cart')) || [];
+    window.localStorage.setItem('Cart', JSON.stringify((cart = [])));
   }
 });
