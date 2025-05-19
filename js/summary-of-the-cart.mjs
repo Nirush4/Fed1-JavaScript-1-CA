@@ -4,7 +4,6 @@ const orderSummaryContainerEl = document.querySelector(
   '#js-order-summary-container'
 );
 let cart = window.localStorage.getItem('Cart') || [];
-// I need to get the cart ID and link it to the products..
 if (cart.length > 0) {
   getCartSummary();
 }
