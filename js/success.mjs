@@ -34,10 +34,16 @@ function getCartSummary() {
             <div class="c-info-container">
                <div class="c-header">${info.title}:</div>
                    <div class="c-pcs">
-                      <div>${info.price.toFixed(2)}kr</div>
-                      <div>Color: ${info.baseColor}</div>
-                      <div>Size: M</div>
-                      <div>Quantity:${product.quantity}</div>
+                     	&nbsp; <div><strong>${info.price.toFixed(
+                        2
+                      )}kr</strong></div>,
+                     	&nbsp;  <div>Color: <strong>${
+                        info.baseColor
+                      }</strong></div>,
+                      &nbsp; <div>Size: <strong>M</strong></div>,
+                     	&nbsp; <div>Quantity:<strong>${
+                        product.quantity
+                      }</strong></div>
                     </div>
                 </div>
             </div>

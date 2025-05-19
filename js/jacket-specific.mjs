@@ -94,10 +94,10 @@ function addToCart(productId, quantity = 1) {
   if (itemPositionInCart === -1) {
     cart.push({
       productId: productId,
-      quantity: quantity, // Use the provided quantity
+      quantity: quantity,
     });
   } else {
-    cart[itemPositionInCart].quantity += quantity; // Increase by selected quantity
+    cart[itemPositionInCart].quantity += quantity;
   }
 
   setCartItemToLocalStorage(cart);
@@ -239,8 +239,6 @@ function changeQuantity(productId, type) {
   addToCartHTML();
 }
 
-///// Mortens code above this line
-
 async function fetchProductDetails(productId = '') {
   const Id = getId();
 
@@ -257,7 +255,6 @@ async function fetchProductDetails(productId = '') {
     console.error(ERROR_MESSAGE_DEFAULT, error?.message);
   }
 }
-// renderProductDetails();
 
 function getId() {
   const parameterString = window.location.search;

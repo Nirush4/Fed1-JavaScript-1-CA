@@ -799,12 +799,12 @@
 
 @media (width<600px) {
     .section-3-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         padding-top: 3rem;
     }
 
     .section-3 {
-        gap: 2rem;
+        gap: 1rem;
         padding: 2rem 2rem 3rem;
 
         article {

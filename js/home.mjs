@@ -1,6 +1,5 @@
 import { createHTML, clearNode } from './utils.mjs';
 import { API_URL, ERROR_MESSAGE_DEFAULT, CURRENCY } from './constants.mjs';
-// import { addToCart } from './cart.mjs';
 
 const containerEl = document.querySelector('#js-products-section');
 const sortByEl = document.querySelector('#js-sort-by');
@@ -18,16 +17,13 @@ async function setup() {
     clearNode(containerEl);
     createLoadingSkeleton();
 
-    // NOTE: This is for the first time rendering the page
     const products = await getProducts();
     const sortProducts = sortByPriceDescending(products);
 
     setProductsToLS(sortProducts);
 
-    // Can only be called after setting products to localstorage
     const limitedSaleProducts = getSaleProductsFromProducts(products);
 
-    // note: need this for the cart
     setSaleProductsToLS(limitedSaleProducts);
 
     createProductsListEl(sortProducts);
@@ -71,7 +67,7 @@ filterEl.addEventListener('change', (event) => {
     filteredProducts = filterProductsByGender(val);
   }
 
-  createProductsListEl(filteredProducts); // Pass the original products list when no gender filter is selected
+  createProductsListEl(filteredProducts);
 });
 
 function filterProductsByGender(gender) {
@@ -266,11 +262,6 @@ function sortByPriceDescending(list = []) {
 function sortByPriceAscending(list = []) {
   return list.sort((a, b) => b.price - a.price);
 }
-
-// Example usage:
-// filterProductsByGender('male');
-// filterProductsByGender('female');
-// filterProductsByGender('unisex');
 
 function getSaleProductsFromProducts() {
   const products = getProductsFromLS();

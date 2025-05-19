@@ -604,8 +604,8 @@ main {
   }
 
   .section-2-article {
-    gap: 2rem;
-    padding: 0rem 1rem;
+    gap: 1rem;
+    padding: 0rem;
 
     .section-2-gallery {
       flex-wrap: nowrap;

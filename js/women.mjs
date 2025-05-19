@@ -16,7 +16,7 @@ const clrRestBtn = document.querySelector('#clr-reset-btn');
 let products = [];
 
 setupTest();
-//// testing
+
 async function setupTest() {
   clearNode(containerEl);
 
@@ -39,10 +39,6 @@ async function getProductsTest() {
     console.error(ERROR_MESSAGE_DEFAULT, error?.message);
   }
 }
-
-///// Testing
-
-// setup();
 
 function setup() {
   if (!containerEl || !sortByEl) {
